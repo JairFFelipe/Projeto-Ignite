@@ -37,13 +37,13 @@
         <form class="mt-6" action="#" method="POST">
           <div>
             <label class="block text-gray-200">Endereço de email</label>
-            <input type="email" name="" id="" placeholder="email@xyz.com" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black  focus:px-5 focus:py-4 ease-in-out duration-300" autofocus autocomplete required>
+            <input type="email" name="" id="" placeholder="email@xyz.com" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black  focus:px-5 focus:py-4 ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
           </div>
   
           <div class="mt-4">
             <label class="block text-gray-200">Senha</label>
             <input type="password" name="" id="" placeholder="Senha123" minlength="6" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500
-                  focus:bg-orange-100 focus:outline-none text-black focus:px-5 focus:py-4 ease-in-out duration-300" required>
+                  focus:bg-orange-100 focus:outline-none text-black focus:px-5 focus:py-4 ease-in-out duration-300 focus:ring-orange-500" required>
           </div>
   
           <div class="text-right mt-2">
@@ -57,7 +57,7 @@
         <hr class="mt-6 border-gray-700 w-full">
         <div class="flex h-fit w-full justify-center">
           <p class="mt-8 ">
-            <a href="#" class="text-orange-500 hover:text-orange-700 font-semibold">
+            <a href="/register" class="text-orange-500 hover:text-orange-700 font-semibold">
               Crie uma conta!
             </a>
           </p>  

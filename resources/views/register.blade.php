@@ -39,46 +39,46 @@
           <div class="flex w-full justify-between">
             <div>
               <label class="block text-gray-200">Nome</label>
-              <input type="email" name="name" id="" placeholder="Nathan" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black ease-in-out duration-300" autofocus autocomplete required>
+              <input type="email" name="name" id="" placeholder="Nathan" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
             </div>
 
             <div class="">
               <label class="block text-gray-200">Sobrenome</label>
-              <input type="email" name="" id="" placeholder="de Souza Filho" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black ease-in-out duration-300" autofocus autocomplete required>
+              <input type="email" name="" id="" placeholder="de Souza Filho" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
             </div>
 
           </div>
 
           <div class="mt-4">
             <label class="block text-gray-200">Número de telefone</label>
-            <input type="email" name="" id="" placeholder="(XX) XXXXX-XXXX" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black  focus:px-5 focus:py-4 ease-in-out duration-300" autofocus autocomplete required>
+            <input type="email" name="" id="" placeholder="(XX) XXXXX-XXXX" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black  focus:px-5 focus:py-4 ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
           </div>
 
           <div class="mt-4">
             <label class="block text-gray-200">Endereço de Email</label>
-            <input type="email" name="email" id="" placeholder="email@xyz.com" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black  focus:px-5 focus:py-4 ease-in-out duration-300" autofocus autocomplete required>
+            <input type="email" name="email" id="" placeholder="email@xyz.com" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black  focus:px-5 focus:py-4 ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
           </div>
   
           <div class="mt-4">
             <label class="block text-gray-200">Senha</label>
             <input type="password" name="password" id="" placeholder="Senha123" minlength="6" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500
-                  focus:bg-orange-100 focus:outline-none text-black focus:px-5 focus:py-4 ease-in-out duration-300" required>
+                  focus:bg-orange-100 focus:outline-none text-black focus:px-5 focus:py-4 ease-in-out duration-300 focus:ring-orange-500" required>
           </div>
           
           <div class="mt-4">
             <label class="block text-gray-200">Repita sua senha</label>
-            <input type="password" name="" id="" placeholder="Senha123" minlength="6" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500
-                  focus:bg-orange-100 focus:outline-none text-black focus:px-5 focus:py-4 ease-in-out duration-300" required>
+            <input type="password" name="" id="" placeholder="Senha123" minlength="6" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 focus:border-orange-500 
+                  focus:bg-orange-100 focus:outline-none text-black focus:px-5 focus:py-4 ease-in-out duration-300 focus:ring-orange-500" required>
           </div>
 
-          <button type="submit" class="w-full block bg-orange-600 hover:bg-orange-400 focus:bg-orange-400 text-black font-semibold rounded-lg
+          <button type="submit" class="w-full block bg-black border-[1px] border-orange-500 hover:bg-orange-500 focus:bg-orange-400 text-white font-semibold rounded-lg
                 px-4 py-3 mt-12 ease-in-out duration-200">Entrar</button>
         </form>
   
         <hr class="mt-6 border-gray-700 w-full">
         <div class="flex h-fit w-full justify-center">
           <p class="mt-8 ">
-            <a href="#" class="text-orange-500 hover:text-orange-700 font-semibold">
+            <a href="/login" class="text-orange-500 hover:text-orange-700 font-semibold">
               Entre na sua conta!
             </a>
           </p>  
