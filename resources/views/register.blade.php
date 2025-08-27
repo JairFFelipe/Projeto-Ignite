@@ -34,25 +34,25 @@
         </div>
         <h1 class="text-xl md:text-2xl font-bold leading-tight mt-12 text-white">Crie sua conta</h1>
   
-        <form class="mt-6" action="#" method="POST">
+        <form class="mt-6" action="/startform" method="POST">
             @csrf
           <div class="flex w-full justify-between">
             <div>
               <label class="block text-gray-200">Nome</label>
-              <input type="email" name="name" id="" placeholder="Nathan" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
+              <input type="text" name="name" id="" placeholder="Nathan" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
             </div>
 
-            <div class="">
+            <!-- <div class="">
               <label class="block text-gray-200">Sobrenome</label>
               <input type="email" name="" id="" placeholder="de Souza Filho" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
-            </div>
+            </div> -->
 
           </div>
 
-          <div class="mt-4">
+          <!-- <div class="mt-4">
             <label class="block text-gray-200">Número de telefone</label>
             <input type="email" name="" id="" placeholder="(XX) XXXXX-XXXX" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black  focus:px-5 focus:py-4 ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
-          </div>
+          </div> -->
 
           <div class="mt-4">
             <label class="block text-gray-200">Endereço de Email</label>
@@ -65,11 +65,11 @@
                   focus:bg-orange-100 focus:outline-none text-black focus:px-5 focus:py-4 ease-in-out duration-300 focus:ring-orange-500" required>
           </div>
           
-          <div class="mt-4">
+          <!-- <div class="mt-4">
             <label class="block text-gray-200">Repita sua senha</label>
             <input type="password" name="" id="" placeholder="Senha123" minlength="6" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 focus:border-orange-500 
                   focus:bg-orange-100 focus:outline-none text-black focus:px-5 focus:py-4 ease-in-out duration-300 focus:ring-orange-500" required>
-          </div>
+          </div> -->
 
           <button type="submit" class="w-full block bg-black border-[1px] border-orange-500 hover:bg-orange-500 focus:bg-orange-400 text-white font-semibold rounded-lg
                 px-4 py-3 mt-12 ease-in-out duration-200">Entrar</button>
