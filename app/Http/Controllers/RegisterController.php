@@ -12,22 +12,21 @@ class RegisterController extends Controller
     }
 
     public function ticabauau(Request $request){
-        $nome = $request->input('name');
-        $email = $request->input('email');
-        $senha = $request->input('password');
+//          Não tem diferença entre $request->input('name') e $request->name
+        $nomeCompleto = $request->name . ' ' . $request->surname;
 
 
 //      Faz o Hash da senha (proteção de senha)       
-        $senhaHash = Hash::make($senha);
+        $senha = Hash::make($request->password);
 
 
 //      Transforma os dados em uma array        
         $formdata = [
-            'nome' => $nome,
-            'email' => $email,
-            'senha' => $senha
+            'nome' => $nomeCompleto,
+            'sobrenome' => $request->sobrenome,
+            'email' => $request->email,
+            'senha' => $request->password
         ];
-
 
         return view('testeform', $formdata);
     }
