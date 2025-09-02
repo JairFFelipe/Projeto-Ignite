@@ -36,40 +36,46 @@
   
         <form class="mt-6" action="/startform" method="POST">
             @csrf
-          <div class="flex w-full justify-between">
+          <div class="flex w-full justify-between gap-5">
             <div>
               <label class="block text-gray-200">Nome</label>
-              <input type="text" name="name" id="" placeholder="Nathan" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
+              <input type="text" name="name" id="" value="{{ old('name') }}" placeholder="Nathan" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
             </div>
 
             <div class="">
               <label class="block text-gray-200">Sobrenome</label>
-              <input type="text" name="surname" id="" placeholder="de Souza Filho" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
+              <input type="text" name="surname" id="" value="{{ old('surname') }}" placeholder="de Souza Filho" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
             </div>
 
           </div>
 
-          <!-- <div class="mt-4">
+          <div class="mt-4">
             <label class="block text-gray-200">Número de telefone</label>
-            <input type="email" name="" id="" placeholder="(XX) XXXXX-XXXX" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black  focus:px-5 focus:py-4 ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
-          </div> -->
+            <input type="text" name="phone" id="" value="{{ old('phone') }}" placeholder="(XX) XXXXX-XXXX" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black  focus:px-5 focus:py-4 ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
+          </div>
+                @error('phone')
+                  <div class="text-red-600 text-sm">{{ $message }}</div>
+              @enderror
 
           <div class="mt-4">
             <label class="block text-gray-200">Endereço de Email</label>
-            <input type="email" name="email" id="" placeholder="email@xyz.com" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black  focus:px-5 focus:py-4 ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
+            <input type="email" name="email" id="" value="{{ old('email') }}" placeholder="email@xyz.com" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black  focus:px-5 focus:py-4 ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
           </div>
   
           <div class="mt-4">
             <label class="block text-gray-200">Senha</label>
-            <input type="password" name="password" id="" placeholder="Senha123" minlength="6" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500
+            <input type="password" name="password" id="" value="" placeholder="Senha123" minlength="6" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500
                   focus:bg-orange-100 focus:outline-none text-black focus:px-5 focus:py-4 ease-in-out duration-300 focus:ring-orange-500" required>
           </div>
           
-          <!-- <div class="mt-4">
-            <label class="block text-gray-200">Repita sua senha</label>
-            <input type="password" name="" id="" placeholder="Senha123" minlength="6" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 focus:border-orange-500 
+          <div class="mt-4">
+            <label class="block text-gray-200">Confirme sua senha</label>
+            <input type="password" name="password_confirmation" id="" placeholder="Senha123" minlength="6" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 focus:border-orange-500 
                   focus:bg-orange-100 focus:outline-none text-black focus:px-5 focus:py-4 ease-in-out duration-300 focus:ring-orange-500" required>
-          </div> -->
+          </div>
+          @error('password')
+                  <div class="text-red-600 text-sm">{{ $message }}</div>
+              @enderror
 
           <button type="submit" class="w-full block bg-black border-[1px] border-orange-500 hover:bg-orange-500 focus:bg-orange-400 text-white font-semibold rounded-lg
                 px-4 py-3 mt-12 ease-in-out duration-200">Entrar</button>
