@@ -39,12 +39,12 @@
           <div class="flex w-full justify-between gap-5">
             <div>
               <label class="block text-gray-200">Nome</label>
-              <input type="text" name="name" id="" value="{{ old('name') }}" placeholder="Nathan" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
+              <input type="text" name="nome" id="" value="{{ old('nome') }}" placeholder="Nathan" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
             </div>
 
             <div class="">
               <label class="block text-gray-200">Sobrenome</label>
-              <input type="text" name="surname" id="" value="{{ old('surname') }}" placeholder="de Souza Filho" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
+              <input type="text" name="sobrenome" id="" value="{{ old('sobrenome') }}" placeholder="de Souza Filho" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
             </div>
 
           </div>
@@ -64,16 +64,16 @@
   
           <div class="mt-4">
             <label class="block text-gray-200">Senha</label>
-            <input type="password" name="password" id="" value="" placeholder="Senha123" minlength="6" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500
+            <input type="password" name="senha" id="" value="" placeholder="Senha123" minlength="6" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500
                   focus:bg-orange-100 focus:outline-none text-black focus:px-5 focus:py-4 ease-in-out duration-300 focus:ring-orange-500" required>
           </div>
           
           <div class="mt-4">
             <label class="block text-gray-200">Confirme sua senha</label>
-            <input type="password" name="password_confirmation" id="" placeholder="Senha123" minlength="6" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 focus:border-orange-500 
+            <input type="password" name="senha_confirmation" id="" placeholder="Senha123" minlength="6" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 focus:border-orange-500 
                   focus:bg-orange-100 focus:outline-none text-black focus:px-5 focus:py-4 ease-in-out duration-300 focus:ring-orange-500" required>
           </div>
-          @error('password')
+          @error('senha')
                   <div class="text-red-600 text-sm">{{ $message }}</div>
               @enderror
 
