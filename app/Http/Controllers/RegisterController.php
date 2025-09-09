@@ -9,19 +9,21 @@ use Illuminate\Support\Facades\Hash;
 class RegisterController extends Controller
 {
     public function index(){
-        return view('register');
+        return view('register');    
     }
 
-    public function ticabauau(Request $request){
+    public function registrar(Request $request){
 
         $validated = $request->validate([
             'nome' => 'required',
-            'phone' => 'digits_between:9,11',
-            'email' => 'required',
+            'phone' => 'digits_between:9,11|unique:usuarios,num',
+            'email' => 'required|email|unique:usuarios,email',
             'senha' => 'required|confirmed'
         ],[
-            'phone.digits_between' => 'O número de telefone deve conter 9-15 digitos',
-            'senha.confirmed' => 'A senha ta diferente, burro'
+            'phone.digits_between' => 'O número de telefone deve conter 9-11 digitos',
+            'phone.unique' => 'Este número de telefone já está cadastrado!',
+            'senha.confirmed' => 'Ambas as senhas devem coincidir',
+            'email.unique' => 'Este endereço de email já está cadastrado!'
         ]);
 
 

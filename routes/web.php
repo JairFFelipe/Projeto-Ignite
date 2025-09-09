@@ -14,4 +14,4 @@ Route::get('/login', function () {
 
 Route::get('/register', [RegisterController::class, 'index']);
 
-Route::post('/startform', [RegisterController::class, 'ticabauau']);
+Route::post('/startform', [RegisterController::class, 'registrar']);

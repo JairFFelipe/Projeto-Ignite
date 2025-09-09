@@ -61,6 +61,9 @@
             <label class="block text-gray-200">Endereço de Email</label>
             <input type="email" name="email" id="" value="{{ old('email') }}" placeholder="email@xyz.com" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black  focus:px-5 focus:py-4 ease-in-out duration-300 focus:ring-orange-500" autocomplete required>
           </div>
+                @error('email')
+                        <div class="text-red-600 text-sm">{{ $message }}</div>
+                    @enderror
   
           <div class="mt-4">
             <label class="block text-gray-200">Senha</label>
