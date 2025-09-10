@@ -42,9 +42,6 @@ REM Atualiza o PATH (mantendo o anterior)
 set "NEW_PATH=%PHP_PATH%;%NODE_PATH%;%OLD_PATH%"
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v Path /t REG_EXPAND_SZ /d "%NEW_PATH%" /f || (echo [ERRO] Falha ao atualizar PATH && pause && exit /b)
 
-rundll32 sysdm.cpl,EditEnvironmentVariables
-pause
-
 echo.
 echo ====== Etapa 5: Instalando Composer ======
 "%REQ_DIR%\composer-setup.exe" /quiet || (echo [ERRO] Falha na instalação do Composer && pause && exit /b)
