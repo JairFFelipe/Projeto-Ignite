@@ -241,7 +241,7 @@
                 <a href="#">Legal</a>
                 <a href="#">Mapa do site</a>
             </div>
-            <p>© 2025 Triumph Motorcycles</p>
+            <p>© 2025 Ignite</p>
             </div>
         </div>
     </footer>
