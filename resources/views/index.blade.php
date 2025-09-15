@@ -1,7 +1,48 @@
-@extends('layout.layout')
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body>
     <style>[x-cloak]{display:none;}</style>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<!--Header inicio-->
+    <header class="flex w-full">
+        <div class="flex text-white bg-black w-screen h-[7vh] items-center px-10 justify-between ">
+            <div class="flex w-fit h-[7vh] items-center space-x-10 font-semibold">    
+                <div class="flex">
+                    <img src="{{ asset('img/gatoburro.png') }}" alt="Logo" class="h-10 w-40">
+                </div>
+
+                <div class="flex">
+                    <ul class="flex space-x-5">
+                        <li>MOTOCICLETAS</li>
+                        <li>ACESSÓRIOS</li>
+                        <li>ROUPAS</li>
+                        <li>SAIBA MAIS</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex space-x-10 items-center">
+                <div>
+                    <ul class="flex space-x-5 font-thin">
+                        <li>Concessionárias</li>
+                        <li>Monte sua moto</li>
+                        <li>Ofertas</li>
+                        <li>Agende um test ride</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="{{ asset('img/perfilburro.jpg') }}" alt="" class="h-10 w-40">
+                </div>
+            </div>
+        </div>
+    </header>
 
     <section>
         <div
@@ -129,4 +170,82 @@
 
         </div>
     </section>
-@endsection
+    
+    <footer class="bg-white border-t mt-16">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <!-- Grid de Links -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm font-semibold">
+            <!-- Coluna 1 -->
+            <div>
+                <h4 class="font-bold mb-3">MOTOCICLETAS</h4>
+                <ul class="space-y-2 text-gray-600">
+                <li><a href="#">Adventure</a></li>
+                <li><a href="#">Classic</a></li>
+                <li><a href="#">Roadsters</a></li>
+                <li><a href="#">Rocket 3</a></li>
+                <li><a href="#">Sport</a></li>
+                <li><a href="#">Press Reviews</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Motocicletas Seminovas</a></li>
+                </ul>
+            </div>
+
+            <!-- Coluna 2 -->
+            <div>
+                <h4 class="font-bold mb-3">AÇÃO</h4>
+                <ul class="space-y-2 text-gray-600">
+                <li><a href="#">Test Ride</a></li>
+                <li><a href="#">Monte sua moto</a></li>
+                <li><a href="#">Encontrar concessionária</a></li>
+                <li><a href="#">Mantenha-me informado</a></li>
+                </ul>
+            </div>
+
+            <!-- Coluna 3 -->
+            <div>
+                <h4 class="font-bold mb-3">FOR THE RIDE</h4>
+                <ul class="space-y-2 text-gray-600">
+                <li><a href="#">Brand</a></li>
+                <li><a href="#">Racing</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Factory Visitor Experience</a></li>
+                <li><a href="#">Triumph Adventure Experience</a></li>
+                </ul>
+            </div>
+
+            <!-- Coluna 4 -->
+            <div>
+                <h4 class="font-bold mb-3">PROPRIETÁRIOS</h4>
+                <ul class="space-y-2 text-gray-600">
+                <li><a href="#">Total Care</a></li>
+                <li><a href="#">Sua Triumph</a></li>
+                <li><a href="#">My Triumph App</a></li>
+                <li><a href="#">What3Words</a></li>
+                <li><a href="#">Agende um serviço</a></li>
+                </ul>
+            </div>
+            </div>
+
+            <!-- Redes sociais -->
+            <div class="flex space-x-4 mt-8">
+            <a href="#"><img src="{{ asset('img/facebook.png') }}" alt="Facebook" class="h-5 w-fit"></a>
+            <a href="#"><img src="{{ asset('img/twitter.svg') }}" alt="Twitter" class="h-5 w-fit"></a>
+            <a href="#"><img src="{{ asset('img/youtube.png') }}" alt="YouTube" class="h-5 w-fit"></a>
+            </div>
+
+            <!-- Linha divisória -->
+            <hr class="my-6 border-gray-300">
+
+            <!-- Rodapé legal -->
+            <div class="flex flex-col md:flex-row justify-between text-xs text-gray-500">
+            <div class="flex space-x-4 mb-2 md:mb-0">
+                <a href="#">Contato</a>
+                <a href="#">Legal</a>
+                <a href="#">Mapa do site</a>
+            </div>
+            <p>© 2025 Ignite</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
