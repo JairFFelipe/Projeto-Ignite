@@ -9,21 +9,23 @@ use Illuminate\Support\Facades\Hash;
 class RegisterController extends Controller
 {
     public function index(){
-        return view('register');    
+        return view('register');
     }
 
     public function registrar(Request $request){
 
         $validated = $request->validate([
             'nome' => 'required',
+            'sobrenome' => 'required',
             'phone' => 'digits_between:9,11|unique:usuarios,num',
-            'email' => 'required|email|unique:usuarios,email',
+            'email' => 'required|email:rfc,dns|unique:usuarios,email',
             'senha' => 'required|confirmed'
         ],[
             'phone.digits_between' => 'O número de telefone deve conter 9-11 digitos',
             'phone.unique' => 'Este número de telefone já está cadastrado!',
             'senha.confirmed' => 'Ambas as senhas devem coincidir',
-            'email.unique' => 'Este endereço de email já está cadastrado!'
+            'email.unique' => 'Este endereço de email já está cadastrado!',
+            'email.email' => 'Domínio de email inválido!'
         ]);
 
 
@@ -33,23 +35,12 @@ class RegisterController extends Controller
         $usuario = new usuarios();
         $usuario->nome = $nomeCompleto;
         $usuario->email = $request->email;
-        $usuario->senha = $request->senha;
+        $usuario->senha = Hash::make($request->senha);
         $usuario->num = $request->phone;
-        $usuario->cpf = 'a';
-        $usuario->cep = 'b';
+
 
         $usuario->save();
-        
 
-//      Transforma os dados em uma array        
-        $formdata = [
-            'nome' => $nomeCompleto,
-            'telefone' => $request->phone,
-            'sobrenome' => $request->sobrenome,
-            'email' => $request->email,
-            'senha' => $request->senha
-        ];
-
-        return view('testeform', $formdata);
+        return redirect('/');
     }
 }
