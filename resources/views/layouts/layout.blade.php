@@ -51,43 +51,7 @@
             </div>
         </div>
 
-        <!-- Container global dos mega menus (ocupa toda a largura e fica logo abaixo da navbar) -->
-        <div class="relative">
-            <!-- Exemplo: MOTOCICLETAS -->
-            <div
-            x-show="activeMenu === 'motocicletas'"
-            x-transition:enter.duration.150ms
-            x-transition:leave.duration.100ms
-            @click.away="activeMenu = null"
-            class="absolute left-0 top-full w-full bg-white text-black shadow-lg"
-            >
-            <div class="max-w-7xl mx-auto grid grid-cols-3 gap-6 p-6">
-                <!-- colunas etc -->
-                <div class="space-y-2 text-sm font-bold">
-                <a href="#" class="block hover:text-red-600">Tiger</a>
-                <a href="#" class="block hover:text-red-600">Tiger Sport</a>
-                <a href="#" class="block hover:text-red-600">Bonneville</a>
-                </div>
-
-                <div class="space-y-4">
-                <div class="flex items-center space-x-4">
-                    <img src="{{ asset('img/moto1.png') }}" class="h-16">
-                    <div>
-                    <p class="font-semibold">Tiger 900 GT Pro</p>
-                    <p class="text-sm text-gray-600">A partir de R$81.690</p>
-                    </div>
-                </div>
-                </div>
-
-                <div class="relative">
-                <img src="{{ asset('img/moto-banner.jpg') }}" class="w-full h-full object-cover rounded">
-                <span class="absolute bottom-4 left-4 text-2xl font-bold text-white">TIGER</span>
-                </div>
-            </div>
-            </div>
-
-            <!-- Repita para os outros menus (acessorios, roupas ...) -->
-            <div x-show="activeMenu === 'acessorios'" x-transition @click.away="activeMenu = null" class="absolute left-0 top-full w-full bg-white text-black shadow-lg">
+        <div x-show="activeMenu === 'acessorios'" x-transition @click.away="activeMenu = null" class="absolute left-0 top-full w-full bg-white text-black shadow-lg">
             <div class="max-w-7xl mx-auto p-6">Acessórios content...</div>
             </div>
 
@@ -97,10 +61,107 @@
             
             <div x-show="activeMenu === 'saiba'" x-transition @click.away="activeMenu = null" class="absolute left-0 top-full w-full bg-white text-black shadow-lg">
             <div class="max-w-7xl mx-auto p-6">saiba mais content...</div>
+        </div>
+        <!-- Container motocicletas -->
+        <div 
+            x-show="activeMenu === 'motocicletas'"
+            x-transition:enter.duration.150ms
+            x-transition:leave.duration.150ms
+            x-data="{
+                brand: null,
+                motos: {
+                    kawasaki: {
+                        nome: 'Ninja ZX-6R',
+                        preco: '__________',
+                        imgMini: '{{ asset('img/kawasaki-mini.png') }}',
+                        imgBanner: '{{ asset('img/kawasaki-banner.jpg') }}'
+                    },
+                    harley: {
+                        nome: 'Iron 883',
+                        preco: '__________',
+                        imgMini: '{{ asset('img/harley-mini.jpg') }}',
+                        imgBanner: '{{ asset('img/harley-banner.jpg') }}'
+                    },
+                    royal: {
+                        nome: 'Interceptor 650',
+                        preco: '__________',
+                        imgMini: '{{ asset('img/royal-mini.png') }}',
+                        imgBanner: '{{ asset('img/royal-banner.jpg') }}'
+                    }
+                }
+            }"
+            class="absolute left-0 top-full h-[15vh] w-full bg-white text-black shadow-lg content-center"
+        >
+            <div class="max-w-7xl mx-auto grid grid-cols-3 gap-6 p-6">
+            <!-- links de marcas -->
+            <div class="space-y-2 text-sm font-bold">
+                <a href="#" @click.prevent="brand = 'kawasaki'" class="block hover:text-red-600">Kawasaki</a>
+                <a href="#" @click.prevent="brand = 'harley'" class="block hover:text-red-600">Harley-Davidson</a>
+                <a href="#" @click.prevent="brand = 'royal'" class="block hover:text-red-600">Royal Enfield</a>
             </div>
 
-            <!-- ... demais menus -->
+            <!-- bloco da miniatura -->
+            <div class="relative w-full h-16">
+                <!-- Kawasaki -->
+                <div x-show="brand === 'kawasaki'" :key="'kawasaki-mini'"
+                    x-transition:enter.duration.300ms x-transition:leave.duration.300ms
+                    class="absolute inset-0 flex items-center space-x-4">
+                    <img :src="motos.kawasaki.imgMini" class="h-16">
+                    <div>
+                        <p class="font-semibold" x-text="motos.kawasaki.nome"></p>
+                        <p class="text-sm text-gray-600" x-text="motos.kawasaki.preco"></p>
+                    </div>
+                </div>
+
+                <!-- Harley -->
+                <div x-show="brand === 'harley'" :key="'harley-mini'"
+                    x-transition:enter.duration.300ms x-transition:leave.duration.300ms
+                    class="absolute inset-0 flex items-center space-x-4">
+                    <img :src="motos.harley.imgMini" class="h-16">
+                    <div>
+                        <p class="font-semibold" x-text="motos.harley.nome"></p>
+                        <p class="text-sm text-gray-600" x-text="motos.harley.preco"></p>
+                    </div>
+                </div>
+
+                <!-- Royal -->
+                <div x-show="brand === 'royal'" :key="'royal-mini'"
+                    x-transition:enter.duration.300ms x-transition:leave.duration.300ms
+                    class="absolute inset-0 flex items-center space-x-4">
+                    <img :src="motos.royal.imgMini" class="h-16">
+                    <div>
+                        <p class="font-semibold" x-text="motos.royal.nome"></p>
+                        <p class="text-sm text-gray-600" x-text="motos.royal.preco"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- banner -->
+            <div class="relative w-[10vh] h-[10vh]">
+                <!-- Kawasaki -->
+                <div x-show="brand === 'kawasaki'" :key="'kawasaki-banner'"
+                    x-transition:enter.duration.300ms x-transition:leave.duration.300ms
+                    class="absolute inset-0">
+                    <img :src="motos.kawasaki.imgBanner" class="w-full h-full object-cover rounded">
+                </div>
+
+                <!-- Harley -->
+                <div x-show="brand === 'harley'" :key="'harley-banner'"
+                    x-transition:enter.duration.300ms x-transition:leave.duration.300ms
+                    class="absolute inset-0">
+                    <img :src="motos.harley.imgBanner" class="w-full h-full object-cover rounded">
+                </div>
+
+                <!-- Royal -->
+                <div x-show="brand === 'royal'" :key="'royal-banner'"
+                    x-transition:enter.duration.300ms x-transition:leave.duration.300ms
+                    class="absolute inset-0">
+                    <img :src="motos.royal.imgBanner" class="w-full h-full object-cover rounded">
+                </div>
+            </div>
+            </div>
         </div>
+    </div>
     </header>
 
 
