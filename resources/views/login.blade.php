@@ -45,10 +45,12 @@
                         <div class="text-red-600 text-sm">{{ $message }}</div>
                     @enderror
 
-          <div class="mt-4">
+          <div class="mt-4 relative">
             <label class="block text-gray-200">Senha</label>
-            <input type="password" name="senha" id="" placeholder="Senha123" minlength="6" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500
-                  focus:bg-orange-100 focus:outline-none text-black focus:px-5 focus:py-4 ease-in-out duration-300 focus:ring-orange-500" required>
+              <div class="flex items-center">
+                <input type="password" name="senha" id="senha" placeholder="Senha123" minlength="6" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black ease-in-out duration-300 focus:ring-orange-500" required>
+                <button type="button" onclick="toggleSenha('senha', this)" aria-label="Mostrar senha" class="absolute right-3 transform"><img src="{{ asset('img/olhoaberto.png') }}" alt="mostrar senha" class="w-[2vw] h-[2vw]"></button>
+              </div>
           </div>
           @error('senha')
                         <div class="text-red-600 text-sm">{{ $message }}</div>
@@ -77,7 +79,20 @@
 
   </section>
 
+  <script>
+  // toggle de mostrar/ocultar senha
+      function toggleSenha(id, btn) {
+        const input = document.getElementById(id);
+        if (!input) return;
+        const showing = input.type === 'password';
+        input.type = showing ? 'text' : 'password';
+        btn.innerHTML = showing ? '<img src="{{ asset('img/olhofechado.png') }}" alt="ocultar senha" class="w-[2vw] h-[2vw]">' : '<img src="{{ asset('img/olhoaberto.png') }}" alt="mostrar senha" class="w-[2vw] h-[2vw]">';
+        btn.setAttribute('aria-pressed', String(showing));
+      }
 
+      // permite uso via onclick inline
+      window.toggleSenha = toggleSenha;
+  </script>
 </body>
 </html>
 
