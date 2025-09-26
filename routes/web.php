@@ -16,3 +16,9 @@ Route::post('/startform', [RegisterController::class, 'registrar']);
 Route::get('/login', [LoginController::class, 'index']);
 
 Route::post('/logincheck', [LoginController::class, 'login']);
+
+Route::get('/kawasaki', [LoginController::class, 'kawasaki']);
+
+Route::get('/harleydavidson', [LoginController::class, 'harleydavidson']);
+
+Route::get('/royalenfield', [LoginController::class, 'royalenfield']);

@@ -92,9 +92,9 @@
             }"
             class="absolute left-0 top-full h-[15vh] w-full bg-white text-black shadow-lg content-center"
         >
-            <div class="max-w-7xl mx-auto grid grid-cols-3 gap-6 p-6">
+            <div class="max-w-7xl mx-auto grid grid-cols-[150px_1fr_200px] gap-4 p-6">
             <!-- links de marcas -->
-            <div class="space-y-2 text-sm font-bold">
+            <div class="space-y-2 text-sm font-bold w-32">
                 <a href="#" @click.prevent="brand = 'kawasaki'" class="block hover:text-red-600">Kawasaki</a>
                 <a href="#" @click.prevent="brand = 'harley'" class="block hover:text-red-600">Harley-Davidson</a>
                 <a href="#" @click.prevent="brand = 'royal'" class="block hover:text-red-600">Royal Enfield</a>
@@ -103,37 +103,50 @@
             <!-- bloco da miniatura -->
             <div class="relative w-full h-16">
                 <!-- Kawasaki -->
-                <div x-show="brand === 'kawasaki'" :key="'kawasaki-mini'"
-                    x-transition:enter.duration.300ms x-transition:leave.duration.300ms
-                    class="absolute inset-0 flex items-center space-x-4">
-                    <img :src="motos.kawasaki.imgMini" class="h-16">
-                    <div>
-                        <p class="font-semibold" x-text="motos.kawasaki.nome"></p>
-                        <p class="text-sm text-gray-600" x-text="motos.kawasaki.preco"></p>
+                <a href="#">
+                    <div x-show="brand === 'kawasaki'" :key="'kawasaki-mini'"
+                        x-transition:enter.duration.300ms x-transition:leave.duration.300ms
+                        class="absolute inset-0 flex items-center space-x-4 flex-col justify-around">
+                        <div class="flex">
+                            <img :src="motos.kawasaki.imgMini" class="h-16">
+                            <div>
+                                <p class="font-semibold" x-text="motos.kawasaki.nome"></p>
+                                <p class="text-sm text-gray-600" x-text="motos.kawasaki.preco"></p>
+                            </div>
+                        </div>
+                        <div class="w-[25%] h-full bg-orange-600 font-semibold text-black rounded-md text-center"><a href="kawasaki"><p>VEJA MAIS +</p></a></div>
                     </div>
-                </div>
-
+                </a>
                 <!-- Harley -->
-                <div x-show="brand === 'harley'" :key="'harley-mini'"
-                    x-transition:enter.duration.300ms x-transition:leave.duration.300ms
-                    class="absolute inset-0 flex items-center space-x-4">
-                    <img :src="motos.harley.imgMini" class="h-16">
-                    <div>
-                        <p class="font-semibold" x-text="motos.harley.nome"></p>
-                        <p class="text-sm text-gray-600" x-text="motos.harley.preco"></p>
+                <a href="#1">
+                    <div x-show="brand === 'harley'" :key="'harley-mini'"
+                        x-transition:enter.duration.300ms x-transition:leave.duration.300ms
+                        class="absolute inset-0 flex items-center space-x-4 flex-col">
+                        <div class="flex">
+                            <img :src="motos.harley.imgMini" class="h-16">
+                            <div>
+                                <p class="font-semibold" x-text="motos.harley.nome"></p>
+                                <p class="text-sm text-gray-600" x-text="motos.harley.preco"></p>
+                            </div>
+                        </div>
+                        <div class="w-[25%] h-full bg-orange-600 font-semibold text-black rounded-md text-center"><a href="harleydavidson"><p>VEJA MAIS +</p></a></div>
                     </div>
-                </div>
-
+                </a>
                 <!-- Royal -->
-                <div x-show="brand === 'royal'" :key="'royal-mini'"
-                    x-transition:enter.duration.300ms x-transition:leave.duration.300ms
-                    class="absolute inset-0 flex items-center space-x-4">
-                    <img :src="motos.royal.imgMini" class="h-16">
-                    <div>
-                        <p class="font-semibold" x-text="motos.royal.nome"></p>
-                        <p class="text-sm text-gray-600" x-text="motos.royal.preco"></p>
+                <a href="#2">
+                    <div x-show="brand === 'royal'" :key="'royal-mini'"
+                        x-transition:enter.duration.300ms x-transition:leave.duration.300ms
+                        class="absolute inset-0 flex items-center space-x-4 flex-col">
+                        <div class="flex">
+                            <img :src="motos.royal.imgMini" class="h-16">
+                            <div>
+                                <p class="font-semibold" x-text="motos.royal.nome"></p>
+                                <p class="text-sm text-gray-600" x-text="motos.royal.preco"></p>
+                            </div>
+                        </div>
+                        <div class="w-[25%] h-full bg-orange-600 font-semibold text-black rounded-md text-center"><a href="royalenfield"><p>VEJA MAIS +</p></a></div>
                     </div>
-                </div>
+                </a>
             </div>
 
             <!-- banner -->
@@ -141,7 +154,7 @@
                 <!-- Kawasaki -->
                 <div x-show="brand === 'kawasaki'" :key="'kawasaki-banner'"
                     x-transition:enter.duration.300ms x-transition:leave.duration.300ms
-                    class="absolute inset-0">
+                    class="absolute inset-0 flex flex-col">
                     <img :src="motos.kawasaki.imgBanner" class="w-full h-full object-cover rounded">
                 </div>
 
