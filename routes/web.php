@@ -17,7 +17,10 @@ Route::get('/login', [LoginController::class, 'index']);
 
 Route::post('/logincheck', [LoginController::class, 'login']);
 
-Route::get('/kawasaki', [LoginController::class, 'kawasaki']);
+Route::get('/kawasaki', function () {
+    return view('kawasaki');
+});
+
 
 Route::get('/harleydavidson', [LoginController::class, 'harleydavidson']);
 
