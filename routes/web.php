@@ -22,6 +22,32 @@ Route::get('/kawasaki', function () {
 });
 
 
-Route::get('/harleydavidson', [LoginController::class, 'harleydavidson']);
+Route::get('/royalenfield', function () {
+    return view('royalenfield');
+});
 
-Route::get('/royalenfield', [LoginController::class, 'royalenfield']);
+Route::get('/harleydavidson', function () {
+    return view('harleydavidson');
+});
+
+// PAGINAS DE COMPRAS DA LOJA (⚠☣☢ EXTREMAMENTE TENEBROSO ☢☣⚠)
+
+    //---------KAWASAKI---------//
+
+        Route::get('/NinjaH2R', function () {
+            return view('paginas de compras/NINJAH2R');
+        });
+
+    //-----HARLEY DAVIDSON-----//
+
+
+        //
+
+
+    //------ROYAL ENFIELD------//
+
+
+        //
+
+
+    //-----------FIM-----------//

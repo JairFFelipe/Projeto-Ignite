@@ -29,8 +29,8 @@
           flex items-center justify-center">
 
       <div class="w-full h-100">
-        <div class="flex items-center gap-3">
-          <img src="{{ asset('img/gatoburro.png') }}" alt="🔥" class="w-9 h-9"><h1 class="text-5xl font-bold text-white">IGNITE</h1>
+        <div class="flex items-center gap-3 w-full align-middle justify-center">
+          <img src="{{ asset('img/ignitelogobranco.png') }}" alt="🔥" class="w-[25vh]">
         </div>
         <h1 class="text-xl md:text-2xl font-bold leading-tight mt-12 text-white">Entre na sua conta</h1>
 

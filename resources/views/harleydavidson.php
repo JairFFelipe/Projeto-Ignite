@@ -2,7 +2,7 @@
 @section('content')
 
 <section class="mt-[7vw] flex gap-6 justify-center flex-wrap">
-    <div class="flex justify-center py-10 bg-white">
+    <div class="flex justify-center py-10 bg-gray-50">
         <div class="max-w-sm w-full">
             <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakiplaceholder.png') }}" alt="Moto à venda">
@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <div class="flex justify-center py-10 bg-white">
+    <div class="flex justify-center py-10 bg-gray-50">
         <div class="max-w-sm w-full">
             <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakiplaceholder.png') }}" alt="Moto à venda">
@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    <div class="flex justify-center py-10 bg-white">
+    <div class="flex justify-center py-10 bg-gray-50">
         <div class="max-w-sm w-full">
             <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakiplaceholder.png') }}" alt="Moto à venda">
@@ -68,7 +68,7 @@
         </div>
     </div>
 
-    <div class="flex justify-center py-10 bg-white">
+    <div class="flex justify-center py-10 bg-gray-50">
         <div class="max-w-sm w-full">
             <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakiplaceholder.png') }}" alt="Moto à venda">
@@ -90,7 +90,7 @@
         </div>
     </div>
 
-    <div class="flex justify-center py-10 bg-white">
+    <div class="flex justify-center py-10 bg-gray-50">
         <div class="max-w-sm w-full">
             <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakiplaceholder.png') }}" alt="Moto à venda">
@@ -112,7 +112,7 @@
         </div>
     </div>
 
-    <div class="flex justify-center py-10 whitee">
+    <div class="flex justify-center py-10 bg-gray-50">
         <div class="max-w-sm w-full">
             <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakiplaceholder.png') }}" alt="Moto à venda">

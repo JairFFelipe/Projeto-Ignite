@@ -18,12 +18,12 @@
           flex items-center justify-center">
 
       <div class="w-full h-100">
-        <div class="flex items-center gap-3">
-          <img src="{{ asset('img/gatoburro.png') }}" alt="🔥" class="w-9 h-9"><h1 class="text-5xl font-bold text-white">IGNITE</h1>
+        <div class="flex items-center gap-3 w-full align-middle justify-center">
+          <img src="{{ asset('img/ignitelogobranco.png') }}" alt="🔥" class="w-[25vh]">
         </div>
-        <h1 class="text-xl md:text-2xl font-bold leading-tight mt-12 text-white">Crie sua conta</h1>
+        <h1 class="text-xl md:text-2xl font-bold leading-tight text-white">Crie sua conta</h1>
 
-        <form class="mt-6" action="/startform" method="POST">
+        <form class="mt-2" action="/startform" method="POST">
           @csrf
           <div class="flex w-full justify-between gap-5">
             <div>
@@ -72,12 +72,12 @@
             <div class="text-red-600 text-sm">{{ $message }}</div>
           @enderror
 
-          <button type="submit" class="w-full block bg-black border-[1px] border-orange-500 hover:bg-orange-500 focus:bg-orange-400 text-white font-semibold rounded-lg px-4 py-3 mt-12 ease-in-out duration-200">Entrar</button>
+          <button type="submit" class="w-full block bg-black border-[1px] border-orange-500 hover:bg-orange-500 focus:bg-orange-400 text-white font-semibold rounded-lg px-4 py-3 mt-8 ease-in-out duration-200">Entrar</button>
         </form>
 
         <hr class="mt-6 border-gray-700 w-full">
         <div class="flex h-fit w-full justify-center">
-          <p class="mt-8">
+          <p class="mt-2">
             <a href="/login" class="text-orange-500 hover:text-orange-700 font-semibold">Entre na sua conta!</a>
           </p>
         </div>
