@@ -38,6 +38,14 @@ Route::get('/harleydavidson', function () {
             return view('paginas de compras/NINJAH2R');
         });
 
+        Route::get('/NinjaZX10R', function () {
+            return view('paginas de compras/NINJAZX10R');
+        });
+
+        Route::get('/Ninja1000SX', function () {
+            return view('paginas de compras/NINJA1000SX');
+        });
+
     //-----HARLEY DAVIDSON-----//
 
 
