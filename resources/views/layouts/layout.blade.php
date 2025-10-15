@@ -68,12 +68,12 @@
             x-transition:enter.duration.150ms
             x-transition:leave.duration.150ms
             x-data="{
-                brand: null,
+                brand: 'kawasaki', // valor padrão inicial
                 motos: {
                     kawasaki: {
-                        nome: 'Ninja ZX-6R',
-                        preco: '__________',
-                        imgMini: '{{ asset('img/kawasaki-mini.png') }}',
+                        nome: 'Ninja H2R',
+                        preco: 'R$ 357.000',
+                        imgMini: '{{ asset('img/kawasakininjah2r.png') }}',
                         imgBanner: '{{ asset('img/kawasaki-banner.jpg') }}'
                     },
                     harley: {
@@ -90,20 +90,35 @@
                     }
                 }
             }"
+            x-init="brand = 'kawasaki'"
             class="absolute left-0 top-full h-[15vh] w-full bg-white text-black shadow-lg content-center"
         >
             <div class="max-w-7xl mx-auto grid grid-cols-[150px_1fr_200px] gap-4 p-6">
             <!-- links de marcas -->
             <div class="space-y-2 text-sm font-bold w-32">
-                <a href="#" @click.prevent="brand = 'kawasaki'" class="block hover:text-red-600">Kawasaki</a>
-                <a href="#" @click.prevent="brand = 'harley'" class="block hover:text-red-600">Harley-Davidson</a>
-                <a href="#" @click.prevent="brand = 'royal'" class="block hover:text-red-600">Royal Enfield</a>
+                <a href="#" 
+                    @click.prevent="brand = 'kawasaki'" 
+                    :class="brand === 'kawasaki' ? 'text-red-600 font-bold' : 'text-black hover:text-red-600'" 
+                    class="block"
+                >Kawasaki</a>
+
+                <a href="#" 
+                    @click.prevent="brand = 'harley'" 
+                    :class="brand === 'harley' ? 'text-red-600 font-bold' : 'text-black hover:text-red-600'" 
+                    class="block"
+                >Harley-Davidson</a>
+
+                <a href="#" 
+                    @click.prevent="brand = 'royal'" 
+                    :class="brand === 'royal' ? 'text-red-600 font-bold' : 'text-black hover:text-red-600'" 
+                    class="block"
+                >Royal Enfield</a>
             </div>
 
             <!-- bloco da miniatura -->
             <div class="relative w-full h-16">
                 <!-- Kawasaki -->
-                <a href="#">
+                <a href="NinjaH2R">
                     <div x-show="brand === 'kawasaki'" :key="'kawasaki-mini'"
                         x-transition:enter.duration.300ms x-transition:leave.duration.300ms
                         class="absolute inset-0 flex items-center space-x-4 flex-col justify-around">
@@ -114,7 +129,7 @@
                                 <p class="text-sm text-gray-600" x-text="motos.kawasaki.preco"></p>
                             </div>
                         </div>
-                        <div class="w-[25%] h-full bg-orange-600 font-semibold text-black rounded-md text-center"><a href="/kawasaki"><p>VEJA MAIS +</p></a></div>
+                        <div class="w-[25%] h-full bg-orange-600 hover:bg-orange-700 ease-in-out duration-300  font-semibold text-black rounded-md text-center"><a href="/kawasaki"><p>VEJA MAIS +</p></a></div>
                     </div>
                 </a>
                 <!-- Harley -->
@@ -187,78 +202,36 @@
 
 
     <footer class="bg-white border-t mt-16">
-        <div class="max-w-7xl mx-auto px-6 py-12">
-            <!-- Grid de Links -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm font-semibold">
-            <!-- Coluna 1 -->
+        <div class="max-w-7xl mx-auto px-6 py-8 text-sm text-gray-600">
+            
+            <!-- Seção de informações básicas -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
             <div>
-                <h4 class="font-bold mb-3">MOTOCICLETAS</h4>
-                <ul class="space-y-2 text-gray-600">
-                <li><a href="#">Adventure</a></li>
-                <li><a href="#">Classic</a></li>
-                <li><a href="#">Roadsters</a></li>
-                <li><a href="#">Rocket 3</a></li>
-                <li><a href="#">Sport</a></li>
-                <li><a href="#">Press Reviews</a></li>
-                <li><a href="#">Ofertas</a></li>
-                <li><a href="#">Motocicletas Seminovas</a></li>
-                </ul>
-            </div>
-
-            <!-- Coluna 2 -->
-            <div>
-                <h4 class="font-bold mb-3">AÇÃO</h4>
-                <ul class="space-y-2 text-gray-600">
-                <li><a href="#">Test Ride</a></li>
-                <li><a href="#">Monte sua moto</a></li>
-                <li><a href="#">Encontrar concessionária</a></li>
-                <li><a href="#">Mantenha-me informado</a></li>
-                </ul>
-            </div>
-
-            <!-- Coluna 3 -->
-            <div>
-                <h4 class="font-bold mb-3">FOR THE RIDE</h4>
-                <ul class="space-y-2 text-gray-600">
-                <li><a href="#">Brand</a></li>
-                <li><a href="#">Racing</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Factory Visitor Experience</a></li>
-                <li><a href="#">Triumph Adventure Experience</a></li>
-                </ul>
-            </div>
-
-            <!-- Coluna 4 -->
-            <div>
-                <h4 class="font-bold mb-3">PROPRIETÁRIOS</h4>
-                <ul class="space-y-2 text-gray-600">
-                <li><a href="#">Total Care</a></li>
-                <li><a href="#">Sua Triumph</a></li>
-                <li><a href="#">My Triumph App</a></li>
-                <li><a href="#">What3Words</a></li>
-                <li><a href="#">Agende um serviço</a></li>
-                </ul>
-            </div>
+                <h4 class="font-bold text-black mb-2">Ignite Motorcycles</h4>
+                <p class="text-xs text-gray-500 max-w-sm">
+                Projeto desenvolvido para fins acadêmicos
+                </p>
             </div>
 
             <!-- Redes sociais -->
-            <div class="flex space-x-4 mt-8">
-            <a href="#"><img src="{{ asset('img/facebook.png') }}" alt="Facebook" class="h-5 w-fit"></a>
-            <a href="#"><img src="{{ asset('img/twitter.svg') }}" alt="Twitter" class="h-5 w-fit"></a>
-            <a href="#"><img src="{{ asset('img/youtube.png') }}" alt="YouTube" class="h-5 w-fit"></a>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="#"><img src="{{ asset('img/facebook.png') }}" alt="Facebook" class="h-5 w-fit"></a>
+                <a href="#"><img src="{{ asset('img/twitter.svg') }}" alt="Twitter" class="h-5 w-fit"></a>
+                <a href="#"><img src="{{ asset('img/youtube.png') }}" alt="YouTube" class="h-5 w-fit"></a>
+            </div>
             </div>
 
             <!-- Linha divisória -->
-            <hr class="my-6 border-gray-300">
+            <hr class="my-4 border-gray-300">
 
-            <!-- Rodapé legal -->
+            <!-- Rodapé final -->
             <div class="flex flex-col md:flex-row justify-between text-xs text-gray-500">
             <div class="flex space-x-4 mb-2 md:mb-0">
                 <a href="#">Contato</a>
-                <a href="#">Legal</a>
-                <a href="#">Mapa do site</a>
+                <a href="#">Sobre</a>
+                <a href="#">Política de Privacidade</a>
             </div>
-            <p>© 2025 Ignite</p>
+            <p>© 2025 Ignite — Projeto Acadêmico</p>
             </div>
         </div>
     </footer>
