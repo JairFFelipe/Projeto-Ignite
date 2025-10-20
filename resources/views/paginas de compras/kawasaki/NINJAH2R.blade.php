@@ -11,7 +11,6 @@
         <h1 class="text-xl font-bold text-orange-600 uppercase">Kawasaki Ninja H2R</h1>
         <nav class="space-x-6 text-sm font-medium text-gray-600">
             <button @click="aba = 'resumo'" :class="aba === 'resumo' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Resumo</button>
-            <button @click="aba = 'modelos'" :class="aba === 'modelos' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Modelos</button>
             <button @click="aba = 'ficha'" :class="aba === 'ficha' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Ficha Técnica</button>
             <button @click="aba = 'acessorios'" :class="aba === 'acessorios' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Acessórios</button>
         </nav>
@@ -44,40 +43,22 @@
                     <p class="text-2xl font-bold text-gray-800 mb-6">
                         A partir de <span class="text-orange-600">R$ 357.000,00</span>
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                    <div class="flex flex-col gap-4 mb-6">
+                        <div class="flex flex-row space-x-5">
+                            <button class="border border-gray-800 hover:bg-gray-200 text-gray-900 px-24 py-3 rounded-md font-semibold text-sm uppercase" @click="aba = 'acessorios'">
+                                ACESSÓRIOS
+                            </button>
+                            <button class="border border-gray-800 hover:bg-gray-200 text-gray-900 px-24 py-3 rounded-md font-semibold text-sm uppercase" @click="aba = 'ficha'">
+                                ESPECIFICAÇÕES
+                            </button>
+                        </div>
                         <button class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-md font-semibold text-sm uppercase">
                             IR PARA À COMPRA
-                        </button>
-                        <button class="border border-gray-800 hover:bg-gray-200 text-gray-900 px-6 py-3 rounded-md font-semibold text-sm uppercase" @click="aba = 'ficha'">
-                            ESPECIFICAÇÕES
                         </button>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         A Kawasaki Ninja H2R é a hipermoto definitiva, equipada com motor supercharger de 998 cc e mais de 300 cv de potência.
                         Construída para desempenho extremo em pista fechada, representa o auge da engenharia e do design Kawasaki.
-                    </p>
-                </div>
-
-                <!-- MODELOS -->
-                <div
-                    x-cloak
-                    x-show="aba === 'modelos'"
-                    x-transition:enter="transition ease-out duration-500 delay-100"
-                    x-transition:enter-start="opacity-0 -translate-y-10"
-                    x-transition:enter-end="opacity-100 translate-y-0"
-                    x-transition:leave="transition ease-in duration-400"
-                    x-transition:leave-start="opacity-100 translate-y-0"
-                    x-transition:leave-end="opacity-0 translate-y-10"
-                    class="absolute inset-0"
-                >
-                    <h2 class="text-3xl font-bold mb-4">Outros modelos da linha H2</h2>
-                    <ul class="list-disc ml-6 text-gray-700 space-y-2">
-                        <li>Ninja H2 Carbon</li>
-                        <li>Ninja H2 SX SE</li>
-                        <li>Ninja H2 SX SE+</li>
-                    </ul>
-                    <p class="mt-4 text-sm text-gray-600">
-                        Cada modelo oferece variações de conforto, aerodinâmica e potência, mantendo a essência da série H2.
                     </p>
                 </div>
 
@@ -149,6 +130,9 @@
                                 <li><strong>Velocidade Máxima:</strong> 400 km/h (estimada)</li>
                             </ul>
                         </div>
+                        <button class="border border-gray-800 hover:bg-gray-200 text-gray-900 px-24 py-3 rounded-md font-semibold text-sm uppercase mb-10" @click="aba = 'resumo'">
+                                VOLTAR
+                        </button>
                     </div>
 
                     <p class="mt-6 text-xs text-gray-500 italic">
@@ -168,13 +152,56 @@
                     x-transition:leave-end="opacity-0 translate-y-10"
                     class="absolute inset-0"
                 >
-                    <h2 class="text-3xl font-bold mb-4">Acessórios Disponíveis</h2>
-                    <ul class="text-sm text-gray-700 space-y-2">
-                        <li>Capa personalizada H2R</li>
-                        <li>Kit de performance com escapamento Akrapovič</li>
-                        <li>Protetores laterais de carenagem</li>
-                        <li>Capacete Kawasaki Carbon Edition</li>
-                    </ul>
+                    <h2 class="text-3xl font-extrabold text-gray-900 mb-6 border-b-2 border-orange-500 inline-block pb-1">
+                        Acessórios Disponíveis
+                    </h2>
+
+                    <div class="space-y-4 text-gray-700">
+
+                        <!-- Acessório 1 -->
+                        <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Capa Personalizada H2R</h3>
+                                <p class="text-sm text-gray-500">Protege sua moto contra poeira e arranhões com ajuste sob medida.</p>
+                            </div>
+                            <span class="text-orange-600 font-bold text-lg">R$ 1.290,00</span>
+                        </div>
+
+                        <!-- Acessório 2 -->
+                        <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Kit de Performance Akrapovič</h3>
+                                <p class="text-sm text-gray-500">Sistema de escapamento em titânio com ganho de potência e som esportivo.</p>
+                            </div>
+                            <span class="text-orange-600 font-bold text-lg">R$ 9.850,00</span>
+                        </div>
+
+                        <!-- Acessório 3 -->
+                        <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Protetores Laterais de Carenagem</h3>
+                                <p class="text-sm text-gray-500">Minimiza danos em eventuais quedas, com design integrado à carenagem.</p>
+                            </div>
+                            <span class="text-orange-600 font-bold text-lg">R$ 1.790,00</span>
+                        </div>
+
+                        <!-- Acessório 4 -->
+                        <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Capacete Kawasaki Carbon Edition</h3>
+                                <p class="text-sm text-gray-500">Modelo premium em fibra de carbono, leve e aerodinâmico.</p>
+                            </div>
+                            <span class="text-orange-600 font-bold text-lg">R$ 4.590,00</span>
+                        </div>
+
+                    </div>
+
+                    <p class="mt-6 text-xs text-gray-500 italic">
+                        *Preços sugeridos pela Kawasaki Brasil. Sujeitos a alteração sem aviso prévio.
+                    </p>
+                    <button class="border border-gray-800 hover:bg-gray-200 text-gray-900 px-24 py-3 rounded-md font-semibold text-sm uppercase mt-6" @click="aba = 'resumo'">
+                        VOLTAR
+                    </button>
                 </div>
             </div>
         </div>
@@ -187,4 +214,5 @@
 
     </main>
 </section>
+<br>
 @endsection

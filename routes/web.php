@@ -34,16 +34,16 @@ Route::get('/harleydavidson', function () {
 
     //---------KAWASAKI---------//
 
-        Route::get('/NinjaH2R', function () {
-            return view('paginas de compras/NINJAH2R');
+        Route::get('/ninjah2r', function () {
+            return view('paginas de compras/kawasaki/NINJAH2R');
         });
 
-        Route::get('/NinjaZX10R', function () {
-            return view('paginas de compras/NINJAZX10R');
+        Route::get('/ninjazx10r', function () {
+            return view('paginas de compras/kawasaki/NINJAZX10R');
         });
 
-        Route::get('/Ninja1000SX', function () {
-            return view('paginas de compras/NINJA1000SX');
+        Route::get('/ninja1000sx', function () {
+            return view('paginas de compras/kawasaki/NINJA1000SX');
         });
 
     //-----HARLEY DAVIDSON-----//
