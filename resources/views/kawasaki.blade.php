@@ -15,7 +15,7 @@
 
                 <div class="flex items-center justify-between mt-4">
                 <span class="text-lg font-semibold text-green-600">R$ 357.000</span>
-                <a href="/NinjaH2R">
+                <a href="/ninjah2r">
                     <button  class="bg-orange-600 text-white px-4 py-2 rounded-xl hover:bg-orange-700 transition-colors duration-300">
                         Ver detalhes
                     </button>
@@ -39,7 +39,7 @@
 
                 <div class="flex items-center justify-between mt-4">
                 <span class="text-lg font-semibold text-green-600">R$ 73.975</span>
-                <a href="/Ninja1000SX">
+                <a href="/ninja1000sx">
                     <button  class="bg-orange-600 text-white px-4 py-2 rounded-xl hover:bg-orange-700 transition-colors duration-300">
                         Ver detalhes
                     </button>

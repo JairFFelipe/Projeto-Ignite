@@ -11,7 +11,7 @@
 
 <!--Header inicio-->
     <header x-data="{ activeMenu: null }" @keydown.escape.window="activeMenu = null" class="bg-black text-white fixed top-0 left-0 w-full z-50">
-        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+        <div class="max-w-full flex justify-between items-center px-10 py-4">
             <!-- Logo -->
             <img src="{{ asset('img/ignitelogobrancolimpo.png') }}" alt="Logo" class="h-8">
 
@@ -21,34 +21,32 @@
             <button
                 @click.stop="activeMenu = activeMenu === 'motocicletas' ? null : 'motocicletas'"
                 :aria-expanded="activeMenu === 'motocicletas'"
-                class="hover:text-gray-400"
+                class="hover:text-orange-600"
             >MOTOCICLETAS</button>
 
             <button
                 @click.stop="activeMenu = activeMenu === 'acessorios' ? null : 'acessorios'"
                 :aria-expanded="activeMenu === 'acessorios'"
-                class="hover:text-gray-400"
+                class="hover:text-orange-600"
             >ACESSÓRIOS</button>
 
             <button
                 @click.stop="activeMenu = activeMenu === 'roupas' ? null : 'roupas'"
                 :aria-expanded="activeMenu === 'roupas'"
-                class="hover:text-gray-400"
+                class="hover:text-orange-600"
             >ROUPAS</button>
 
             <button
                 @click.stop="activeMenu = activeMenu === 'saiba' ? null : 'saiba'"
                 :aria-expanded="activeMenu === 'saiba'"
-                class="hover:text-gray-400"
+                class="hover:text-orange-600"
             >SAIBA MAIS</button>
             </nav>
 
             <!-- Links extras -->
-            <div class="flex space-x-6 text-xs">
-            <a href="#">Concessionárias</a>
-            <a href="#">Monte sua moto</a>
-            <a href="#">Ofertas</a>
-            <a href="#">Agende um test ride</a>
+            <div class="flex text-slate-400 space-x-6 text-xs">
+            <a href="#">Contato</a>
+            <a href="#">Sobre</a>
             </div>
         </div>
 
@@ -130,7 +128,7 @@
                                 <p class="text-sm text-gray-600" x-text="motos.kawasaki.preco"></p>
                             </div>
                         </div>
-                        <div class="w-[25%] h-full bg-orange-600 hover:bg-orange-700 ease-in-out duration-300  font-semibold text-black rounded-md text-center"><a href="/kawasaki"><p>VEJA MAIS +</p></a></div>
+                        <div class="w-[25%] h-full bg-orange-600 hover:bg-orange-700 ease-in-out duration-300  font-semibold text-black rounded-md text-center"><a href="/kawasaki"><p>Mais motocicletas +</p></a></div>
                     </div>
                 </a>
                 <!-- Harley -->
@@ -145,7 +143,7 @@
                                 <p class="text-sm text-gray-600" x-text="motos.harley.preco"></p>
                             </div>
                         </div>
-                        <div class="w-[25%] h-full bg-orange-600 font-semibold text-black rounded-md text-center"><a href="/harleydavidson"><p>VEJA MAIS +</p></a></div>
+                        <div class="w-[25%] h-full bg-orange-600 font-semibold text-black rounded-md text-center"><a href="/harleydavidson"><p>Mais motocicletas +</p></a></div>
                     </div>
                 </a>
                 <!-- Royal -->
@@ -160,7 +158,7 @@
                                 <p class="text-sm text-gray-600" x-text="motos.royal.preco"></p>
                             </div>
                         </div>
-                        <div class="w-[25%] h-full bg-orange-600 font-semibold text-black rounded-md text-center"><a href="/royalenfield"><p>VEJA MAIS +</p></a></div>
+                        <div class="w-[25%] h-full bg-orange-600 font-semibold text-black rounded-md text-center"><a href="/royalenfield"><p>Mais motocicletas +</p></a></div>
                     </div>
                 </a>
             </div>

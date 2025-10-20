@@ -14,9 +14,7 @@
             <button @click="aba = 'ficha'" :class="aba === 'ficha' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Ficha Técnica</button>
             <button @click="aba = 'acessorios'" :class="aba === 'acessorios' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Acessórios</button>
         </nav>
-        <button class="bg-orange-600 hover:bg-orange-700 ease-in-out duration-300 text-white px-4 py-2 rounded-md font-semibold">
-            Ir para à compra
-        </button>
+        <h1 class="text-xl font-bold text-white uppercase">Kawasaki Ninja H2R</h1>
     </div>
 
     <!-- Conteúdo -->
@@ -52,9 +50,6 @@
                                 ESPECIFICAÇÕES
                             </button>
                         </div>
-                        <button class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-md font-semibold text-sm uppercase">
-                            IR PARA À COMPRA
-                        </button>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         A Kawasaki Ninja H2R é a hipermoto definitiva, equipada com motor supercharger de 998 cc e mais de 300 cv de potência.
@@ -210,7 +205,13 @@
         <div class="flex flex-col items-center">
             <img src="{{ asset('img/kawasakininjah2r.png') }}" alt="Kawasaki Ninja H2R" class="w-full max-w-lg object-contain">
             <p class="mt-2 text-xs text-gray-500">*Imagem meramente ilustrativa</p>
+
+            <!-- Botão sempre visível -->
+            <button class="mt-6 bg-orange-600 hover:bg-orange-700 ease-in-out duration-300 text-white px-40 py-3 rounded-md font-semibold uppercase tracking-wide">
+                Ir para à compra
+            </button>
         </div>
+
 
     </main>
 </section>
