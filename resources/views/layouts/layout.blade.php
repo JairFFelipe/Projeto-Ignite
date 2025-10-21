@@ -13,7 +13,7 @@
     <header x-data="{ activeMenu: null }" @keydown.escape.window="activeMenu = null" class="bg-black text-white fixed top-0 left-0 w-full z-50">
         <div class="max-w-full flex justify-between items-center px-10 py-4">
             <!-- Logo -->
-            <img src="{{ asset('img/ignitelogobrancolimpo.png') }}" alt="Logo" class="h-8">
+            <a href="/"><img src="{{ asset('img/ignitelogobrancolimpo.png') }}" alt="Logo" class="h-8"></a>
 
             <!-- Menu principal -->
             <nav class="flex space-x-6 text-sm font-semibold">
@@ -117,7 +117,7 @@
             <!-- bloco da miniatura -->
             <div class="relative w-full h-16">
                 <!-- Kawasaki -->
-                <a href="NinjaH2R">
+                <a href="ninjah2r">
                     <div x-show="brand === 'kawasaki'" :key="'kawasaki-mini'"
                         x-transition:enter.duration.300ms x-transition:leave.duration.300ms
                         class="absolute inset-0 flex items-center space-x-4 flex-col justify-around">

@@ -14,7 +14,9 @@
             <button @click="aba = 'ficha'" :class="aba === 'ficha' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Ficha Técnica</button>
             <button @click="aba = 'acessorios'" :class="aba === 'acessorios' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Acessórios</button>
         </nav>
-        <h1 class="text-xl font-bold text-white uppercase">Kawasaki Ninja H2R</h1>
+        <a href="/kawasaki"><button class="border border-gray-800 hover:bg-gray-200 text-gray-900 px-24 py-3 rounded-md font-semibold text-sm uppercase">
+            <div class="flex justify-center items-center align-middle gap-2"><img src="{{ asset('img/voltar.png') }}" alt="" class="h-5 w-5">Voltar à Kawasaki</div>
+        </button></a>
     </div>
 
     <!-- Conteúdo -->
@@ -206,11 +208,159 @@
             <img src="{{ asset('img/kawasakininjah2r.png') }}" alt="Kawasaki Ninja H2R" class="w-full max-w-lg object-contain">
             <p class="mt-2 text-xs text-gray-500">*Imagem meramente ilustrativa</p>
 
-            <!-- Botão sempre visível -->
-            <button class="mt-6 bg-orange-600 hover:bg-orange-700 ease-in-out duration-300 text-white px-40 py-3 rounded-md font-semibold uppercase tracking-wide">
-                Ir para à compra
-            </button>
-        </div>
+            <!-- Modal de Compra -->
+            <div 
+                x-data="{
+                    aberto: false,
+                    nome: '',
+                    email: '',
+                    telefone: '',
+                    cpf: '',
+                    forma_pagamento: 'cartao',
+                    acessorios: [
+                        { nome: 'Capa Personalizada H2R', preco: 1290, selecionado: false },
+                        { nome: 'Kit de Performance Akrapovič', preco: 9850, selecionado: false },
+                        { nome: 'Protetores Laterais de Carenagem', preco: 1790, selecionado: false },
+                        { nome: 'Capacete Kawasaki Carbon Edition', preco: 4590, selecionado: false }
+                    ],
+                    precoBase: 357000,
+                    get total() {
+                        return this.precoBase + this.acessorios.filter(a => a.selecionado).reduce((s, a) => s + a.preco, 0);
+                    }
+                }"
+            >
+                <!-- Botão que abre o popup -->
+                <button 
+                    @click="aberto = true"
+                    class="mt-6 bg-orange-600 hover:bg-orange-700 ease-in-out duration-300 text-white px-40 py-3 rounded-md font-semibold uppercase tracking-wide">
+                    Ir para à compra
+                </button>
+
+                <!-- Fundo escurecido -->
+                <div 
+                    x-show="aberto"
+                    x-cloak
+                    class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50"
+                    x-transition
+                >
+                    <!-- Modal -->
+                    <div class="bg-white w-[90vw] max-w-lg p-6 rounded-2xl shadow-2xl relative" @click.away="aberto = false">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Finalizar Compra</h2>
+
+                        <form method="POST" action="" novalidate>
+                        @csrf
+
+                        <!-- Dados do comprador -->
+                        <div class="space-y-3 mb-4">
+                            <input type="text" name="cpf" x-model="cpf" placeholder="CPF" required class="w-full border p-2 rounded-md" maxlength="14">
+                        </div>
+
+                        <!-- Forma de pagamento -->
+                        <div class="mb-4">
+                            <label class="font-semibold text-gray-800 block mb-2">Forma de pagamento:</label>
+                            <select name="forma_pagamento" x-model="forma_pagamento" class="w-full border p-2 rounded-md">
+                                <option value="cartao">Cartão de Crédito</option>
+                                <option value="pix">PIX</option>
+                            </select>
+                        </div>
+
+                        <!-- Campos de cartão (exibidos apenas se forma_pagamento == 'cartao') -->
+                        <div x-show="forma_pagamento === 'cartao'" x-cloak class="mb-4 space-y-3">
+                            <p class="text-sm text-gray-600">Informações do cartão </p>
+
+                            <div class="grid grid-cols-1 gap-2">
+                                <!-- Número do cartão -->
+                                <input
+                                    type="text"
+                                    name="card_number"
+                                    placeholder="Número do cartão (ex: 4111 1111 1111 1111)"
+                                    inputmode="numeric"
+                                    maxlength="19"
+                                    x-model="card_number"
+                                    class="w-full border p-2 rounded-md"
+                                    pattern="[\d\s]{13,19}"
+                                    autocomplete="cc-number"
+                                    required
+                                >
+
+                                <!-- Validade MM/AA -->
+                                <input
+                                    type="text"
+                                    name="card_expiry"
+                                    placeholder="Validade (MM/AA)"
+                                    maxlength="5"
+                                    x-model="card_expiry"
+                                    class="w-full border p-2 rounded-md"
+                                    pattern="(0[1-9]|1[0-2])\/?([0-9]{2})"
+                                    autocomplete="cc-exp"
+                                    required
+                                >
+
+                                <!-- CVV -->
+                                <input
+                                    type="text"
+                                    name="card_cvv"
+                                    placeholder="CVV (3 ou 4 dígitos)"
+                                    inputmode="numeric"
+                                    maxlength="4"
+                                    x-model="card_cvv"
+                                    class="w-full border p-2 rounded-md"
+                                    pattern="\d{3,4}"
+                                    autocomplete="cc-csc"
+                                    required
+                                >
+                            </div>
+                        </div>
+                        <!-- QR Code Pix -->
+                        <div x-show="forma_pagamento === 'pix'" x-cloak class="mb-4 text-center">
+                            <p class="text-sm text-gray-600 mb-2">O QR code será gerado após a finalização da compra</p>
+                        </div>
+
+                        <!-- Acessórios -->
+                        <div class="mb-4">
+                            <h3 class="font-semibold text-gray-800 mb-2">Selecione os acessórios:</h3>
+                            <template x-for="(item, index) in acessorios" :key="index">
+                                <label class="flex justify-between items-center border-b py-2">
+                                    <span x-text="item.nome"></span>
+                                    <div class="flex items-center gap-3">
+                                        <span class="text-orange-600 font-semibold" x-text="`R$ ${item.preco.toLocaleString()}`"></span>
+                                        <input type="checkbox" :name="`acessorios[]`" :value="item.nome" x-model="item.selecionado" class="h-5 w-5 text-orange-600">
+                                    </div>
+                                </label>
+                            </template>
+                        </div>
+
+                        <!-- Total -->
+                        <div class="border-t pt-3 mb-4 text-right">
+                            <p class="text-lg font-bold text-gray-900">
+                                Total: <span class="text-orange-600" x-text="`R$ ${total.toLocaleString()}`"></span>
+                            </p>
+                        </div>
+
+                        <!-- Campo oculto com o valor total -->
+                        <input type="hidden" name="total" :value="total">
+
+                        <!-- (Opcional) campo para payment token (se usar gateway -> frontend cria token aqui) -->
+                        <input type="hidden" name="payment_token" x-model="payment_token">
+
+                        <!-- Botões -->
+                        <div class="flex justify-end gap-3">
+                            <button type="button" @click="aberto = false" class="border border-gray-400 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-100">Cancelar</button>
+                            <button
+                                type="submit"
+                                class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-md font-semibold"
+                                @click.prevent="handleSubmit($event)"
+                            >
+                                Confirmar Compra
+                            </button>
+                        </div>
+                    </form>
+
+                        <!-- Fechar -->
+                        <button @click="aberto = false" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">✕</button>
+                    </div>
+                </div>
+            </div>
 
 
     </main>
