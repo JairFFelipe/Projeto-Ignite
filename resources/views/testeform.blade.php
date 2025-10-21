@@ -1,4 +1,4 @@
 nome: {{ $nome }} <br>
-num: {{ $telefone }} <br>
+num: {{ $phone }} <br>
 email: {{ $email }} <br>
 senha: {{ $senha }} <br>

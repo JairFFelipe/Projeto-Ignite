@@ -14,19 +14,24 @@ class RegisterController extends Controller
 
     public function registrar(Request $request){
 
+        $request->merge([
+            // É meia noite e eu to vendo aula de Regex pra fazer essa porra... SOS
+            'phone' => preg_replace('/\D/', '', $request->input('phone')),
+        ]);
+
         $validated = $request->validate([
             'nome' => 'required',
             'sobrenome' => 'required',
             'phone' => 'digits_between:9,11|unique:usuarios,num',
             'email' => 'required|email:rfc,dns|unique:usuarios,email',
             'senha' => 'required|confirmed'
-        ],[
-            'phone.digits_between' => 'O número de telefone deve conter 9-11 digitos',
-            'phone.unique' => 'Este número de telefone já está cadastrado!',
-            'senha.confirmed' => 'Ambas as senhas devem coincidir',
-            'email.unique' => 'Este endereço de email já está cadastrado!',
-            'email.email' => 'Domínio de email inválido!'
-        ]);
+        ], [
+             'phone.digits_between' => 'O número de telefone deve conter 9-11 digitos',
+             'phone.unique' => 'Este número de telefone já está cadastrado!',
+             'senha.confirmed' => 'Ambas as senhas devem coincidir',
+             'email.unique' => 'Este endereço de email já está cadastrado!',
+             'email.email' => 'Domínio de email inválido!'
+         ]);
 
 
  //     Não tem diferença entre $request->input('name') e $request->name
@@ -39,8 +44,8 @@ class RegisterController extends Controller
         $usuario->num = $request->phone;
 
 
-        $usuario->save();
+       $usuario->save();
 
-        return redirect('/');
+        return view('testeform', $validated);
     }
 }
