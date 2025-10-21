@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\usuarios;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Notifications\UsuarioCriado;
+
 
 class RegisterController extends Controller
 {
@@ -44,8 +46,13 @@ class RegisterController extends Controller
         $usuario->num = $request->phone;
 
 
+
        $usuario->save();
 
+        $usuario->notify(new UsuarioCriado());
+
+
         return view('testeform', $validated);
+       
     }
 }
