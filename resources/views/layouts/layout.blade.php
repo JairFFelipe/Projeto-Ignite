@@ -44,9 +44,30 @@
             </nav>
 
             <!-- Links extras -->
-            <div class="flex text-slate-400 space-x-6 text-xs">
-            <a href="#">Contato</a>
-            <a href="#">Sobre</a>
+            <div class="flex text-slate-400 space-x-6 text-xs items-center" x-data="{ showProfile: false }" @click.away="showProfile = false">
+                <a href="#">Contato</a>
+                <a href="#">Sobre</a>
+
+                <!-- Botão do perfil -->
+                <button 
+                    @click="showProfile = !showProfile"
+                    class="flex items-center gap-1 hover:text-orange-600 transition relative"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5.121 17.804A13.937 13.937 0 0112 15c2.21 0 4.305.497 6.121 1.804M15 11a3 3 0 10-6 0 3 3 0 006 0z" />
+                    </svg>
+                    <span>Perfil</span>
+                </button>
+
+                <!-- Dropdown -->
+                <div 
+                    x-show="showProfile"
+                    x-transition
+                    class="absolute right-10 top-full mt-3 w-40 bg-white text-black rounded-lg shadow-lg border border-gray-100 py-2 text-xs font-medium"
+                >
+                    <a href="/perfil" class="block px-4 py-2 hover:bg-gray-100">Ver Perfil</a>
+                    <a href="/logout" class="block px-4 py-2 text-red-500 hover:bg-red-50">Sair</a>
+                </div>
             </div>
         </div>
 

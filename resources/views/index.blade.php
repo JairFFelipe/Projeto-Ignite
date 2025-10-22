@@ -9,7 +9,7 @@
             slides: @json([ asset("img/perfilburro.jpg"), asset("img/motos.png"), asset("img/gatoburro.png") ]),
             active: 0
             }'
-            class="relative w-full h-[93vh] overflow-hidden shadow-lg"
+            class="relative w-full h-[93vh] overflow-hidden shadow-lg mt-16"
         >
             <!-- Slides -->
             <template x-for="(slide, index) in slides" :key="index">
@@ -53,36 +53,47 @@
         <div class="w-full bg-gray-900 text-white flex justify-center items-center divide-x divide-gray-700">
             
             <!-- Item 1 -->
-            <a href="#"
+            <a href="/kawasaki"
                 class="flex items-center justify-center flex-1 py-4 gap-2 hover:bg-gray-800 transition">
                 <!-- Ícone de sliders (ajustes) -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                         d="M12 4v16m6-8H6" />
                 </svg>
-                <span class="text-sm font-semibold">MONTE SUA MOTO</span>
+                <span class="text-sm font-semibold">Kawasaki</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M12 4v16m6-8H6" />
+                </svg>
             </a>
 
             <!-- Item 2 -->
-            <a href="#"
+            <a href="/harleydavidson"
                 class="flex items-center justify-center flex-1 py-4 gap-2 hover:bg-gray-800 transition">
-                <!-- Ícone de capacete (simulação com um círculo/outline) -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 4a8 8 0 100 16 8 8 0 000-16z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M12 4v16m6-8H6" />
                 </svg>
-                <span class="text-sm font-semibold">TEST DRIVE</span>
+                <span class="text-sm font-semibold">Harley-Davidson</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M12 4v16m6-8H6" />
+                </svg>
             </a>
 
             <!-- Item 3 -->
-            <a href="#"
+            <a href="/royalenfield"
                 class="flex items-center justify-center flex-1 py-4 gap-2 hover:bg-gray-800 transition">
                 <!-- Ícone de ferramentas -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M15 12h.01M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M12 4v16m6-8H6" />
                 </svg>
-                <span class="text-sm font-semibold">AGENDE UM SERVIÇO</span>
+                <span class="text-sm font-semibold">Royal Enfield</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M12 4v16m6-8H6" />
+                </svg>
             </a>
         </div>
     </section>
@@ -91,7 +102,7 @@
         <!-- Títulos -->
         <div class="text-center mb-12">
             <h2 class="text-2xl font-bold">BEM-VINDO AO IGNITE</h2>
-            <p class="mt-4 text-lg font-semibold">ONDE VOCÊ PODE ACENDER SUA CHAMA COM UMA MOTO</p>
+            <p class="mt-4 text-lg font-semibold">ACENDA SUA CHAMA COM UMA MOTO</p>
         </div>
 
         <!-- Grid de Cards -->
@@ -99,10 +110,10 @@
 
             <!-- Card 1 -->
             <div>
-            <img src="{{ asset('img/card1.jpg') }}" alt="img" class="w-full h-56 object-cover">
-            <h3 class="mt-4 text-lg font-bold">LOREM</h3>
+            <img src="{{ asset('img/kawasakininjah2r.png') }}" alt="img" class="w-full h-56 object-cover">
+            <h3 class="mt-4 text-lg font-bold">Kawasaki Ninja H2R</h3>
             <p class="mt-2 text-sm text-gray-700">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt porro architecto, aut facilis vel voluptates sapiente molestias, culpa repellat non voluptatibus facere odio, quidem tempore modi sit excepturi totam deserunt.
+                A Kawasaki Ninja H2R é a hipermoto definitiva, equipada com motor supercharger de 998 cc e mais de 300 cv de potência. Construída para desempenho extremo em pista fechada, representa o auge da engenharia e do design Kawasaki.
             </p>
             <a href="#" class="mt-3 inline-block text-xs font-bold uppercase hover:underline">DESCUBRA MAIS →</a>
             </div>

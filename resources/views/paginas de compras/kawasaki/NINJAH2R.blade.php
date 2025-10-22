@@ -244,7 +244,11 @@
                     x-transition
                 >
                     <!-- Modal -->
-                    <div class="bg-white w-[90vw] max-w-lg p-6 rounded-2xl shadow-2xl relative" @click.away="aberto = false">
+                    <div 
+                        class="bg-white w-[90vw] max-w-lg p-6 rounded-2xl shadow-2xl relative 
+                            max-h-[80vh] overflow-y-auto"
+                        @click.away="aberto = false"
+                    >
                         <h2 class="text-2xl font-bold text-gray-900 mb-4">Finalizar Compra</h2>
 
                         <form method="POST" action="" novalidate>
@@ -253,6 +257,30 @@
                         <!-- Dados do comprador -->
                         <div class="space-y-3 mb-4">
                             <input type="text" name="cpf" x-model="cpf" placeholder="CPF" required class="w-full border p-2 rounded-md" maxlength="14">
+                        </div>
+
+                        <!-- Endereço -->
+                        <div class="space-y-3 mb-4">
+                            <h3 class="font-semibold text-gray-800 mb-2">Endereço de Entrega</h3>
+
+                            <input type="text" name="cep" placeholder="CEP" required maxlength="9"
+                                x-model="cep" class="w-full border p-2 rounded-md" inputmode="numeric">
+
+                            <input type="text" name="rua" placeholder="Rua" required
+                                x-model="rua" class="w-full border p-2 rounded-md">
+
+                            <input type="text" name="numero" placeholder="Número" required
+                                x-model="numero" class="w-full border p-2 rounded-md">
+
+                            <input type="text" name="bairro" placeholder="Bairro"
+                                x-model="bairro" class="w-full border p-2 rounded-md">
+
+                            <div class="grid grid-cols-2 gap-2">
+                                <input type="text" name="cidade" placeholder="Cidade" required
+                                    x-model="cidade" class="w-full border p-2 rounded-md">
+                                <input type="text" name="estado" placeholder="Estado" maxlength="2" required
+                                    x-model="estado" class="w-full border p-2 rounded-md uppercase">
+                            </div>
                         </div>
 
                         <!-- Forma de pagamento -->

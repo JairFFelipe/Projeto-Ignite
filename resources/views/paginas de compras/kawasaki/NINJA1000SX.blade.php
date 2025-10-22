@@ -14,9 +14,9 @@
             <button @click="aba = 'ficha'" :class="aba === 'ficha' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Ficha Técnica</button>
             <button @click="aba = 'acessorios'" :class="aba === 'acessorios' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Acessórios</button>
         </nav>
-        <button class="bg-orange-600 hover:bg-orange-700 ease-in-out duration-300 text-white px-4 py-2 rounded-md font-semibold">
-            Ir para à compra
-        </button>
+        <a href="/kawasaki"><button class="border border-gray-800 hover:bg-gray-200 text-gray-900 px-24 py-3 rounded-md font-semibold text-sm uppercase">
+            <div class="flex justify-center items-center align-middle gap-2"><img src="{{ asset('img/voltar.png') }}" alt="" class="h-5 w-5">Voltar à Kawasaki</div>
+        </button></a>
     </div>
 
     <!-- Conteúdo -->
@@ -39,9 +39,9 @@
                     class="absolute inset-0"
                 >
                     <h2 class="text-5xl font-extrabold text-gray-900 mb-4">NINJA 1000SX</h2>
-                    <p class="uppercase text-sm tracking-widest text-orange-600 font-semibold mb-2">Sport Touring Edition</p>
+                    <p class="uppercase text-sm tracking-widest text-orange-600 font-semibold mb-2">Sport Touring</p>
                     <p class="text-2xl font-bold text-gray-800 mb-6">
-                        A partir de <span class="text-orange-600">R$ 73.975,00</span>
+                        A partir de <span class="text-orange-600">R$ 92.000,00</span>
                     </p>
                     <div class="flex flex-col gap-4 mb-6">
                         <div class="flex flex-row space-x-5">
@@ -52,12 +52,11 @@
                                 ESPECIFICAÇÕES
                             </button>
                         </div>
-                        <button class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-md font-semibold text-sm uppercase">
-                            IR PARA À COMPRA
-                        </button>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed">
-                        A Kawasaki Ninja 1000SX combina desempenho de quatro cilindros de 1.043 cc com refinamento touring — oferecendo potência, tecnologia e conforto para longas distâncias e pilotagem esportiva.
+                        A Kawasaki Ninja 1000SX combina a performance esportiva de uma superbike com o conforto de uma tourer. 
+                        Equipada com motor de 1.043 cc, controle eletrônico avançado e ergonomia otimizada para longas distâncias, 
+                        é uma sport touring equilibrada e precisa, projetada para desempenho em estrada e conforto em viagens prolongadas.
                     </p>
                 </div>
 
@@ -80,13 +79,15 @@
                     <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-700">
 
                         <!-- MOTOR E TRANSMISSÃO -->
-                        <div class=" p-4 rounded-2xl shadow-sm hover:shadow-md transition">
+                        <div class="p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <h3 class="text-lg font-semibold text-orange-600 mb-2">Motor e Transmissão</h3>
                             <ul class="space-y-1">
                                 <li><strong>Tipo:</strong> 4 cilindros em linha, DOHC, 16 válvulas, refrigeração líquida</li>
                                 <li><strong>Cilindrada:</strong> 1.043 cc</li>
-                                <li><strong>Transmissão:</strong> 6 marchas, retorno</li>
-                                <li><strong>Sistema de embraiagem:</strong> Assistida / deslizante (modelo internacional) — confirmar versão Brasil</li>
+                                <li><strong>Potência Máxima:</strong> 142 cv @ 10.000 rpm</li>
+                                <li><strong>Torque Máximo:</strong> 11,2 kgf·m @ 8.000 rpm</li>
+                                <li><strong>Transmissão:</strong> 6 marchas, quickshifter bidirecional</li>
+                                <li><strong>Embreagem:</strong> Assistida e deslizante</li>
                             </ul>
                         </div>
 
@@ -94,9 +95,12 @@
                         <div class="p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <h3 class="text-lg font-semibold text-orange-600 mb-2">Chassi e Dimensões</h3>
                             <ul class="space-y-1">
-                                <li><strong>Altura do Assento:</strong> ~820 mm</li>
-                                <li><strong>Capacidade do Tanque:</strong> ~19 litros</li>
-                                <li><strong>Tipo de quadro:</strong> Alumínio ou treliça (verificar versão Brasil)</li>
+                                <li><strong>Chassi:</strong> Monocoque de alumínio</li>
+                                <li><strong>Comprimento x Largura x Altura:</strong> 2.100 × 830 × 1.190 mm</li>
+                                <li><strong>Altura do Assento:</strong> 835 mm</li>
+                                <li><strong>Peso em Ordem de Marcha:</strong> 235 kg</li>
+                                <li><strong>Tanque de Combustível:</strong> 19 litros</li>
+                                <li><strong>Distância Entre Eixos:</strong> 1.440 mm</li>
                             </ul>
                         </div>
 
@@ -104,9 +108,11 @@
                         <div class="bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <h3 class="text-lg font-semibold text-orange-600 mb-2">Suspensão e Freios</h3>
                             <ul class="space-y-1">
-                                <li><strong>Dianteira:</strong> Garfo invertido 41 mm ajustável</li>
-                                <li><strong>Traseira:</strong> Mono-choque ajustável</li>
-                                <li><strong>Freios Dianteiros:</strong> Disco duplo 300 mm (aproximado) / modelo internacional</li>
+                                <li><strong>Dianteira:</strong> Garfo telescópico invertido (41 mm), ajustável</li>
+                                <li><strong>Traseira:</strong> Amortecedor Uni-Trak ajustável em pré-carga e retorno</li>
+                                <li><strong>Freios Dianteiros:</strong> Duplo disco 310 mm com pinças radiais monobloco</li>
+                                <li><strong>Freio Traseiro:</strong> Disco 250 mm com pinça simples</li>
+                                <li><strong>Pneus:</strong> 120/70 ZR17 (D) | 190/50 ZR17 (T)</li>
                             </ul>
                         </div>
 
@@ -114,19 +120,22 @@
                         <div class="bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <h3 class="text-lg font-semibold text-orange-600 mb-2">Eletrônica e Desempenho</h3>
                             <ul class="space-y-1">
-                                <li><strong>Modos de pilotagem:</strong> Vários (incluso controle de tração, quick-shifter) :contentReference[oaicite:1]{index=1}</li>
-                                <li><strong>Preço estimado Brasil:</strong> ~R$ 73.975 para o modelo 2024. :contentReference[oaicite:2]{index=2}</li>
+                                <li><strong>Controle de Tração (KTRC):</strong> 3 modos + desligamento</li>
+                                <li><strong>ABS em Curva (KIBS):</strong> Sim</li>
+                                <li><strong>Controle de Cruzeiro:</strong> Sim</li>
+                                <li><strong>Modos de Potência:</strong> Full / Low</li>
+                                <li><strong>Painel:</strong> TFT colorido com Bluetooth (Kawasaki Rideology)</li>
+                                <li><strong>Velocidade Máxima:</strong> ~250 km/h (estimada)</li>
                             </ul>
                         </div>
-
+                        <button class="border border-gray-800 hover:bg-gray-200 text-gray-900 px-24 py-3 rounded-md font-semibold text-sm uppercase mb-10" @click="aba = 'resumo'">
+                                VOLTAR
+                        </button>
                     </div>
 
-                    <p class="mt‐6 text-xs text-gray-500 italic">
-                        *Informações para referência — dê preferência aos dados da concessionária para versão brasileira.
+                    <p class="mt-6 text-xs text-gray-500 italic">
+                        *Dados técnicos baseados em informações oficiais Kawasaki. Modelo homologado para uso em via pública.
                     </p>
-                    <button class="border border-gray-800 hover:bg-gray-200 text-gray-900 px-24 py-3 rounded-md font-semibold text-sm uppercase mt-5" @click="aba = 'resumo'">
-                                VOLTAR
-                    </button>
                 </div>
 
                 <!-- ACESSÓRIOS -->
@@ -148,39 +157,39 @@
                     <div class="space-y-4 text-gray-700">
 
                         <!-- Acessório 1 -->
-                        <div class="flex justify-between items-center bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition w-[34vw]">
+                        <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <div>
-                                <h3 class="font-semibold text-gray-900">Capa Personalizada 1000SX</h3>
-                                <p class="text-sm text-gray-500">Capa sob medida para a Ninja 1000SX — proteção e estilo.</p>
+                                <h3 class="font-semibold text-gray-900">Malas Laterais Originais</h3>
+                                <p class="text-sm text-gray-500">Conjunto integrado com 28 L cada, removíveis e com chave única.</p>
                             </div>
-                            <span class="text-orange-600 font-bold text-lg">R$ 1.290,00</span>
+                            <span class="text-orange-600 font-bold text-lg">R$ 8.900,00</span>
                         </div>
 
                         <!-- Acessório 2 -->
-                        <div class="flex justify-between items-center bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition w-[34vw]">
+                        <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <div>
-                                <h3 class="font-semibold text-gray-900">Kit de Performance 1000SX</h3>
-                                <p class="text-sm text-gray-500">Escapamento esportivo e melhorias de torque para o touring esportivo.</p>
+                                <h3 class="font-semibold text-gray-900">Bolha Touring Alta</h3>
+                                <p class="text-sm text-gray-500">Oferece maior proteção aerodinâmica para viagens longas.</p>
                             </div>
-                            <span class="text-orange-600 font-bold text-lg">R$ 9.850,00</span>
+                            <span class="text-orange-600 font-bold text-lg">R$ 1.250,00</span>
                         </div>
 
                         <!-- Acessório 3 -->
-                        <div class="flex justify-between items-center bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition w-[34vw]">
+                        <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <div>
-                                <h3 class="font-semibold text-gray-900">Protetores Laterais de Carenagem</h3>
-                                <p class="text-sm text-gray-500">Proteção lateral discreta, ideal para touring e estrada.</p>
+                                <h3 class="font-semibold text-gray-900">Protetor de Tanque Kawasaki</h3>
+                                <p class="text-sm text-gray-500">Peça adesiva em gel para proteger a pintura contra abrasão.</p>
                             </div>
-                            <span class="text-orange-600 font-bold text-lg">R$ 1.790,00</span>
+                            <span class="text-orange-600 font-bold text-lg">R$ 350,00</span>
                         </div>
 
                         <!-- Acessório 4 -->
-                        <div class="flex justify-between items-center bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition w-[34vw]">
+                        <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <div>
-                                <h3 class="font-semibold text-gray-900">Capacete Kawasaki Carbon Edition</h3>
-                                <p class="text-sm text-gray-500">Modelo premium em fibra de carbono — combina com a identidade 1000SX.</p>
+                                <h3 class="font-semibold text-gray-900">Slider de Proteção Lateral</h3>
+                                <p class="text-sm text-gray-500">Protege a carenagem em eventuais quedas leves ou deslizes.</p>
                             </div>
-                            <span class="text-orange-600 font-bold text-lg">R$ 4.590,00</span>
+                            <span class="text-orange-600 font-bold text-lg">R$ 1.450,00</span>
                         </div>
 
                     </div>
@@ -188,11 +197,10 @@
                     <p class="mt-6 text-xs text-gray-500 italic">
                         *Preços sugeridos pela Kawasaki Brasil. Sujeitos a alteração sem aviso prévio.
                     </p>
-                    <button class="border border-gray-800 hover:bg-gray-200 text-gray-900 px-24 py-3 rounded-md font-semibold text-sm uppercase mt-5" @click="aba = 'resumo'">
-                                VOLTAR
+                    <button class="border border-gray-800 hover:bg-gray-200 text-gray-900 px-24 py-3 rounded-md font-semibold text-sm uppercase mt-6" @click="aba = 'resumo'">
+                        VOLTAR
                     </button>
                 </div>
-
             </div>
         </div>
 
@@ -200,8 +208,191 @@
         <div class="flex flex-col items-center">
             <img src="{{ asset('img/kawasakininja1000sx.jpg') }}" alt="Kawasaki Ninja 1000SX" class="w-full max-w-lg object-contain">
             <p class="mt-2 text-xs text-gray-500">*Imagem meramente ilustrativa</p>
-        </div>
+
+           <!-- Modal de Compra -->
+            <div 
+                x-data="{
+                    aberto: false,
+                    nome: '',
+                    email: '',
+                    telefone: '',
+                    cpf: '',
+                    forma_pagamento: 'cartao',
+                    acessorios: [
+                        { nome: 'Malas Laterais Originais', preco: 8900, selecionado: false },
+                        { nome: 'Bolha Touring Alta', preco: 1250, selecionado: false },
+                        { nome: 'Protetor de Tanque Kawasaki', preco: 350, selecionado: false },
+                        { nome: 'Slider de Proteção Lateral', preco: 1450, selecionado: false }
+                    ],
+                    precoBase: 92000,
+                    get total() {
+                        return this.precoBase + this.acessorios.filter(a => a.selecionado).reduce((s, a) => s + a.preco, 0);
+                    }
+                }"
+            >
+                <!-- Botão que abre o popup -->
+                <button 
+                    @click="aberto = true"
+                    class="mt-6 bg-orange-600 hover:bg-orange-700 ease-in-out duration-300 text-white px-40 py-3 rounded-md font-semibold uppercase tracking-wide">
+                    Ir para à compra
+                </button>
+
+                <!-- Fundo escurecido -->
+                <div 
+                    x-show="aberto"
+                    x-cloak
+                    class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50"
+                    x-transition
+                >
+                    <!-- Modal -->
+                    <div 
+                        class="bg-white w-[90vw] max-w-lg p-6 rounded-2xl shadow-2xl relative 
+                            max-h-[80vh] overflow-y-auto"
+                        @click.away="aberto = false"
+                    >
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Finalizar Compra</h2>
+
+                        <form method="POST" action="" novalidate>
+                        @csrf
+
+                        <!-- Dados do comprador -->
+                        <div class="space-y-3 mb-4">
+                            <input type="text" name="cpf" x-model="cpf" placeholder="CPF" required class="w-full border p-2 rounded-md" maxlength="14">
+                        </div>
+
+                        <!-- Endereço -->
+                        <div class="space-y-3 mb-4">
+                            <h3 class="font-semibold text-gray-800 mb-2">Endereço de Entrega</h3>
+
+                            <input type="text" name="cep" placeholder="CEP" required maxlength="9"
+                                x-model="cep" class="w-full border p-2 rounded-md" inputmode="numeric">
+
+                            <input type="text" name="rua" placeholder="Rua" required
+                                x-model="rua" class="w-full border p-2 rounded-md">
+
+                            <input type="text" name="numero" placeholder="Número" required
+                                x-model="numero" class="w-full border p-2 rounded-md">
+
+                            <input type="text" name="bairro" placeholder="Bairro"
+                                x-model="bairro" class="w-full border p-2 rounded-md">
+
+                            <div class="grid grid-cols-2 gap-2">
+                                <input type="text" name="cidade" placeholder="Cidade" required
+                                    x-model="cidade" class="w-full border p-2 rounded-md">
+                                <input type="text" name="estado" placeholder="Estado" maxlength="2" required
+                                    x-model="estado" class="w-full border p-2 rounded-md uppercase">
+                            </div>
+                        </div>
+
+                        <!-- Forma de pagamento -->
+                        <div class="mb-4">
+                            <label class="font-semibold text-gray-800 block mb-2">Forma de pagamento:</label>
+                            <select name="forma_pagamento" x-model="forma_pagamento" class="w-full border p-2 rounded-md">
+                                <option value="cartao">Cartão de Crédito</option>
+                                <option value="pix">PIX</option>
+                            </select>
+                        </div>
+
+                        <!-- Campos de cartão (exibidos apenas se forma_pagamento == 'cartao') -->
+                        <div x-show="forma_pagamento === 'cartao'" x-cloak class="mb-4 space-y-3">
+                            <p class="text-sm text-gray-600">Informações do cartão </p>
+
+                            <div class="grid grid-cols-1 gap-2">
+                                <!-- Número do cartão -->
+                                <input
+                                    type="text"
+                                    name="card_number"
+                                    placeholder="Número do cartão (ex: 4111 1111 1111 1111)"
+                                    inputmode="numeric"
+                                    maxlength="19"
+                                    x-model="card_number"
+                                    class="w-full border p-2 rounded-md"
+                                    pattern="[\d\s]{13,19}"
+                                    autocomplete="cc-number"
+                                    required
+                                >
+
+                                <!-- Validade MM/AA -->
+                                <input
+                                    type="text"
+                                    name="card_expiry"
+                                    placeholder="Validade (MM/AA)"
+                                    maxlength="5"
+                                    x-model="card_expiry"
+                                    class="w-full border p-2 rounded-md"
+                                    pattern="(0[1-9]|1[0-2])\/?([0-9]{2})"
+                                    autocomplete="cc-exp"
+                                    required
+                                >
+
+                                <!-- CVV -->
+                                <input
+                                    type="text"
+                                    name="card_cvv"
+                                    placeholder="CVV (3 ou 4 dígitos)"
+                                    inputmode="numeric"
+                                    maxlength="4"
+                                    x-model="card_cvv"
+                                    class="w-full border p-2 rounded-md"
+                                    pattern="\d{3,4}"
+                                    autocomplete="cc-csc"
+                                    required
+                                >
+                            </div>
+                        </div>
+                        <!-- QR Code Pix -->
+                        <div x-show="forma_pagamento === 'pix'" x-cloak class="mb-4 text-center">
+                            <p class="text-sm text-gray-600 mb-2">O QR code será gerado após a finalização da compra</p>
+                        </div>
+
+                        <!-- Acessórios -->
+                        <div class="mb-4">
+                            <h3 class="font-semibold text-gray-800 mb-2">Selecione os acessórios:</h3>
+                            <template x-for="(item, index) in acessorios" :key="index">
+                                <label class="flex justify-between items-center border-b py-2">
+                                    <span x-text="item.nome"></span>
+                                    <div class="flex items-center gap-3">
+                                        <span class="text-orange-600 font-semibold" x-text="`R$ ${item.preco.toLocaleString()}`"></span>
+                                        <input type="checkbox" :name="`acessorios[]`" :value="item.nome" x-model="item.selecionado" class="h-5 w-5 text-orange-600">
+                                    </div>
+                                </label>
+                            </template>
+                        </div>
+
+                        <!-- Total -->
+                        <div class="border-t pt-3 mb-4 text-right">
+                            <p class="text-lg font-bold text-gray-900">
+                                Total: <span class="text-orange-600" x-text="`R$ ${total.toLocaleString()}`"></span>
+                            </p>
+                        </div>
+
+                        <!-- Campo oculto com o valor total -->
+                        <input type="hidden" name="total" :value="total">
+
+                        <!-- (Opcional) campo para payment token (se usar gateway -> frontend cria token aqui) -->
+                        <input type="hidden" name="payment_token" x-model="payment_token">
+
+                        <!-- Botões -->
+                        <div class="flex justify-end gap-3">
+                            <button type="button" @click="aberto = false" class="border border-gray-400 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-100">Cancelar</button>
+                            <button
+                                type="submit"
+                                class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-md font-semibold"
+                                @click.prevent="handleSubmit($event)"
+                            >
+                                Confirmar Compra
+                            </button>
+                        </div>
+                    </form>
+
+                        <!-- Fechar -->
+                        <button @click="aberto = false" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">✕</button>
+                    </div>
+                </div>
+            </div>
+
 
     </main>
 </section>
+<br>
 @endsection
