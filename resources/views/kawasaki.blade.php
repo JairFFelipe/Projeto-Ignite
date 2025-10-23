@@ -53,12 +53,14 @@
     <div class="flex justify-center py-10 bg-white">
         <div class="max-w-sm w-full">
             <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-            <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakiplaceholder.png') }}" alt="Moto à venda">
+            <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakininjazx10r.jpg') }}" alt="Moto à venda">
             
             <div class="p-5">
-                <h2 class="text-xl font-bold text-gray-800">Moto foda XD</h2>
+                <h2 class="text-xl font-bold text-gray-800">Kawasaki Ninja ZX10R</h2>
                 <p class="text-gray-600 mt-2 text-sm overflow-auto max-h-16">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. A illum doloremque cupiditate maxime libero qui? Incidunt architecto facere sed ex quae corrupti eaque nam. Amet commodi placeat minima laborum consequatur!
+                A Kawasaki Ninja ZX-10R é uma superbike de alta performance com enfoque em pista. 
+                Equipada com motor 998 cc, eletrônica de última geração e estrutura derivada do WorldSBK, 
+                entrega resposta rápida, estabilidade em curvas e dinâmica agressiva para pilotagem esportiva.
                 </p>
 
                 <div class="flex items-center justify-between mt-4">
@@ -75,13 +77,12 @@
     <div class="flex justify-center py-10 bg-white">
         <div class="max-w-sm w-full">
             <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-            <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakiplaceholder.png') }}" alt="Moto à venda">
+            <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakininja650.jpg') }}" alt="Moto à venda">
             
             <div class="p-5">
-                <h2 class="text-xl font-bold text-gray-800">Moto foda XD</h2>
+                <h2 class="text-xl font-bold text-gray-800">Kawasaki Ninja 650</h2>
                 <p class="text-gray-600 mt-2 text-sm overflow-auto max-h-16">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ipsam corporis alias temporibus, odio qui non, aut excepturi mollitia repellendus quidem pariatur expedita libero asperiores adipisci reiciendis aliquid unde quisquam?
-                </p>
+                A Kawasaki Ninja 650 combina desempenho esportivo com ergonomia confortável. Equipada com motor bicilíndrico de 649 cc e eletrônica moderna, oferece pilotagem precisa e eficiente tanto em uso urbano quanto rodoviário.
 
                 <div class="flex items-center justify-between mt-4">
                 <span class="text-lg font-semibold text-green-600">R$ 34.900</span>

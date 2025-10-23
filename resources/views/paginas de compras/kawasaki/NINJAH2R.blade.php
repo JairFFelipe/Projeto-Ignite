@@ -23,7 +23,7 @@
     <main class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
 
         <!-- COLUNA DE TEXTO -->
-        <div class="relative min-h-[500px] mb-[10vh]">
+        <div class="relative min-h-[500px] mb-[20vh]">
             <div class="overflow-auto h-full">
 
                 <!-- RESUMO -->
@@ -132,7 +132,7 @@
                         </button>
                     </div>
 
-                    <p class="mt-6 text-xs text-gray-500 italic">
+                    <p class=" text-xs text-gray-500 italic">
                         *Informações baseadas em dados oficiais Kawasaki. Modelo exclusivo para uso em pista fechada.
                     </p>
                 </div>

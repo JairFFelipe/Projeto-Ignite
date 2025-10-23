@@ -8,7 +8,7 @@
 
     <!-- Navbar -->
     <div class="flex justify-between items-center p-6 border-b border-gray-200">
-        <h1 class="text-xl font-bold text-orange-600 uppercase">Kawasaki Ninja H2R</h1>
+        <h1 class="text-xl font-bold text-orange-600 uppercase">Kawasaki Ninja ZX-10R</h1>
         <nav class="space-x-6 text-sm font-medium text-gray-600">
             <button @click="aba = 'resumo'" :class="aba === 'resumo' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Resumo</button>
             <button @click="aba = 'ficha'" :class="aba === 'ficha' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Ficha Técnica</button>
@@ -23,7 +23,7 @@
     <main class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
 
         <!-- COLUNA DE TEXTO -->
-        <div class="relative min-h-[500px] mb-[10vh]">
+        <div class="relative min-h-[500px] mb-[20vh]">
             <div class="overflow-auto h-full">
 
                 <!-- RESUMO -->
@@ -38,10 +38,10 @@
                     x-transition:leave-end="opacity-0 translate-y-10"
                     class="absolute inset-0"
                 >
-                    <h2 class="text-5xl font-extrabold text-gray-900 mb-4">NINJA H2R</h2>
-                    <p class="uppercase text-sm tracking-widest text-orange-600 font-semibold mb-2">Carbon Edition</p>
+                    <h2 class="text-5xl font-extrabold text-gray-900 mb-4">NINJA ZX-10R</h2>
+                    <p class="uppercase text-sm tracking-widest text-orange-600 font-semibold mb-2">Superesportiva / Supersport</p>
                     <p class="text-2xl font-bold text-gray-800 mb-6">
-                        A partir de <span class="text-orange-600">R$ 115.800,00</span>
+                        A partir de <span class="text-orange-600">R$ 115.000,00</span>
                     </p>
                     <div class="flex flex-col gap-4 mb-6">
                         <div class="flex flex-row space-x-5">
@@ -54,8 +54,9 @@
                         </div>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed">
-                        A Kawasaki Ninja H2R é a hipermoto definitiva, equipada com motor supercharger de 998 cc e mais de 300 cv de potência.
-                        Construída para desempenho extremo em pista fechada, representa o auge da engenharia e do design Kawasaki.
+                        A Kawasaki Ninja ZX-10R é uma superbike de alta performance com enfoque em pista. 
+                        Equipada com motor 998 cc, eletrônica de última geração e estrutura derivada do WorldSBK, 
+                        entrega resposta rápida, estabilidade em curvas e dinâmica agressiva para pilotagem esportiva.
                     </p>
                 </div>
 
@@ -68,25 +69,25 @@
                     x-transition:enter-end="opacity-100 translate-y-0"
                     x-transition:leave="transition ease-in duration-400"
                     x-transition:leave-start="opacity-100 translate-y-0"
-                    x-transition:leave-end="opacity-0 translate-y-10"
+                    x-transition:leave-end="opacity-0 translate-y+10"
                     class="absolute inset-0"
                 >
                     <h2 class="text-3xl font-extrabold text-gray-900 mb-6 border-b-2 border-orange-500 inline-block pb-1">
-                        Ficha Técnica — Ninja H2R
+                        Ficha Técnica — Ninja ZX-10R
                     </h2>
 
                     <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-700">
 
                         <!-- MOTOR E TRANSMISSÃO -->
-                        <div class=" p-4 rounded-2xl shadow-sm hover:shadow-md transition">
+                        <div class="p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <h3 class="text-lg font-semibold text-orange-600 mb-2">Motor e Transmissão</h3>
                             <ul class="space-y-1">
-                                <li><strong>Tipo:</strong> 4 cilindros em linha, DOHC, 16 válvulas, supercharger</li>
+                                <li><strong>Tipo:</strong> 4 cilindros em linha, DOHC, 16 válvulas, refrigeração líquida</li>
                                 <li><strong>Cilindrada:</strong> 998 cc</li>
-                                <li><strong>Potência Máxima:</strong> 310 cv (326 cv com RAM Air)</li>
-                                <li><strong>Torque Máximo:</strong> 16,8 kgf·m @ 12.500 rpm</li>
-                                <li><strong>Transmissão:</strong> 6 marchas, quickshifter bidirecional</li>
-                                <li><strong>Embreagem:</strong> Deslizante assistida</li>
+                                <li><strong>Potência Máxima:</strong> 203 cv @ 13.200 rpm</li>
+                                <li><strong>Torque Máximo:</strong> ~11,5 kgf·m @ 11.500 rpm</li>
+                                <li><strong>Transmissão:</strong> 6 marchas, quickshifter bidirecional (KQS)</li>
+                                <li><strong>Embreagem:</strong> Multidisco em banho de óleo com função assistida/deslizante</li>
                             </ul>
                         </div>
 
@@ -94,12 +95,12 @@
                         <div class="p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <h3 class="text-lg font-semibold text-orange-600 mb-2">Chassi e Dimensões</h3>
                             <ul class="space-y-1">
-                                <li><strong>Chassi:</strong> Treliça em aço de alta resistência</li>
-                                <li><strong>Comprimento x Largura x Altura:</strong> 2.070 × 770 × 1.160 mm</li>
-                                <li><strong>Altura do Assento:</strong> 830 mm</li>
-                                <li><strong>Peso Seco:</strong> 216 kg</li>
+                                <li><strong>Chassi:</strong> Deltabox de alumínio</li>
+                                <li><strong>Comprimento × Largura × Altura:</strong> ~ 2.100 × 770 × 1.140 mm</li>
+                                <li><strong>Altura do Assento:</strong> 835 mm (aprox.)</li>
+                                <li><strong>Peso em Ordem de Marcha:</strong> ~ 206 kg</li>
                                 <li><strong>Tanque de Combustível:</strong> 17 litros</li>
-                                <li><strong>Distância Entre Eixos:</strong> 1.450 mm</li>
+                                <li><strong>Distância Entre Eixos:</strong> ~ 1.450 mm</li>
                             </ul>
                         </div>
 
@@ -107,11 +108,11 @@
                         <div class="bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <h3 class="text-lg font-semibold text-orange-600 mb-2">Suspensão e Freios</h3>
                             <ul class="space-y-1">
-                                <li><strong>Dianteira:</strong> Garfo invertido Öhlins, totalmente ajustável</li>
-                                <li><strong>Traseira:</strong> Amortecedor Uni-Trak, ajustável</li>
-                                <li><strong>Freios Dianteiros:</strong> Duplo disco Brembo 330 mm com pinças radiais</li>
-                                <li><strong>Freio Traseiro:</strong> Disco simples de 250 mm</li>
-                                <li><strong>Pneus:</strong> 120/600 R17 (D) | 190/650 R17 (T)</li>
+                                <li><strong>Dianteira:</strong> Garfo Showa Balance Free 43 mm, totalmente ajustável</li>
+                                <li><strong>Traseira:</strong> Amortecedor Showa BFRC com link, ajustes de pré-carga, compressão e retorno</li>
+                                <li><strong>Freios Dianteiros:</strong> Duplo disco 330 mm com pinças Brembo M50 monobloco</li>
+                                <li><strong>Freio Traseiro:</strong> Disco 220–250 mm com pinça única</li>
+                                <li><strong>Pneus:</strong> 120/70 ZR17 (dianteiro) | 190/55 ZR17 (traseiro)</li>
                             </ul>
                         </div>
 
@@ -119,20 +120,22 @@
                         <div class="bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <h3 class="text-lg font-semibold text-orange-600 mb-2">Eletrônica e Desempenho</h3>
                             <ul class="space-y-1">
-                                <li><strong>Controle de Tração (KTRC):</strong> 9 modos</li>
-                                <li><strong>ABS de Curva (KIBS):</strong> Sim</li>
+                                <li><strong>Controle de Tração (S-KTRC):</strong> Vários modos + off</li>
+                                <li><strong>ABS em Curva (KIBS):</strong> Sim</li>
                                 <li><strong>Controle de Largada (KLCM):</strong> Sim</li>
-                                <li><strong>Modo de Potência:</strong> 3 níveis selecionáveis</li>
-                                <li><strong>Painel:</strong> TFT colorido com conectividade Bluetooth</li>
-                                <li><strong>Velocidade Máxima:</strong> 400 km/h (estimada)</li>
+                                <li><strong>Função Gestão de Curvas (KCMF):</strong> Sim</li>
+                                <li><strong>Modos de Potência:</strong> Full / Medium / Low</li>
+                                <li><strong>Painel:</strong> TFT colorido com conectividade e funções avançadas</li>
+                                <li><strong>Velocidade Máxima:</strong> ~ 300 km/h (estimada)</li>
                             </ul>
                         </div>
+
                         <button class="border border-gray-800 hover:bg-gray-200 text-gray-900 px-24 py-3 rounded-md font-semibold text-sm uppercase mb-10" @click="aba = 'resumo'">
-                                VOLTAR
+                            VOLTAR
                         </button>
                     </div>
 
-                    <p class="mt-6 text-xs text-gray-500 italic">
+                    <p class=" text-xs text-gray-500 italic">
                         *Informações baseadas em dados oficiais Kawasaki. Modelo exclusivo para uso em pista fechada.
                     </p>
                 </div>
@@ -146,7 +149,7 @@
                     x-transition:enter-end="opacity-100 translate-y-0"
                     x-transition:leave="transition ease-in duration-400"
                     x-transition:leave-start="opacity-100 translate-y-0"
-                    x-transition:leave-end="opacity-0 translate-y-10"
+                    x_transition:leave-end="opacity-0 translate-y+10"
                     class="absolute inset-0"
                 >
                     <h2 class="text-3xl font-extrabold text-gray-900 mb-6 border-b-2 border-orange-500 inline-block pb-1">
@@ -158,43 +161,43 @@
                         <!-- Acessório 1 -->
                         <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <div>
-                                <h3 class="font-semibold text-gray-900">Capa Personalizada H2R</h3>
-                                <p class="text-sm text-gray-500">Protege sua moto contra poeira e arranhões com ajuste sob medida.</p>
+                                <h3 class="font-semibold text-gray-900">Sliders de Proteção</h3>
+                                <p class="text-sm text-gray-500">Protegem a carenagem em quedas leves.</p>
                             </div>
-                            <span class="text-orange-600 font-bold text-lg">R$ 1.290,00</span>
+                            <span class="text-orange-600 font-bold text-lg">R$ 1.500,00</span>
                         </div>
 
                         <!-- Acessório 2 -->
-                        <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
+                        <div class="flex justify-between items-center w-[34vw] bg_gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <div>
-                                <h3 class="font-semibold text-gray-900">Kit de Performance Akrapovič</h3>
-                                <p class="text-sm text-gray-500">Sistema de escapamento em titânio com ganho de potência e som esportivo.</p>
+                                <h3 class="font-semibold text_gray-900">Escapamento esportivo homologado</h3>
+                                <p class="text-sm text_gray-500">Melhora o desempenho e o som, com homologação para uso rodoviário.</p>
                             </div>
-                            <span class="text-orange-600 font-bold text-lg">R$ 9.850,00</span>
+                            <span class="text-orange-600 font-bold text-lg">R$ 8.800,00</span>
                         </div>
 
                         <!-- Acessório 3 -->
-                        <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
+                        <div class="flex justify-between items-center w-[34vw] bg_gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <div>
-                                <h3 class="font-semibold text-gray-900">Protetores Laterais de Carenagem</h3>
-                                <p class="text-sm text-gray-500">Minimiza danos em eventuais quedas, com design integrado à carenagem.</p>
+                                <h3 class="font-semibold text_gray-900">Bolha esportiva alta</h3>
+                                <p class="text-sm text_gray-500">Melhora a aerodinâmica em velocidades elevadas.</p>
                             </div>
-                            <span class="text-orange-600 font-bold text-lg">R$ 1.790,00</span>
+                            <span class="text-orange-600 font-bold text-lg">R$ 1.300,00</span>
                         </div>
 
                         <!-- Acessório 4 -->
-                        <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
+                        <div class="flex justify-between items-center w-[34vw] bg_gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <div>
-                                <h3 class="font-semibold text-gray-900">Capacete Kawasaki Carbon Edition</h3>
-                                <p class="text-sm text-gray-500">Modelo premium em fibra de carbono, leve e aerodinâmico.</p>
+                                <h3 class="font-semibold text_gray-900">Protetor de tanque em gel</h3>
+                                <p class="text-sm text_gray-500">Evita riscos na pintura por abrasão de roupas.</p>
                             </div>
-                            <span class="text-orange-600 font-bold text-lg">R$ 4.590,00</span>
+                            <span class="text-orange-600 font-bold text-lg">R$ 400,00</span>
                         </div>
 
                     </div>
 
-                    <p class="mt-6 text-xs text-gray-500 italic">
-                        *Preços sugeridos pela Kawasaki Brasil. Sujeitos a alteração sem aviso prévio.
+                    <p class="mt-6 text-xs text_gray-500 italic">
+                        *Preços sugeridos estimados. Sujeitos a alteração sem aviso prévio.
                     </p>
                     <button class="border border-gray-800 hover:bg-gray-200 text-gray-900 px-24 py-3 rounded-md font-semibold text-sm uppercase mt-6" @click="aba = 'resumo'">
                         VOLTAR
@@ -205,10 +208,10 @@
 
         <!-- COLUNA DA IMAGEM -->
         <div class="flex flex-col items-center">
-            <img src="{{ asset('img/kawasakininjah2r.png') }}" alt="Kawasaki Ninja H2R" class="w-full max-w-lg object-contain">
+            <img src="{{ asset('img/kawasakininjazx10r.jpg') }}" alt="Kawasaki Ninja ZX-10R" class="w-full max-w-lg object-contain">
             <p class="mt-2 text-xs text-gray-500">*Imagem meramente ilustrativa</p>
 
-            <!-- Modal de Compra -->
+           <!-- Modal de Compra -->
             <div 
                 x-data="{
                     aberto: false,
@@ -218,12 +221,12 @@
                     cpf: '',
                     forma_pagamento: 'cartao',
                     acessorios: [
-                        { nome: 'Capa Personalizada H2R', preco: 1290, selecionado: false },
-                        { nome: 'Kit de Performance Akrapovič', preco: 9850, selecionado: false },
-                        { nome: 'Protetores Laterais de Carenagem', preco: 1790, selecionado: false },
-                        { nome: 'Capacete Kawasaki Carbon Edition', preco: 4590, selecionado: false }
+                        { nome: 'Sliders de Proteção', preco: 1500, selecionado: false },
+                        { nome: 'Escapamento esportivo homologado', preco: 8800, selecionado: false },
+                        { nome: 'Bolha esportiva alta', preco: 1300, selecionado: false },
+                        { nome: 'Protetor de tanque em gel', preco: 400, selecionado: false }
                     ],
-                    precoBase: 357000,
+                    precoBase: 115000,
                     get total() {
                         return this.precoBase + this.acessorios.filter(a => a.selecionado).reduce((s, a) => s + a.preco, 0);
                     }
@@ -389,7 +392,7 @@
                     </div>
                 </div>
             </div>
-
+        </div>
 
     </main>
 </section>

@@ -8,15 +8,19 @@
 
     <!-- Navbar -->
     <div class="flex justify-between items-center p-6 border-b border-gray-200">
-        <h1 class="text-xl font-bold text-orange-600 uppercase">Kawasaki Ninja 1000SX</h1>
+        <h1 class="text-xl font-bold text-orange-600 uppercase">Kawasaki Ninja 650</h1>
         <nav class="space-x-6 text-sm font-medium text-gray-600">
             <button @click="aba = 'resumo'" :class="aba === 'resumo' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Resumo</button>
             <button @click="aba = 'ficha'" :class="aba === 'ficha' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Ficha Técnica</button>
             <button @click="aba = 'acessorios'" :class="aba === 'acessorios' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Acessórios</button>
         </nav>
-        <a href="/kawasaki"><button class="border border-gray-800 hover:bg-gray-200 text-gray-900 px-24 py-3 rounded-md font-semibold text-sm uppercase">
-            <div class="flex justify-center items-center align-middle gap-2"><img src="{{ asset('img/voltar.png') }}" alt="" class="h-5 w-5">Voltar à Kawasaki</div>
-        </button></a>
+        <a href="/kawasaki">
+            <button class="border border-gray-800 hover:bg-gray-200 text-gray-900 px-24 py-3 rounded-md font-semibold text-sm uppercase">
+                <div class="flex justify-center items-center align-middle gap-2">
+                    <img src="{{ asset('img/voltar.png') }}" alt="" class="h-5 w-5">Voltar à Kawasaki
+                </div>
+            </button>
+        </a>
     </div>
 
     <!-- Conteúdo -->
@@ -38,10 +42,10 @@
                     x-transition:leave-end="opacity-0 translate-y-10"
                     class="absolute inset-0"
                 >
-                    <h2 class="text-5xl font-extrabold text-gray-900 mb-4">NINJA 1000SX</h2>
-                    <p class="uppercase text-sm tracking-widest text-orange-600 font-semibold mb-2">Sport Touring</p>
+                    <h2 class="text-5xl font-extrabold text-gray-900 mb-4">NINJA 650</h2>
+                    <p class="uppercase text-sm tracking-widest text-orange-600 font-semibold mb-2">Sport / Street</p>
                     <p class="text-2xl font-bold text-gray-800 mb-6">
-                        A partir de <span class="text-orange-600">R$ 92.000,00</span>
+                        A partir de <span class="text-orange-600">R$ 49.990,00</span>
                     </p>
                     <div class="flex flex-col gap-4 mb-6">
                         <div class="flex flex-row space-x-5">
@@ -54,9 +58,8 @@
                         </div>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed">
-                        A Kawasaki Ninja 1000SX combina a performance esportiva de uma superbike com o conforto de uma tourer. 
-                        Equipada com motor de 1.043 cc, controle eletrônico avançado e ergonomia otimizada para longas distâncias, 
-                        é uma sport touring equilibrada e precisa, projetada para desempenho em estrada e conforto em viagens prolongadas.
+                        A Kawasaki Ninja 650 combina desempenho esportivo com ergonomia confortável.
+                        Equipada com motor bicilíndrico de 649 cc e eletrônica moderna, oferece pilotagem precisa e eficiente tanto em uso urbano quanto rodoviário.
                     </p>
                 </div>
 
@@ -64,7 +67,7 @@
                 <div
                     x-cloak
                     x-show="aba === 'ficha'"
-                    x-transition:enter="transition ease-out duration-500 delay-100"
+                    x-transition:enter="transition ease-out duration-500"
                     x-transition:enter-start="opacity-0 -translate-y-10"
                     x-transition:enter-end="opacity-100 translate-y-0"
                     x-transition:leave="transition ease-in duration-400"
@@ -73,7 +76,7 @@
                     class="absolute inset-0"
                 >
                     <h2 class="text-3xl font-extrabold text-gray-900 mb-6 border-b-2 border-orange-500 inline-block pb-1">
-                        Ficha Técnica — Ninja 1000SX
+                        Ficha Técnica — Ninja 650
                     </h2>
 
                     <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-700">
@@ -82,11 +85,11 @@
                         <div class="p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <h3 class="text-lg font-semibold text-orange-600 mb-2">Motor e Transmissão</h3>
                             <ul class="space-y-1">
-                                <li><strong>Tipo:</strong> 4 cilindros em linha, DOHC, 16 válvulas, refrigeração líquida</li>
-                                <li><strong>Cilindrada:</strong> 1.043 cc</li>
-                                <li><strong>Potência Máxima:</strong> 142 cv @ 10.000 rpm</li>
-                                <li><strong>Torque Máximo:</strong> 11,2 kgf·m @ 8.000 rpm</li>
-                                <li><strong>Transmissão:</strong> 6 marchas, quickshifter bidirecional</li>
+                                <li><strong>Tipo:</strong> 2 cilindros paralelos, DOHC, 8 válvulas, refrigeração líquida</li>
+                                <li><strong>Cilindrada:</strong> 649 cc</li>
+                                <li><strong>Potência Máxima:</strong> 68 cv @ 8.000 rpm</li>
+                                <li><strong>Torque Máximo:</strong> 6,7 kgf·m @ 6.700 rpm</li>
+                                <li><strong>Transmissão:</strong> 6 marchas</li>
                                 <li><strong>Embreagem:</strong> Assistida e deslizante</li>
                             </ul>
                         </div>
@@ -95,12 +98,12 @@
                         <div class="p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <h3 class="text-lg font-semibold text-orange-600 mb-2">Chassi e Dimensões</h3>
                             <ul class="space-y-1">
-                                <li><strong>Chassi:</strong> Monocoque de alumínio</li>
-                                <li><strong>Comprimento x Largura x Altura:</strong> 2.100 × 830 × 1.190 mm</li>
-                                <li><strong>Altura do Assento:</strong> 835 mm</li>
-                                <li><strong>Peso em Ordem de Marcha:</strong> 235 kg</li>
-                                <li><strong>Tanque de Combustível:</strong> 19 litros</li>
-                                <li><strong>Distância Entre Eixos:</strong> 1.440 mm</li>
+                                <li><strong>Chassi:</strong> Treliça de aço de alta resistência</li>
+                                <li><strong>Comprimento × Largura × Altura:</strong> 2.055 × 740 × 1.145 mm</li>
+                                <li><strong>Altura do Assento:</strong> 790 mm</li>
+                                <li><strong>Peso em Ordem de Marcha:</strong> 193 kg</li>
+                                <li><strong>Tanque de Combustível:</strong> 15 litros</li>
+                                <li><strong>Distância Entre Eixos:</strong> 1.410 mm</li>
                             </ul>
                         </div>
 
@@ -108,32 +111,32 @@
                         <div class="bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <h3 class="text-lg font-semibold text-orange-600 mb-2">Suspensão e Freios</h3>
                             <ul class="space-y-1">
-                                <li><strong>Dianteira:</strong> Garfo telescópico invertido (41 mm), ajustável</li>
-                                <li><strong>Traseira:</strong> Amortecedor Uni-Trak ajustável em pré-carga e retorno</li>
-                                <li><strong>Freios Dianteiros:</strong> Duplo disco 310 mm com pinças radiais monobloco</li>
-                                <li><strong>Freio Traseiro:</strong> Disco 250 mm com pinça simples</li>
-                                <li><strong>Pneus:</strong> 120/70 ZR17 (D) | 190/50 ZR17 (T)</li>
+                                <li><strong>Dianteira:</strong> Garfo telescópico de 41 mm</li>
+                                <li><strong>Traseira:</strong> Monoamortecedor horizontal com ajuste de pré-carga</li>
+                                <li><strong>Freios Dianteiros:</strong> Duplo disco semiflutuante de 300 mm</li>
+                                <li><strong>Freio Traseiro:</strong> Disco simples de 220 mm</li>
+                                <li><strong>Pneus:</strong> 120/70 ZR17 (dianteiro) | 160/60 ZR17 (traseiro)</li>
                             </ul>
                         </div>
 
-                        <!-- ELETRÔNICA E DESEMPENHO -->
+                        <!-- ELETRÔNICA E EQUIPAMENTOS -->
                         <div class="bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
-                            <h3 class="text-lg font-semibold text-orange-600 mb-2">Eletrônica e Desempenho</h3>
+                            <h3 class="text-lg font-semibold text-orange-600 mb-2">Eletrônica e Equipamentos</h3>
                             <ul class="space-y-1">
-                                <li><strong>Controle de Tração (KTRC):</strong> 3 modos + desligamento</li>
-                                <li><strong>ABS em Curva (KIBS):</strong> Sim</li>
-                                <li><strong>Controle de Cruzeiro:</strong> Sim</li>
-                                <li><strong>Modos de Potência:</strong> Full / Low</li>
-                                <li><strong>Painel:</strong> TFT colorido com Bluetooth (Kawasaki Rideology)</li>
-                                <li><strong>Velocidade Máxima:</strong> ~250 km/h (estimada)</li>
+                                <li><strong>ABS:</strong> Sim</li>
+                                <li><strong>Controle de Tração:</strong> Não</li>
+                                <li><strong>Iluminação:</strong> Totalmente em LED</li>
+                                <li><strong>Painel:</strong> TFT ou LCD (modelo/ano), com conectividade</li>
+                                <li><strong>Velocidade Máxima:</strong> ~210 km/h (estimada)</li>
                             </ul>
                         </div>
+
                         <button class="border border-gray-800 hover:bg-gray-200 text-gray-900 px-24 py-3 rounded-md font-semibold text-sm uppercase mb-10" @click="aba = 'resumo'">
-                                VOLTAR
+                            VOLTAR
                         </button>
                     </div>
 
-                    <p class="mt-6 text-xs text-gray-500 italic">
+                    <p class="text-xs text-gray-500 italic">
                         *Dados técnicos baseados em informações oficiais Kawasaki. Modelo homologado para uso em via pública.
                     </p>
                 </div>
@@ -142,7 +145,7 @@
                 <div
                     x-cloak
                     x-show="aba === 'acessorios'"
-                    x-transition:enter="transition ease-out duration-500 delay-100"
+                    x-transition:enter="transition ease-out duration-500"
                     x-transition:enter-start="opacity-0 -translate-y-10"
                     x-transition:enter-end="opacity-100 translate-y-0"
                     x-transition:leave="transition ease-in duration-400"
@@ -159,54 +162,55 @@
                         <!-- Acessório 1 -->
                         <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <div>
-                                <h3 class="font-semibold text-gray-900">Malas Laterais Originais</h3>
-                                <p class="text-sm text-gray-500">Conjunto integrado com 28 L cada, removíveis e com chave única.</p>
+                                <h3 class="font-semibold text-gray-900">Sliders de Proteção</h3>
+                                <p class="text-sm text-gray-500">Protegem a carenagem em quedas leves.</p>
                             </div>
-                            <span class="text-orange-600 font-bold text-lg">R$ 8.900,00</span>
+                            <span class="text-orange-600 font-bold text-lg">R$ 1.500,00</span>
                         </div>
 
                         <!-- Acessório 2 -->
                         <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <div>
-                                <h3 class="font-semibold text-gray-900">Bolha Touring Alta</h3>
-                                <p class="text-sm text-gray-500">Oferece maior proteção aerodinâmica para viagens longas.</p>
+                                <h3 class="font-semibold text-gray-900">Escapamento esportivo homologado</h3>
+                                <p class="text-sm text-gray-500">Melhora o desempenho e o som, com homologação para uso rodoviário.</p>
                             </div>
-                            <span class="text-orange-600 font-bold text-lg">R$ 1.250,00</span>
+                            <span class="text-orange-600 font-bold text-lg">R$ 8.800,00</span>
                         </div>
 
                         <!-- Acessório 3 -->
                         <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <div>
-                                <h3 class="font-semibold text-gray-900">Protetor de Tanque Kawasaki</h3>
-                                <p class="text-sm text-gray-500">Peça adesiva em gel para proteger a pintura contra abrasão.</p>
+                                <h3 class="font-semibold text-gray-900">Bolha esportiva alta</h3>
+                                <p class="text-sm text-gray-500">Melhora a aerodinâmica em velocidades elevadas.</p>
                             </div>
-                            <span class="text-orange-600 font-bold text-lg">R$ 350,00</span>
+                            <span class="text-orange-600 font-bold text-lg">R$ 1.300,00</span>
                         </div>
 
                         <!-- Acessório 4 -->
                         <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <div>
-                                <h3 class="font-semibold text-gray-900">Slider de Proteção Lateral</h3>
-                                <p class="text-sm text-gray-500">Protege a carenagem em eventuais quedas leves ou deslizes.</p>
+                                <h3 class="font-semibold text-gray-900">Protetor de tanque em gel</h3>
+                                <p class="text-sm text-gray-500">Evita riscos na pintura por abrasão de roupas.</p>
                             </div>
-                            <span class="text-orange-600 font-bold text-lg">R$ 1.450,00</span>
+                            <span class="text-orange-600 font-bold text-lg">R$ 400,00</span>
                         </div>
 
                     </div>
 
                     <p class="mt-6 text-xs text-gray-500 italic">
-                        *Preços sugeridos pela Kawasaki Brasil. Sujeitos a alteração sem aviso prévio.
+                        *Preços sugeridos estimados. Sujeitos a alteração sem aviso prévio.
                     </p>
                     <button class="border border-gray-800 hover:bg-gray-200 text-gray-900 px-24 py-3 rounded-md font-semibold text-sm uppercase mt-6" @click="aba = 'resumo'">
                         VOLTAR
                     </button>
                 </div>
+
             </div>
         </div>
 
-        <!-- COLUNA DA IMAGEM -->
+        <!-- COLUNA DA IMAGEM E MODAL DE COMPRA -->
         <div class="flex flex-col items-center">
-            <img src="{{ asset('img/kawasakininja1000sx.jpg') }}" alt="Kawasaki Ninja 1000SX" class="w-full max-w-lg object-contain">
+            <img src="{{ asset('img/kawasakininja650.jpg') }}" alt="Kawasaki Ninja 650" class="w-full max-w-lg object-contain">
             <p class="mt-2 text-xs text-gray-500">*Imagem meramente ilustrativa</p>
 
            <!-- Modal de Compra -->
@@ -219,14 +223,24 @@
                     cpf: '',
                     forma_pagamento: 'cartao',
                     acessorios: [
-                        { nome: 'Malas Laterais Originais', preco: 8900, selecionado: false },
-                        { nome: 'Bolha Touring Alta', preco: 1250, selecionado: false },
-                        { nome: 'Protetor de Tanque Kawasaki', preco: 350, selecionado: false },
-                        { nome: 'Slider de Proteção Lateral', preco: 1450, selecionado: false }
+                        { nome: 'Sliders de Proteção', preco: 1500, selecionado: false },
+                        { nome: 'Escapamento esportivo homologado', preco: 8800, selecionado: false },
+                        { nome: 'Bolha esportiva alta', preco: 1300, selecionado: false },
+                        { nome: 'Protetor de tanque em gel', preco: 400, selecionado: false }
                     ],
-                    precoBase: 92000,
+                    precoBase: 49990,
+                    payment_token: '',
+                    card_number: '',
+                    card_expiry: '',
+                    card_cvv: '',
                     get total() {
                         return this.precoBase + this.acessorios.filter(a => a.selecionado).reduce((s, a) => s + a.preco, 0);
+                    },
+                    handleSubmit(e) {
+                        // Placeholder: aqui seu frontend pode gerar token com gateway e submeter o form
+                        // Por enquanto apenas fecha o modal para demonstração
+                        this.aberto = false;
+                        // Se quiser, remova o preventDefault e submeta via form real no backend
                     }
                 }"
             >
@@ -242,13 +256,23 @@
                     x-show="aberto"
                     x-cloak
                     class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50"
-                    x-transition
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0"
+                    x-transition:enter-end="opacity-100"
+                    x-transition:leave="transition ease-in duration-200"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
                 >
                     <!-- Modal -->
                     <div 
-                        class="bg-white w-[90vw] max-w-lg p-6 rounded-2xl shadow-2xl relative 
-                            max-h-[80vh] overflow-y-auto"
+                        class="bg-white w-[90vw] max-w-lg p-6 rounded-2xl shadow-2xl relative max-h-[80vh] overflow-y-auto"
                         @click.away="aberto = false"
+                        x-transition:enter="transition ease-out duration-300 transform"
+                        x-transition:enter-start="opacity-0 scale-95"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-200 transform"
+                        x-transition:leave-start="opacity-100 scale-100"
+                        x-transition:leave-end="opacity-0 scale-95"
                     >
                         <h2 class="text-2xl font-bold text-gray-900 mb-4">Finalizar Compra</h2>
 
@@ -257,7 +281,10 @@
 
                         <!-- Dados do comprador -->
                         <div class="space-y-3 mb-4">
+                            <input type="text" name="nome" x-model="nome" placeholder="Nome completo" class="w-full border p-2 rounded-md" required>
                             <input type="text" name="cpf" x-model="cpf" placeholder="CPF" required class="w-full border p-2 rounded-md" maxlength="14">
+                            <input type="email" name="email" x-model="email" placeholder="E-mail" class="w-full border p-2 rounded-md" required>
+                            <input type="text" name="telefone" x-model="telefone" placeholder="Telefone" class="w-full border p-2 rounded-md">
                         </div>
 
                         <!-- Endereço -->
@@ -340,6 +367,7 @@
                                 >
                             </div>
                         </div>
+
                         <!-- QR Code Pix -->
                         <div x-show="forma_pagamento === 'pix'" x-cloak class="mb-4 text-center">
                             <p class="text-sm text-gray-600 mb-2">O QR code será gerado após a finalização da compra</p>
@@ -390,7 +418,7 @@
                     </div>
                 </div>
             </div>
-
+        </div>
 
     </main>
 </section>

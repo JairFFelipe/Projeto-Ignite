@@ -46,6 +46,10 @@ Route::get('/harleydavidson', function () {
             return view('paginas de compras/kawasaki/NINJA1000SX');
         });
 
+        Route::get('/ninja650', function () {
+            return view('paginas de compras/kawasaki/NINJA650');
+        });
+
     //-----HARLEY DAVIDSON-----//
 
 
