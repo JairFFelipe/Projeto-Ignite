@@ -221,7 +221,7 @@
     
 
 
-    <footer class="bg-white border-t mt-16">
+    <footer class="bg-white border-t mt-48">
         <div class="max-w-7xl mx-auto px-6 py-8 text-sm text-gray-600">
             
             <!-- Seção de informações básicas -->

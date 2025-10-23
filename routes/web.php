@@ -50,6 +50,29 @@ Route::get('/harleydavidson', function () {
             return view('paginas de compras/kawasaki/NINJA650');
         });
 
+        Route::get('/ninja400', function () {
+            return view('paginas de compras/kawasaki/ninja400');
+        });
+        
+        Route::get('/zx4rr', function () {
+            return view('paginas de compras/kawasaki/ninjazx4rr');
+        });
+
+        Route::get('/zh2', function () {
+            return view('paginas de compras/kawasaki/zh2');
+        });
+
+        Route::get('/z1000', function () {
+            return view('paginas de compras/kawasaki/z1000');
+        });
+
+        Route::get('/z900', function () {
+            return view('paginas de compras/kawasaki/z900');
+        });
+
+        Route::get('/z650', function () {
+            return view('paginas de compras/kawasaki/z650');
+        });
     //-----HARLEY DAVIDSON-----//
 
 
