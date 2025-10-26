@@ -3,7 +3,7 @@
 
 <section class="mt-[7vw] flex gap-6 justify-center flex-wrap">
     <div class="flex justify-center py-10 bg-white">
-        <div class="max-w-sm w-full">
+        <div class="max-w-sm w-384">
             <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakininjah2r.png') }}" alt="Moto à venda">
             
@@ -27,7 +27,7 @@
     </div>
 
     <div class="flex justify-center py-10 bg-white">
-        <div class="max-w-sm w-full">
+        <div class="max-w-sm w-384">
             <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakininja1000sx.jpg') }}" alt="Moto à venda">
             
@@ -51,7 +51,7 @@
     </div>
 
     <div class="flex justify-center py-10 bg-white">
-        <div class="max-w-sm w-full">
+        <div class="max-w-sm w-384">
             <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakininjazx10r.jpg') }}" alt="Moto à venda">
             
@@ -77,7 +77,7 @@
     </div>
 
     <div class="flex justify-center py-10 bg-white">
-        <div class="max-w-sm w-full">
+        <div class="max-w-sm w-384">
             <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakininja650.jpg') }}" alt="Moto à venda">
             
@@ -99,7 +99,7 @@
     </div>
 
     <div class="flex justify-center py-10 bg-white">
-        <div class="max-w-sm w-full">
+        <div class="max-w-sm w-384">
             <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakininja400.jpg') }}" alt="Moto à venda">
             
@@ -123,7 +123,7 @@
     </div>
 
     <div class="flex justify-center py-10 bg-white">
-        <div class="max-w-sm w-full">
+        <div class="max-w-sm w-384">
             <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakininjazx4rr.png') }}" alt="Moto à venda">
             
@@ -147,7 +147,7 @@
     </div>
 
     <div class="flex justify-center py-10 bg-white">
-        <div class="max-w-sm w-full">
+        <div class="max-w-sm w-384">
             <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakizh2.png') }}" alt="Moto à venda">
             
@@ -171,7 +171,7 @@
     </div>
 
     <div class="flex justify-center py-10 bg-white">
-        <div class="max-w-sm w-full">
+        <div class="max-w-sm w-384">
             <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakiz1000.png') }}" alt="Moto à venda">
             
@@ -195,7 +195,7 @@
     </div>
 
     <div class="flex justify-center py-10 bg-white">
-        <div class="max-w-sm w-full">
+        <div class="max-w-sm w-384">
             <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakiz900.avif') }}" alt="Moto à venda">
             
@@ -218,7 +218,7 @@
     </div>
 
     <div class="flex justify-center py-10 bg-white">
-        <div class="max-w-sm w-full">
+        <div class="max-w-sm w-384">
             <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakiz650.jpg') }}" alt="Moto à venda">
             

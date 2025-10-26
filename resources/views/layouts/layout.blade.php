@@ -214,10 +214,10 @@
 
 
 
-    <div>
+    <body>
         <!-- Codigo do blade que diz onde o conteúdo vai ser colocado -->
         @yield('content')
-    </div>
+    </body>
     
 
 
@@ -255,6 +255,5 @@
             </div>
         </div>
     </footer>
-    
-</body>
+
 </html>

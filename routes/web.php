@@ -81,8 +81,46 @@ Route::get('/harleydavidson', function () {
 
     //------ROYAL ENFIELD------//
 
+        Route::get('/continentalgt650', function () {
+            return view('continentalgt650');
+        });
 
-        //
+        Route::get('/interceptor650cc', function () {
+            return view('interceptor650cc');
+        });
+
+        Route::get('/shotgun650', function () {
+            return view('shotgun650');
+        });
+
+        Route::get('/supermeteor650', function () {
+            return view('supermeteor650');
+        });
+
+        Route::get('/classic350', function () {
+            return view('classic350');
+        });
+
+        Route::get('/hunter350', function () {
+            return view('hunter350');
+        });
+
+        Route::get('/thunderbird500x', function () {
+            return view('thunderbird500x');
+        });
+
+        Route::get('/bullet350', function () {
+            return view('bullet350');
+        });
+
+        Route::get('/meteor350', function () {
+            return view('bullet350');
+        });
+
+        Route::get('/Classic500', function () {
+            return view('Classic500');
+        });
+        
 
 
     //-----------FIM-----------//
