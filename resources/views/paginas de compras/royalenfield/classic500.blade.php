@@ -8,7 +8,7 @@
 
     <!-- Navbar -->
     <div class="flex justify-between items-center p-6 border-b border-gray-200">
-        <h1 class="text-xl font-bold text-orange-600 uppercase">Royal Enfield Continental GT 650</h1>
+        <h1 class="text-xl font-bold text-orange-600 uppercase">Royal Enfield Classic 500</h1>
         <nav class="space-x-6 text-sm font-medium text-gray-600">
             <button @click="aba = 'resumo'" :class="aba === 'resumo' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Resumo</button>
             <button @click="aba = 'ficha'" :class="aba === 'ficha' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Ficha Técnica</button>
@@ -42,10 +42,10 @@
                     x-transition:leave-end="opacity-0 translate-y-10"
                     class="absolute inset-0"
                 >
-                    <h2 class="text-5xl font-extrabold text-gray-900 mb-4">CONTINENTAL GT 650</h2>
-                    <p class="uppercase text-sm tracking-widest text-orange-600 font-semibold mb-2">Café Racer / Clássica</p>
+                    <h2 class="text-5xl font-extrabold text-gray-900 mb-4">CLASSIC 500</h2>
+                    <p class="uppercase text-sm tracking-widest text-orange-600 font-semibold mb-2">Clássica / Retrô</p>
                     <p class="text-2xl font-bold text-gray-800 mb-6">
-                        A partir de <span class="text-orange-600">R$ 37.990,00</span>
+                        A partir de <span class="text-orange-600">R$ 29.990,00</span>
                     </p>
                     <div class="flex flex-col gap-4 mb-6">
                         <div class="flex flex-row space-x-5">
@@ -58,8 +58,8 @@
                         </div>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed">
-                        A Royal Enfield Continental GT 650 combina o visual icônico das café racers com desempenho moderno.
-                        Seu motor bicilíndrico de 648 cc oferece torque linear e pilotagem envolvente, mantendo o charme clássico com tecnologia atualizada.
+                        A Royal Enfield Classic 500 traz o charme retrô com motor monocilíndrico de 499 cc,
+                        proporcionando pilotagem suave e clássica, perfeita para quem busca tradição e estilo.
                     </p>
                 </div>
 
@@ -76,7 +76,7 @@
                     class="absolute inset-0"
                 >
                     <h2 class="text-3xl font-extrabold text-gray-900 mb-6 border-b-2 border-orange-500 inline-block pb-1">
-                        Ficha Técnica — Continental GT 650
+                        Ficha Técnica — Classic 500
                     </h2>
 
                     <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-700">
@@ -84,35 +84,35 @@
                         <div class="p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <h3 class="text-lg font-semibold text-orange-600 mb-2">Motor e Transmissão</h3>
                             <ul class="space-y-1">
-                                <li><strong>Tipo:</strong> 2 cilindros paralelos, 4 tempos, SOHC, refrigeração a ar/óleo</li>
-                                <li><strong>Cilindrada:</strong> 648 cc</li>
-                                <li><strong>Potência Máxima:</strong> 47 cv @ 7.250 rpm</li>
-                                <li><strong>Torque Máximo:</strong> 5,3 kgf·m @ 5.250 rpm</li>
-                                <li><strong>Transmissão:</strong> 6 marchas</li>
-                                <li><strong>Embreagem:</strong> Assistida e deslizante</li>
+                                <li><strong>Tipo:</strong> Monocilíndrico, 4 tempos, SOHC, refrigeração a ar/óleo</li>
+                                <li><strong>Cilindrada:</strong> 499 cc</li>
+                                <li><strong>Potência Máxima:</strong> 27,2 cv @ 5.250 rpm</li>
+                                <li><strong>Torque Máximo:</strong> 4,2 kgf·m @ 4.000 rpm</li>
+                                <li><strong>Transmissão:</strong> 5 marchas</li>
+                                <li><strong>Embreagem:</strong> Multidisco, úmida</li>
                             </ul>
                         </div>
 
                         <div class="p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <h3 class="text-lg font-semibold text-orange-600 mb-2">Chassi e Dimensões</h3>
                             <ul class="space-y-1">
-                                <li><strong>Chassi:</strong> Tubular em aço, desenvolvido pela Harris Performance</li>
-                                <li><strong>Comprimento × Largura × Altura:</strong> 2.122 × 744 × 1.024 mm</li>
-                                <li><strong>Altura do Assento:</strong> 804 mm</li>
-                                <li><strong>Peso em Ordem de Marcha:</strong> 202 kg</li>
-                                <li><strong>Tanque de Combustível:</strong> 12,5 litros</li>
-                                <li><strong>Distância Entre Eixos:</strong> 1.398 mm</li>
+                                <li><strong>Chassi:</strong> Tubular em aço, desenvolvido pela RE</li>
+                                <li><strong>Comprimento × Largura × Altura:</strong> 2.145 × 790 × 1.070 mm</li>
+                                <li><strong>Altura do Assento:</strong> 800 mm</li>
+                                <li><strong>Peso em Ordem de Marcha:</strong> 192 kg</li>
+                                <li><strong>Tanque de Combustível:</strong> 13,5 litros</li>
+                                <li><strong>Distância Entre Eixos:</strong> 1.365 mm</li>
                             </ul>
                         </div>
 
                         <div class="bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <h3 class="text-lg font-semibold text-orange-600 mb-2">Suspensão e Freios</h3>
                             <ul class="space-y-1">
-                                <li><strong>Dianteira:</strong> Garfo telescópico de 41 mm</li>
-                                <li><strong>Traseira:</strong> Duplo amortecedor com ajuste de pré-carga</li>
-                                <li><strong>Freio Dianteiro:</strong> Disco único de 320 mm com ABS</li>
+                                <li><strong>Dianteira:</strong> Garfo telescópico de 35 mm</li>
+                                <li><strong>Traseira:</strong> Duplo amortecedor ajustável</li>
+                                <li><strong>Freio Dianteiro:</strong> Disco de 280 mm com ABS</li>
                                 <li><strong>Freio Traseiro:</strong> Disco de 240 mm com ABS</li>
-                                <li><strong>Pneus:</strong> 100/90-18 (dianteiro) | 130/70-18 (traseiro)</li>
+                                <li><strong>Pneus:</strong> 90/90-19 (dianteiro) | 120/90-18 (traseiro)</li>
                             </ul>
                         </div>
 
@@ -123,7 +123,7 @@
                                 <li><strong>Controle de Tração:</strong> Não</li>
                                 <li><strong>Iluminação:</strong> Halógena com lanternas em LED</li>
                                 <li><strong>Painel:</strong> Analógico com display digital auxiliar</li>
-                                <li><strong>Velocidade Máxima:</strong> ~170 km/h (estimada)</li>
+                                <li><strong>Velocidade Máxima:</strong> ~130 km/h (estimada)</li>
                             </ul>
                         </div>
 
@@ -155,23 +155,23 @@
 
                     <div class="space-y-4 text-gray-700">
                         <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
-                            <div><h3 class="font-semibold text-gray-900">Banco Café Racer Premium</h3><p class="text-sm text-gray-500">Acabamento em couro legítimo e costura artesanal.</p></div>
-                            <span class="text-orange-600 font-bold text-lg">R$ 1.700,00</span>
+                            <div><h3 class="font-semibold text-gray-900">Banco Clássico Conforto</h3><p class="text-sm text-gray-500">Assento em couro premium com costura detalhada.</p></div>
+                            <span class="text-orange-600 font-bold text-lg">R$ 1.500,00</span>
                         </div>
 
                         <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
-                            <div><h3 class="font-semibold text-gray-900">Escapamento duplo inox</h3><p class="text-sm text-gray-500">Estilo retrô com ronco clássico aprimorado.</p></div>
-                            <span class="text-orange-600 font-bold text-lg">R$ 6.900,00</span>
+                            <div><h3 class="font-semibold text-gray-900">Escapamento Clássico</h3><p class="text-sm text-gray-500">Som retrô autêntico com acabamento cromado.</p></div>
+                            <span class="text-orange-600 font-bold text-lg">R$ 5.500,00</span>
                         </div>
 
                         <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
-                            <div><h3 class="font-semibold text-gray-900">Bolha retrô fumê</h3><p class="text-sm text-gray-500">Proteção aerodinâmica sem perder o estilo clássico.</p></div>
-                            <span class="text-orange-600 font-bold text-lg">R$ 1.200,00</span>
+                            <div><h3 class="font-semibold text-gray-900">Bolha Retrô</h3><p class="text-sm text-gray-500">Proteção aerodinâmica mantendo o estilo clássico.</p></div>
+                            <span class="text-orange-600 font-bold text-lg">R$ 1.000,00</span>
                         </div>
 
                         <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
-                            <div><h3 class="font-semibold text-gray-900">Capacete Royal Enfield Classic</h3><p class="text-sm text-gray-500">Visual retrô com homologação DOT e viseira curva.</p></div>
-                            <span class="text-orange-600 font-bold text-lg">R$ 2.400,00</span>
+                            <div><h3 class="font-semibold text-gray-900">Capacete Classic Retro</h3><p class="text-sm text-gray-500">Visual vintage com homologação DOT.</p></div>
+                            <span class="text-orange-600 font-bold text-lg">R$ 2.200,00</span>
                         </div>
                     </div>
 
@@ -186,11 +186,11 @@
         </div>
 
         <!-- COLUNA DA IMAGEM E MODAL DE COMPRA -->
-        <div class="flex flex-col items-center">
-            <img src="{{ asset('img/royalgt650.avif') }}" alt="Royal Enfield Continental GT 650" class="w-full max-w-lg object-contain">
+        <div class="flex flex-col items-center ml-20">
+            <img src="{{ asset('img/royalclassic500.jpg') }}" alt="Royal Enfield Classic 500" class="w-full max-w-lg object-contain">
             <p class="mt-2 text-xs text-gray-500">*Imagem meramente ilustrativa</p>
 
-           <!-- Modal de Compra (completo, embutido) -->
+            <!-- Modal de Compra -->
             <div 
                 x-data="{
                     aberto: false,
@@ -202,7 +202,7 @@
                         { nome: 'Bolha retrô fumê', preco: 1200, selecionado: false },
                         { nome: 'Capacete Royal Enfield Classic', preco: 2400, selecionado: false }
                     ],
-                    precoBase: 37990,
+                    precoBase: 29990,
                     payment_token: '',
                     card_number: '',
                     card_expiry: '',

@@ -3,51 +3,104 @@
     <style>[x-cloak]{display:none;}</style>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    <section>
-        <div
-            x-data='{
-            slides: @json([ asset("img/perfilburro.jpg"), asset("img/motos.png"), asset("img/gatoburro.png") ]),
-            active: 0
-            }'
-            class="relative w-full h-[93vh] overflow-hidden shadow-lg mt-16"
-        >
-            <!-- Slides -->
-            <template x-for="(slide, index) in slides" :key="index">
-            <div x-show="active === index" x-cloak class="w-full h-[100vh] bg-gray-200 flex items-center justify-center">
-                <img :src="slide" class="w-full h-full object-cover" alt="" />
-            </div>
-            </template>
+        <section>
+            <div
+                x-data='{
+                slides: [
+                    { 
+                    image: "{{ asset("img/ninjazx4rbanner.jpg") }}", 
+                    title: "Kawasaki Ninja ZX-4R", 
+                    text: "A fusão perfeita entre potência, precisão e design agressivo.", 
+                    button: { label: "Conheça o modelo", link: "/ninjazx4r" } 
+                    },
+                    { 
+                    image: "{{ asset("img/continentalgt650banner.png") }}", 
+                    title: "Royal Enfield Continental GT 650", 
+                    text: "Um clássico moderno que une elegância britânica e alma esportiva.", 
+                    button: { label: "Conheça o modelo", link: "/continentalgt650" }
+                    },
+                    { 
+                    image: "{{ asset("img/roadkingbanner.jpg") }}", 
+                    title: "Harley-Davidson Road King", 
+                    text: "Uma touring clássica que combina estilo retrô com conforto e desempenho para longas viagens.", 
+                    button: { label: "Confira agora", link: "/roadking" } 
+                    }
+                ],
+                active: 0
+                }'
+                class="relative w-full h-[93vh] overflow-hidden shadow-lg mt-16"
+            >
+                <!-- Slides -->
+                <template x-for="(slide, index) in slides" :key="index">
+                <div
+                    x-show="active === index"
+                    x-cloak
+                    class="relative w-full h-[93vh] flex items-center justify-center text-center"
+                >
+                    <!-- Imagem -->
+                    <img 
+                    :src="slide.image" 
+                    class="absolute inset-0 w-full h-full object-cover blur-sm" 
+                    alt=""
+                    >
+                    <!-- Sobreposição escura -->
+                    <div class="absolute inset-0 bg-black/50"></div>
+                    
+                    <!-- Conteúdo -->
+                    <div class="relative z-10 max-w-3xl px-6 text-white animate-fade-in">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg" x-text="slide.title"></h2>
+                    <p class="text-lg md:text-xl mb-8 opacity-90" x-text="slide.text"></p>
+                    <a 
+                        :href="slide.button.link" 
+                        class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-full transition transform hover:scale-105 shadow-lg"
+                    >
+                        <span x-text="slide.button.label"></span>
+                    </a>
+                    </div>
+                </div>
+                </template>
 
-            <!-- Prev -->
-            <button
-            type="button"
-            @click="active = (active === 0) ? slides.length - 1 : active - 1"
-            class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
-            aria-label="Previous"
-            >‹</button>
-
-            <!-- Next -->
-            <button
-            type="button"
-            @click="active = (active === slides.length - 1) ? 0 : active + 1"
-            class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
-            aria-label="Next"
-            >›</button>
-
-            <!-- Indicators -->
-            <div class="absolute bottom-3 w-full flex justify-center space-x-2">
-            <template x-for="(slide, index) in slides" :key="index">
+                <!-- Prev -->
                 <button
                 type="button"
-                class="w-3 h-3 rounded-full"
-                :class="active === index ? 'bg-white' : 'bg-gray-400'"
-                @click="active = index"
-                :aria-current="active === index"
-                ></button>
-            </template>
+                @click="active = (active === 0) ? slides.length - 1 : active - 1"
+                class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-3 rounded-full transition"
+                aria-label="Previous"
+                >‹</button>
+
+                <!-- Next -->
+                <button
+                type="button"
+                @click="active = (active === slides.length - 1) ? 0 : active + 1"
+                class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-3 rounded-full transition"
+                aria-label="Next"
+                >›</button>
+
+                <!-- Indicators -->
+                <div class="absolute bottom-6 w-full flex justify-center space-x-2">
+                <template x-for="(slide, index) in slides" :key="index">
+                    <button
+                    type="button"
+                    class="w-3 h-3 rounded-full transition"
+                    :class="active === index ? 'bg-white scale-110' : 'bg-gray-400'"
+                    @click="active = index"
+                    ></button>
+                </template>
+                </div>
             </div>
-        </div>
-    </section>
+            </section>
+
+    <!-- Animação simples -->
+    <style>
+    [x-cloak] { display: none !important; }
+    .animate-fade-in {
+        animation: fadeIn 0.8s ease-in-out;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    </style>
 
     <section>
         <div class="w-full bg-gray-900 text-white flex justify-center items-center divide-x divide-gray-700">

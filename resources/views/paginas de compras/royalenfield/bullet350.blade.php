@@ -8,7 +8,7 @@
 
     <!-- Navbar -->
     <div class="flex justify-between items-center p-6 border-b border-gray-200">
-        <h1 class="text-xl font-bold text-orange-600 uppercase">Royal Enfield Continental GT 650</h1>
+        <h1 class="text-xl font-bold text-orange-600 uppercase">Royal Enfield Bullet 350</h1>
         <nav class="space-x-6 text-sm font-medium text-gray-600">
             <button @click="aba = 'resumo'" :class="aba === 'resumo' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Resumo</button>
             <button @click="aba = 'ficha'" :class="aba === 'ficha' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Ficha Técnica</button>
@@ -42,10 +42,10 @@
                     x-transition:leave-end="opacity-0 translate-y-10"
                     class="absolute inset-0"
                 >
-                    <h2 class="text-5xl font-extrabold text-gray-900 mb-4">CONTINENTAL GT 650</h2>
-                    <p class="uppercase text-sm tracking-widest text-orange-600 font-semibold mb-2">Café Racer / Clássica</p>
+                    <h2 class="text-5xl font-extrabold text-gray-900 mb-4">Bullet 350</h2>
+                    <p class="uppercase text-sm tracking-widest text-orange-600 font-semibold mb-2">Standard Retrô / Clássica</p>
                     <p class="text-2xl font-bold text-gray-800 mb-6">
-                        A partir de <span class="text-orange-600">R$ 37.990,00</span>
+                        A partir de <span class="text-orange-600">R$ 22.000,00</span>
                     </p>
                     <div class="flex flex-col gap-4 mb-6">
                         <div class="flex flex-row space-x-5">
@@ -58,8 +58,7 @@
                         </div>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed">
-                        A Royal Enfield Continental GT 650 combina o visual icônico das café racers com desempenho moderno.
-                        Seu motor bicilíndrico de 648 cc oferece torque linear e pilotagem envolvente, mantendo o charme clássico com tecnologia atualizada.
+                        A Royal Enfield Bullet 350 preserva o estilo icônico e atemporal que a tornou lendária. Equipada com o moderno motor J-series de 349 cc, oferece uma condução suave e confiável, ideal tanto para o uso urbano quanto para passeios tranquilos. Uma moto que une tradição, elegância e robustez em cada detalhe.
                     </p>
                 </div>
 
@@ -187,7 +186,7 @@
 
         <!-- COLUNA DA IMAGEM E MODAL DE COMPRA -->
         <div class="flex flex-col items-center">
-            <img src="{{ asset('img/royalgt650.avif') }}" alt="Royal Enfield Continental GT 650" class="w-full max-w-lg object-contain">
+            <img src="{{ asset('img/royalbullet350.webp') }}" alt="Royal Enfield Continental GT 650" class="w-full max-w-lg object-contain">
             <p class="mt-2 text-xs text-gray-500">*Imagem meramente ilustrativa</p>
 
            <!-- Modal de Compra (completo, embutido) -->
@@ -202,7 +201,7 @@
                         { nome: 'Bolha retrô fumê', preco: 1200, selecionado: false },
                         { nome: 'Capacete Royal Enfield Classic', preco: 2400, selecionado: false }
                     ],
-                    precoBase: 37990,
+                    precoBase: 22000,
                     payment_token: '',
                     card_number: '',
                     card_expiry: '',

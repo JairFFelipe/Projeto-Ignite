@@ -8,7 +8,7 @@
 
     <!-- Navbar -->
     <div class="flex justify-between items-center p-6 border-b border-gray-200">
-        <h1 class="text-xl font-bold text-orange-600 uppercase">Royal Enfield Continental GT 650</h1>
+        <h1 class="text-xl font-bold text-orange-600 uppercase">Royal Enfield Shotgun 650</h1>
         <nav class="space-x-6 text-sm font-medium text-gray-600">
             <button @click="aba = 'resumo'" :class="aba === 'resumo' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Resumo</button>
             <button @click="aba = 'ficha'" :class="aba === 'ficha' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Ficha Técnica</button>
@@ -42,10 +42,10 @@
                     x-transition:leave-end="opacity-0 translate-y-10"
                     class="absolute inset-0"
                 >
-                    <h2 class="text-5xl font-extrabold text-gray-900 mb-4">CONTINENTAL GT 650</h2>
-                    <p class="uppercase text-sm tracking-widest text-orange-600 font-semibold mb-2">Café Racer / Clássica</p>
+                    <h2 class="text-5xl font-extrabold text-gray-900 mb-4">Shotgun 650</h2>
+                    <p class="uppercase text-sm tracking-widest text-orange-600 font-semibold mb-2">Café racer / Clássica</p>
                     <p class="text-2xl font-bold text-gray-800 mb-6">
-                        A partir de <span class="text-orange-600">R$ 37.990,00</span>
+                        A partir de <span class="text-orange-600">R$33.990,00</span>
                     </p>
                     <div class="flex flex-col gap-4 mb-6">
                         <div class="flex flex-row space-x-5">
@@ -58,12 +58,14 @@
                         </div>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed">
-                        A Royal Enfield Continental GT 650 combina o visual icônico das café racers com desempenho moderno.
-                        Seu motor bicilíndrico de 648 cc oferece torque linear e pilotagem envolvente, mantendo o charme clássico com tecnologia atualizada.
+                        A Royal Enfield Shotgun 650 une estilo clássico e performance moderna.
+                        Seu motor bicilíndrico de 648 cc garante pilotagem suave e potente.
+                        Painel analógico/digital, iluminação em LED e ABS proporcionam segurança e conectividade.
+                        Perfeita para quem busca personalidade e conforto em qualquer estrada.
                     </p>
                 </div>
 
-                <!-- FICHA TÉCNICA -->
+                <!-- FICHA -->
                 <div
                     x-cloak
                     x-show="aba === 'ficha'"
@@ -76,53 +78,57 @@
                     class="absolute inset-0"
                 >
                     <h2 class="text-3xl font-extrabold text-gray-900 mb-6 border-b-2 border-orange-500 inline-block pb-1">
-                        Ficha Técnica — Continental GT 650
+                        Ficha Técnica — Shotgun 650
                     </h2>
 
                     <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-700">
 
+                        <!-- MOTOR E TRANSMISSÃO -->
                         <div class="p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <h3 class="text-lg font-semibold text-orange-600 mb-2">Motor e Transmissão</h3>
                             <ul class="space-y-1">
-                                <li><strong>Tipo:</strong> 2 cilindros paralelos, 4 tempos, SOHC, refrigeração a ar/óleo</li>
+                                <li><strong>Tipo:</strong> Bicilíndrico paralelo, 4 tempos, SOHC, refrigeração ar-óleo</li>
                                 <li><strong>Cilindrada:</strong> 648 cc</li>
                                 <li><strong>Potência Máxima:</strong> 47 cv @ 7.250 rpm</li>
-                                <li><strong>Torque Máximo:</strong> 5,3 kgf·m @ 5.250 rpm</li>
+                                <li><strong>Torque Máximo:</strong> 52,3 Nm @ 5.650 rpm</li>
                                 <li><strong>Transmissão:</strong> 6 marchas</li>
                                 <li><strong>Embreagem:</strong> Assistida e deslizante</li>
                             </ul>
                         </div>
 
+                        <!-- CHASSI E DIMENSÕES -->
                         <div class="p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <h3 class="text-lg font-semibold text-orange-600 mb-2">Chassi e Dimensões</h3>
                             <ul class="space-y-1">
-                                <li><strong>Chassi:</strong> Tubular em aço, desenvolvido pela Harris Performance</li>
-                                <li><strong>Comprimento × Largura × Altura:</strong> 2.122 × 744 × 1.024 mm</li>
-                                <li><strong>Altura do Assento:</strong> 804 mm</li>
-                                <li><strong>Peso em Ordem de Marcha:</strong> 202 kg</li>
-                                <li><strong>Tanque de Combustível:</strong> 12,5 litros</li>
-                                <li><strong>Distância Entre Eixos:</strong> 1.398 mm</li>
+                                <li><strong>Chassi:</strong> Tubular de aço</li>
+                                <li><strong>Comprimento × Largura × Altura:</strong> Dados não disponíveis</li>
+                                <li><strong>Altura do Assento:</strong> Dados não disponíveis</li>
+                                <li><strong>Peso em Ordem de Marcha:</strong> 240 kg</li>
+                                <li><strong>Tanque de Combustível:</strong> Dados não disponíveis</li>
+                                <li><strong>Distância Entre Eixos:</strong> Dados não disponíveis</li>
                             </ul>
                         </div>
 
+                        <!-- SUSPENSÃO E FREIOS -->
                         <div class="bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <h3 class="text-lg font-semibold text-orange-600 mb-2">Suspensão e Freios</h3>
                             <ul class="space-y-1">
-                                <li><strong>Dianteira:</strong> Garfo telescópico de 41 mm</li>
-                                <li><strong>Traseira:</strong> Duplo amortecedor com ajuste de pré-carga</li>
-                                <li><strong>Freio Dianteiro:</strong> Disco único de 320 mm com ABS</li>
-                                <li><strong>Freio Traseiro:</strong> Disco de 240 mm com ABS</li>
-                                <li><strong>Pneus:</strong> 100/90-18 (dianteiro) | 130/70-18 (traseiro)</li>
+                                <li><strong>Dianteira:</strong> Garfo telescópico invertido (USD)</li>
+                                <li><strong>Traseira:</strong> Amortecedores duplos com ajuste de pré-carga</li>
+                                <li><strong>Freios Dianteiros:</strong> Disco com ABS de dois canais</li>
+                                <li><strong>Freio Traseiro:</strong> Disco com ABS de dois canais</li>
+                                <li><strong>Pneus:</strong> 100/90-18 (dianteiro) | 150/70-17 (traseiro)</li>
                             </ul>
                         </div>
 
+                        <!-- ELETRÔNICA E EQUIPAMENTOS -->
                         <div class="bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <h3 class="text-lg font-semibold text-orange-600 mb-2">Eletrônica e Equipamentos</h3>
                             <ul class="space-y-1">
-                                <li><strong>ABS:</strong> Sim, de duplo canal</li>
+                                <li><strong>ABS:</strong> Sim, dianteiro e traseiro</li>
                                 <li><strong>Controle de Tração:</strong> Não</li>
-                                <li><strong>Iluminação:</strong> Halógena com lanternas em LED</li>
-                                <li><strong>Painel:</strong> Analógico com display digital auxiliar</li>
+                                <li><strong>Iluminação:</strong> Totalmente em LED</li>
+                                <li><strong>Painel:</strong> Analógico/digital com navegação Tripper</li>
                                 <li><strong>Velocidade Máxima:</strong> ~170 km/h (estimada)</li>
                             </ul>
                         </div>
@@ -187,7 +193,7 @@
 
         <!-- COLUNA DA IMAGEM E MODAL DE COMPRA -->
         <div class="flex flex-col items-center">
-            <img src="{{ asset('img/royalgt650.avif') }}" alt="Royal Enfield Continental GT 650" class="w-full max-w-lg object-contain">
+            <img src="{{ asset('img/royalshotgun650.png') }}" alt="Royal Enfield Continental GT 650" class="w-full max-w-lg object-contain">
             <p class="mt-2 text-xs text-gray-500">*Imagem meramente ilustrativa</p>
 
            <!-- Modal de Compra (completo, embutido) -->
@@ -202,7 +208,7 @@
                         { nome: 'Bolha retrô fumê', preco: 1200, selecionado: false },
                         { nome: 'Capacete Royal Enfield Classic', preco: 2400, selecionado: false }
                     ],
-                    precoBase: 37990,
+                    precoBase: 33990,
                     payment_token: '',
                     card_number: '',
                     card_expiry: '',

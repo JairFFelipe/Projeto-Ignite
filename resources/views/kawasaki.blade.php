@@ -128,14 +128,14 @@
             <img class="w-full h-56 object-cover" src="{{ asset('img/kawasakininjazx4rr.png') }}" alt="Moto à venda">
             
             <div class="p-5">
-                <h2 class="text-xl font-bold text-gray-800">Kawasaki Ninja ZX-4RR</h2>
+                <h2 class="text-xl font-bold text-gray-800">Kawasaki Ninja ZX-4R</h2>
                 <p class="text-gray-600 mt-2 text-sm overflow-auto max-h-16">
                 A Ninja ZX-4RR é uma supersport de alta rotação com motor inline-4 de 399 cc projetada para máximo prazer de pilotagem. Alta potência específica, resposta imediata do acelerador e chassis inspirado em competição proporcionam desempenho para rodovia e pista.
                 </p>
 
                 <div class="flex items-center justify-between mt-4">
                 <span class="text-lg font-semibold text-green-600">R$ 56.990</span>
-                <a href="/zx4rr">
+                <a href="/zx4r">
                     <button class="bg-orange-600 text-white px-4 py-2 rounded-xl hover:bg-orange-700 transition-colors duration-300">
                         Ver detalhes
                     </button>

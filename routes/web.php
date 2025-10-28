@@ -54,7 +54,7 @@ Route::get('/harleydavidson', function () {
             return view('paginas de compras/kawasaki/ninja400');
         });
         
-        Route::get('/zx4rr', function () {
+        Route::get('/zx4r', function () {
             return view('paginas de compras/kawasaki/ninjazx4rr');
         });
 
@@ -82,43 +82,43 @@ Route::get('/harleydavidson', function () {
     //------ROYAL ENFIELD------//
 
         Route::get('/continentalgt650', function () {
-            return view('continentalgt650');
+            return view('paginas de compras/royalenfield/continentalgt650');
         });
 
         Route::get('/interceptor650cc', function () {
-            return view('interceptor650cc');
+            return view('paginas de compras/royalenfield/interceptor650cc');
         });
 
         Route::get('/shotgun650', function () {
-            return view('shotgun650');
+            return view('paginas de compras/royalenfield/shotgun650');
         });
 
         Route::get('/supermeteor650', function () {
-            return view('supermeteor650');
+            return view('paginas de compras/royalenfield/supermeteor650');
         });
 
         Route::get('/classic350', function () {
-            return view('classic350');
+            return view('paginas de compras/royalenfield/classic350');
         });
 
         Route::get('/hunter350', function () {
-            return view('hunter350');
+            return view('paginas de compras/royalenfield/hunter350');
         });
 
         Route::get('/thunderbird500x', function () {
-            return view('thunderbird500x');
+            return view('paginas de compras/royalenfield/thunderbird500x');
         });
 
         Route::get('/bullet350', function () {
-            return view('bullet350');
+            return view('paginas de compras/royalenfield/bullet350');
         });
 
         Route::get('/meteor350', function () {
-            return view('bullet350');
+            return view('paginas de compras/royalenfield/meteor350');
         });
 
-        Route::get('/Classic500', function () {
-            return view('Classic500');
+        Route::get('/classic500', function () {
+            return view('paginas de compras/royalenfield/classic500');
         });
         
 
