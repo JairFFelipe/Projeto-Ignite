@@ -75,8 +75,45 @@ Route::get('/harleydavidson', function () {
         });
     //-----HARLEY DAVIDSON-----//
 
+        Route::get('/electraglide', function () {
+            return view('paginas de compras/harleydavidson/electraglide');
+        });     
+        
+        Route::get('/fatbob', function () {
+            return view('paginas de compras/harleydavidson/fatbob');
+        });
 
-        //
+        Route::get('/fatboy', function () {
+            return view('paginas de compras/harleydavidson/fatboy');
+        });
+
+        Route::get('/heritageclassic', function () {
+            return view('paginas de compras/harleydavidson/heritageclassic');
+        });
+
+        Route::get('/lowriders', function () {
+            return view('paginas de compras/harleydavidson/lowriders');
+        });
+
+        Route::get('/nightster', function () {
+            return view('paginas de compras/harleydavidson/nightster');
+        });
+
+        Route::get('/panamerica', function () {
+            return view('paginas de compras/harleydavidson/panamerica');
+        });
+
+        Route::get('/roadking', function () {
+            return view('paginas de compras/harleydavidson/roadking');
+        });
+
+        Route::get('/sportster', function () {
+            return view('paginas de compras/harleydavidson/sportster');
+        });
+
+        Route::get('/streetglide', function () {
+            return view('paginas de compras/harleydavidson/streetglide');
+        });
 
 
     //------ROYAL ENFIELD------//

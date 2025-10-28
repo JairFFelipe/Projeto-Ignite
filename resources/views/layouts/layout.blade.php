@@ -97,15 +97,15 @@
                         imgBanner: '{{ asset('img/kawasaki-banner.jpg') }}'
                     },
                     harley: {
-                        nome: 'Iron 883',
-                        preco: '__________',
-                        imgMini: '{{ asset('img/harley-mini.jpg') }}',
+                        nome: 'Sporster',
+                        preco: 'R$ 125.900',
+                        imgMini: '{{ asset('img/harleysportster.png') }}',
                         imgBanner: '{{ asset('img/harley-banner.jpg') }}'
                     },
                     royal: {
-                        nome: 'Interceptor 650',
-                        preco: '__________',
-                        imgMini: '{{ asset('img/royal-mini.png') }}',
+                        nome: 'Interceptor 650cc',
+                        preco: 'R$ 34.990',
+                        imgMini: '{{ asset('img/royalinterceptor650cc.jpg') }}',
                         imgBanner: '{{ asset('img/royal-banner.jpg') }}'
                     }
                 }
@@ -149,7 +149,7 @@
                                 <p class="text-sm text-gray-600" x-text="motos.kawasaki.preco"></p>
                             </div>
                         </div>
-                        <div class="w-[25%] h-full bg-orange-600 hover:bg-orange-700 ease-in-out duration-300  font-semibold text-black rounded-md text-center"><a href="/kawasaki"><p>Mais motocicletas +</p></a></div>
+                        <div class="w-[25%] h-full bg-orange-600 hover:bg-orange-700 ease-in-out duration-300  font-semibold text-black rounded-md text-center mt-3"><a href="/kawasaki"><p>Mais motocicletas +</p></a></div>
                     </div>
                 </a>
                 <!-- Harley -->
@@ -164,7 +164,7 @@
                                 <p class="text-sm text-gray-600" x-text="motos.harley.preco"></p>
                             </div>
                         </div>
-                        <div class="w-[25%] h-full bg-orange-600 font-semibold text-black rounded-md text-center"><a href="/harleydavidson"><p>Mais motocicletas +</p></a></div>
+                        <div class="w-[25%] h-full bg-orange-600 font-semibold text-black rounded-md text-center mt-3"><a href="/harleydavidson"><p>Mais motocicletas +</p></a></div>
                     </div>
                 </a>
                 <!-- Royal -->
@@ -179,7 +179,7 @@
                                 <p class="text-sm text-gray-600" x-text="motos.royal.preco"></p>
                             </div>
                         </div>
-                        <div class="w-[25%] h-full bg-orange-600 font-semibold text-black rounded-md text-center"><a href="/royalenfield"><p>Mais motocicletas +</p></a></div>
+                        <div class="w-[25%] h-full bg-orange-600 font-semibold text-black rounded-md text-center mt-3"><a href="/royalenfield"><p>Mais motocicletas +</p></a></div>
                     </div>
                 </a>
             </div>
