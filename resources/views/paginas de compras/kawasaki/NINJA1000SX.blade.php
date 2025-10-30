@@ -213,20 +213,44 @@
             <div 
                 x-data="{
                     aberto: false,
-                    nome: '',
-                    email: '',
-                    telefone: '',
                     cpf: '',
+                    cep: '',
+                    rua: '',
+                    numero: '',
+                    bairro: '',
+                    cidade: '',
+                    estado: '',
                     forma_pagamento: 'cartao',
                     acessorios: [
-                        { nome: 'Malas Laterais Originais', preco: 8900, selecionado: false },
+                        { nome: 'Malas laterais Originais', preco: 8900, selecionado: false },
                         { nome: 'Bolha Touring Alta', preco: 1250, selecionado: false },
-                        { nome: 'Protetor de Tanque Kawasaki', preco: 350, selecionado: false },
+                        { nome: 'Bolha Touring Alta', preco: 350, selecionado: false },
                         { nome: 'Slider de Proteção Lateral', preco: 1450, selecionado: false }
                     ],
-                    precoBase: 92000,
+                    precoBase: 73975,
                     get total() {
                         return this.precoBase + this.acessorios.filter(a => a.selecionado).reduce((s, a) => s + a.preco, 0);
+                    },
+                    handleSubmit(event) {
+                        event.preventDefault();
+                        const pedido = {
+                            moto: 'Kawasaki Ninja H2R',
+                            cpf: this.cpf,
+                            endereco: {
+                                cep: this.cep,
+                                rua: this.rua,
+                                numero: this.numero,
+                                bairro: this.bairro,
+                                cidade: this.cidade,
+                                estado: this.estado
+                            },
+                            forma_pagamento: this.forma_pagamento,
+                            total: this.total,
+                            acessorios: this.acessorios.filter(a => a.selecionado),
+                        };
+                        localStorage.setItem('pedido', JSON.stringify(pedido));
+                        this.aberto = false;
+                        window.location.href = '/pedido';
                     }
                 }"
             >

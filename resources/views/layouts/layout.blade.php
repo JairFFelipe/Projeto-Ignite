@@ -28,13 +28,13 @@
                 @click.stop="activeMenu = activeMenu === 'acessorios' ? null : 'acessorios'"
                 :aria-expanded="activeMenu === 'acessorios'"
                 class="hover:text-orange-600"
-            >ACESSÓRIOS</button>
+            >SOBRE</button>
 
             <button
                 @click.stop="activeMenu = activeMenu === 'roupas' ? null : 'roupas'"
                 :aria-expanded="activeMenu === 'roupas'"
                 class="hover:text-orange-600"
-            >ROUPAS</button>
+            >CONTATO</button>
 
             <button
                 @click.stop="activeMenu = activeMenu === 'saiba' ? null : 'saiba'"

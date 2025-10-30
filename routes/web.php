@@ -30,6 +30,10 @@ Route::get('/harleydavidson', function () {
     return view('harleydavidson');
 });
 
+Route::get('/pedido', function () {
+    return view('pedido');
+});
+
 // PAGINAS DE COMPRAS DA LOJA (⚠☣☢ EXTREMAMENTE TENEBROSO ☢☣⚠)
 
     //---------KAWASAKI---------//
