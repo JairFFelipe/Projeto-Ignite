@@ -154,8 +154,8 @@
     <section class="py-16 px-8">
         <!-- Títulos -->
         <div class="text-center mb-12">
-            <h2 class="text-2xl font-bold">BEM-VINDO AO IGNITE</h2>
-            <p class="mt-4 text-lg font-semibold">ACENDA SUA CHAMA COM UMA MOTO</p>
+            <h2 class="text-2xl font-bold">VEJA MAIS RECOMENDAÇÕES</h2>
+            <p class="mt-4 text-lg font-semibold">+</p>
         </div>
 
         <!-- Grid de Cards -->
@@ -168,27 +168,27 @@
             <p class="mt-2 text-sm text-gray-700">
                 A Kawasaki Ninja H2R é a hipermoto definitiva, equipada com motor supercharger de 998 cc e mais de 300 cv de potência. Construída para desempenho extremo em pista fechada, representa o auge da engenharia e do design Kawasaki.
             </p>
-            <a href="#" class="mt-3 inline-block text-xs font-bold uppercase hover:underline">DESCUBRA MAIS →</a>
+            <a href="/ninjah2r" class="mt-3 inline-block text-xs font-bold uppercase hover:underline">VEJA MAIS →</a>
             </div>
 
             <!-- Card 2 -->
             <div>
-            <img src="{{ asset('img/card2.jpg') }}" alt="img" class="w-full h-56 object-cover">
-            <h3 class="mt-4 text-lg font-bold">IPSUM</h3>
+            <img src="{{ asset('img/harleysportster.png') }}" alt="img" class="w-full h-56 object-cover">
+            <h3 class="mt-4 text-lg font-bold">Harley-Davidson Sportster</h3>
             <p class="mt-2 text-sm text-gray-700">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae assumenda eligendi, quas ipsam ab at, excepturi labore debitis quaerat ullam fugiat quisquam corporis repudiandae aliquam explicabo laboriosam alias odit doloribus!
+                A Sportster™ S combina o motor Revolution™ Max 1250T de 121 cv com um design minimalista e moderno. Equipada com suspensão dianteira invertida, escapamento alto e tecnologia avançada, é ideal para quem busca desempenho e estilo urbano.
             </p>
-            <a href="#" class="mt-3 inline-block text-xs font-bold uppercase hover:underline">DESCUBRA MAIS →</a>
+            <a href="/sportster" class="mt-3 inline-block text-xs font-bold uppercase hover:underline">VEJA MAIS →</a>
             </div>
 
             <!-- Card 3 -->
             <div>
-            <img src="{{ asset('img/card3.jpg') }}" alt="img" class="w-full h-56 object-cover">
-            <h3 class="mt-4 text-lg font-bold">DOLOR</h3>
+            <img src="{{ asset('img/royalclassic350.webp') }}" alt="img" class="w-full h-56 object-cover">
+            <h3 class="mt-4 text-lg font-bold">Royal Enfield Classic 350</h3>
             <p class="mt-2 text-sm text-gray-700">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, voluptas, nihil delectus pariatur vero asperiores consequuntur fuga, modi omnis at facere beatae reiciendis minus impedit aliquam doloribus ab laborum ipsam!
+                A Royal Enfield Classic 350 combina estética retrô refinada com mecânica moderna: seu visual remete às lendárias britânicas dos anos 1940/50, enquanto o motor monocilíndrico de 349 cc oferece média de 30 km/l e pilotagem tranquila, ideal para quem valoriza estilo sem abrir mão da versatilidade.
             </p>
-            <a href="#" class="mt-3 inline-block text-xs font-bold uppercase hover:underline">DESCUBRA MAIS →</a>
+            <a href="/classic350" class="mt-3 inline-block text-xs font-bold uppercase hover:underline">VEJA MAIS →</a>
             </div>
 
         </div>

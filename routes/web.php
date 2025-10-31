@@ -34,6 +34,14 @@ Route::get('/pedido', function () {
     return view('pedido');
 });
 
+Route::get('/saibamais', function () {
+    return view('saibamais');
+});
+
+Route::get('/contato', function () {
+    return view('contato');
+});
+
 // PAGINAS DE COMPRAS DA LOJA (⚠☣☢ EXTREMAMENTE TENEBROSO ☢☣⚠)
 
     //---------KAWASAKI---------//

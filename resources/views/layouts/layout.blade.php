@@ -24,29 +24,17 @@
                 class="hover:text-orange-600"
             >MOTOCICLETAS</button>
 
-            <button
-                @click.stop="activeMenu = activeMenu === 'acessorios' ? null : 'acessorios'"
-                :aria-expanded="activeMenu === 'acessorios'"
+            <a href="/contato"><button
                 class="hover:text-orange-600"
-            >SOBRE</button>
+            >CONTATO</button></a>
 
-            <button
-                @click.stop="activeMenu = activeMenu === 'roupas' ? null : 'roupas'"
-                :aria-expanded="activeMenu === 'roupas'"
+            <a href="/saibamais"><button
                 class="hover:text-orange-600"
-            >CONTATO</button>
-
-            <button
-                @click.stop="activeMenu = activeMenu === 'saiba' ? null : 'saiba'"
-                :aria-expanded="activeMenu === 'saiba'"
-                class="hover:text-orange-600"
-            >SAIBA MAIS</button>
+            >SAIBA MAIS</button></a>
             </nav>
 
             <!-- Links extras -->
             <div class="flex text-slate-400 space-x-6 text-xs items-center" x-data="{ showProfile: false }" @click.away="showProfile = false">
-                <a href="#">Contato</a>
-                <a href="#">Sobre</a>
 
                 <!-- Botão do perfil -->
                 <button 
@@ -78,9 +66,6 @@
             <div x-show="activeMenu === 'roupas'" x-transition @click.away="activeMenu = null" class="absolute left-0 top-full w-full bg-white text-black shadow-lg">
             <div class="max-w-7xl mx-auto p-6">Roupas content...</div>
             </div>
-            
-            <div x-show="activeMenu === 'saiba'" x-transition @click.away="activeMenu = null" class="absolute left-0 top-full w-full bg-white text-black shadow-lg">
-            <div class="max-w-7xl mx-auto p-6">saiba mais content...</div>
         </div>
         <!-- Container motocicletas -->
         <div 
@@ -247,9 +232,9 @@
             <!-- Rodapé final -->
             <div class="flex flex-col md:flex-row justify-between text-xs text-gray-500">
             <div class="flex space-x-4 mb-2 md:mb-0">
-                <a href="#">Contato</a>
+                <a href="/contato">Contato</a>
                 <a href="#">Sobre</a>
-                <a href="#">Política de Privacidade</a>
+                <a href="/saibamais">Saiba Mais</a>
             </div>
             <p>© 2025 Ignite — Projeto Acadêmico</p>
             </div>
