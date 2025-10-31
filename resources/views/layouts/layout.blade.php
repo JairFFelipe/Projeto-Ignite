@@ -97,7 +97,7 @@
                         imgBanner: '{{ asset('img/kawasaki-banner.jpg') }}'
                     },
                     harley: {
-                        nome: 'Sporster',
+                        nome: 'Sportster',
                         preco: 'R$ 125.900',
                         imgMini: '{{ asset('img/harleysportster.png') }}',
                         imgBanner: '{{ asset('img/harley-banner.jpg') }}'
