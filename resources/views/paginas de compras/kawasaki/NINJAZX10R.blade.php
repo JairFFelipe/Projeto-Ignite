@@ -215,10 +215,13 @@
             <div 
                 x-data="{
                     aberto: false,
-                    nome: '',
-                    email: '',
-                    telefone: '',
                     cpf: '',
+                    cep: '',
+                    rua: '',
+                    numero: '',
+                    bairro: '',
+                    cidade: '',
+                    estado: '',
                     forma_pagamento: 'cartao',
                     acessorios: [
                         { nome: 'Sliders de Proteção', preco: 1500, selecionado: false },
@@ -229,6 +232,27 @@
                     precoBase: 115000,
                     get total() {
                         return this.precoBase + this.acessorios.filter(a => a.selecionado).reduce((s, a) => s + a.preco, 0);
+                    },
+                    handleSubmit(event) {
+                        event.preventDefault();
+                        const pedido = {
+                            moto: 'Kawasaki Ninja ZX10R',
+                            cpf: this.cpf,
+                            endereco: {
+                                cep: this.cep,
+                                rua: this.rua,
+                                numero: this.numero,
+                                bairro: this.bairro,
+                                cidade: this.cidade,
+                                estado: this.estado
+                            },
+                            forma_pagamento: this.forma_pagamento,
+                            total: this.total,
+                            acessorios: this.acessorios.filter(a => a.selecionado),
+                        };
+                        localStorage.setItem('pedido', JSON.stringify(pedido));
+                        this.aberto = false;
+                        window.location.href = '/pedido';
                     }
                 }"
             >
@@ -254,7 +278,7 @@
                     >
                         <h2 class="text-2xl font-bold text-gray-900 mb-4">Finalizar Compra</h2>
 
-                        <form method="POST" action="" novalidate>
+                        
                         @csrf
 
                         <!-- Dados do comprador -->

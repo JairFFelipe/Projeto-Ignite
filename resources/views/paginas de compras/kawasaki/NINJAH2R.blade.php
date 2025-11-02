@@ -275,7 +275,7 @@
                     >
                         <h2 class="text-2xl font-bold text-gray-900 mb-4">Finalizar Compra</h2>
 
-                        <button type="submit" @click.prevent="handleSubmit($event)">
+                        
                         @csrf
 
                         <!-- Dados do comprador -->

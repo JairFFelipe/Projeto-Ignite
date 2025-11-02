@@ -212,9 +212,15 @@
                 x-data="{
                     aberto: false,
                     cpf: '',
+                    cep: '',
+                    rua: '',
+                    numero: '',
+                    bairro: '',
+                    cidade: '',
+                    estado: '',
                     forma_pagamento: 'cartao',
                     acessorios: [
-                        { nome: 'Capa Personalizada Z650', preco: 690, selecionado: false },
+                        { nome: 'Capa Personalizada', preco: 690, selecionado: false },
                         { nome: 'Kit Escape Esportivo', preco: 3290, selecionado: false },
                         { nome: 'Protetores Laterais de Carenagem', preco: 990, selecionado: false },
                         { nome: 'Capacete Kawasaki Z650', preco: 2490, selecionado: false }
@@ -222,6 +228,27 @@
                     precoBase: 38990,
                     get total() {
                         return this.precoBase + this.acessorios.filter(a => a.selecionado).reduce((s, a) => s + a.preco, 0);
+                    },
+                    handleSubmit(event) {
+                        event.preventDefault();
+                        const pedido = {
+                            moto: 'Kawasaki Z 650',
+                            cpf: this.cpf,
+                            endereco: {
+                                cep: this.cep,
+                                rua: this.rua,
+                                numero: this.numero,
+                                bairro: this.bairro,
+                                cidade: this.cidade,
+                                estado: this.estado
+                            },
+                            forma_pagamento: this.forma_pagamento,
+                            total: this.total,
+                            acessorios: this.acessorios.filter(a => a.selecionado),
+                        };
+                        localStorage.setItem('pedido', JSON.stringify(pedido));
+                        this.aberto = false;
+                        window.location.href = '/pedido';
                     }
                 }"
             >
@@ -241,17 +268,42 @@
                 >
                     <!-- Modal -->
                     <div 
-                        class="bg-white w-[90vw] max-w-lg p-6 rounded-2xl shadow-2xl relative max-h-[80vh] overflow-y-auto"
+                        class="bg-white w-[90vw] max-w-lg p-6 rounded-2xl shadow-2xl relative 
+                            max-h-[80vh] overflow-y-auto"
                         @click.away="aberto = false"
                     >
                         <h2 class="text-2xl font-bold text-gray-900 mb-4">Finalizar Compra</h2>
 
-                        <form method="POST" action="" novalidate>
+                        
                         @csrf
 
                         <!-- Dados do comprador -->
                         <div class="space-y-3 mb-4">
                             <input type="text" name="cpf" x-model="cpf" placeholder="CPF" required class="w-full border p-2 rounded-md" maxlength="14">
+                        </div>
+
+                        <!-- Endereço -->
+                        <div class="space-y-3 mb-4">
+                            <h3 class="font-semibold text-gray-800 mb-2">Endereço de Entrega</h3>
+
+                            <input type="text" name="cep" placeholder="CEP" required maxlength="9"
+                                x-model="cep" class="w-full border p-2 rounded-md" inputmode="numeric">
+
+                            <input type="text" name="rua" placeholder="Rua" required
+                                x-model="rua" class="w-full border p-2 rounded-md">
+
+                            <input type="text" name="numero" placeholder="Número" required
+                                x-model="numero" class="w-full border p-2 rounded-md">
+
+                            <input type="text" name="bairro" placeholder="Bairro"
+                                x-model="bairro" class="w-full border p-2 rounded-md">
+
+                            <div class="grid grid-cols-2 gap-2">
+                                <input type="text" name="cidade" placeholder="Cidade" required
+                                    x-model="cidade" class="w-full border p-2 rounded-md">
+                                <input type="text" name="estado" placeholder="Estado" maxlength="2" required
+                                    x-model="estado" class="w-full border p-2 rounded-md uppercase">
+                            </div>
                         </div>
 
                         <!-- Forma de pagamento -->
@@ -261,6 +313,58 @@
                                 <option value="cartao">Cartão de Crédito</option>
                                 <option value="pix">PIX</option>
                             </select>
+                        </div>
+
+                        <!-- Campos de cartão (exibidos apenas se forma_pagamento == 'cartao') -->
+                        <div x-show="forma_pagamento === 'cartao'" x-cloak class="mb-4 space-y-3">
+                            <p class="text-sm text-gray-600">Informações do cartão </p>
+
+                            <div class="grid grid-cols-1 gap-2">
+                                <!-- Número do cartão -->
+                                <input
+                                    type="text"
+                                    name="card_number"
+                                    placeholder="Número do cartão (ex: 4111 1111 1111 1111)"
+                                    inputmode="numeric"
+                                    maxlength="19"
+                                    x-model="card_number"
+                                    class="w-full border p-2 rounded-md"
+                                    pattern="[\d\s]{13,19}"
+                                    autocomplete="cc-number"
+                                    required
+                                >
+
+                                <!-- Validade MM/AA -->
+                                <input
+                                    type="text"
+                                    name="card_expiry"
+                                    placeholder="Validade (MM/AA)"
+                                    maxlength="5"
+                                    x-model="card_expiry"
+                                    class="w-full border p-2 rounded-md"
+                                    pattern="(0[1-9]|1[0-2])\/?([0-9]{2})"
+                                    autocomplete="cc-exp"
+                                    required
+                                >
+
+                                <!-- CVV -->
+                                <input
+                                    type="text"
+                                    name="card_cvv"
+                                    placeholder="CVV (3 ou 4 dígitos)"
+                                    inputmode="numeric"
+                                    maxlength="4"
+                                    x-model="card_cvv"
+                                    class="w-full border p-2 rounded-md"
+                                    pattern="\d{3,4}"
+                                    autocomplete="cc-csc"
+                                    required
+                                >
+                            </div>
+                        </div>
+                        <!-- QR Code Pix -->
+                        <div x-show="forma_pagamento === 'pix'" x-cloak class="mb-4 text-center">
+                            <p class="text-sm text-gray-600 mb-2">O QR code será gerado após a finalização da compra</p>
                         </div>
 
                         <!-- Acessórios -->
@@ -287,12 +391,21 @@
                         <!-- Campo oculto com o valor total -->
                         <input type="hidden" name="total" :value="total">
 
+                        <!-- (Opcional) campo para payment token (se usar gateway -> frontend cria token aqui) -->
+                        <input type="hidden" name="payment_token" x-model="payment_token">
+
                         <!-- Botões -->
                         <div class="flex justify-end gap-3">
                             <button type="button" @click="aberto = false" class="border border-gray-400 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-100">Cancelar</button>
-                            <button type="submit" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-md font-semibold">Confirmar Compra</button>
+                            <button
+                                type="submit"
+                                class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-md font-semibold"
+                                @click.prevent="handleSubmit($event)"
+                            >
+                                Confirmar Compra
+                            </button>
                         </div>
-                        </form>
+                    </form>
 
                         <!-- Fechar -->
                         <button @click="aberto = false" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">✕</button>

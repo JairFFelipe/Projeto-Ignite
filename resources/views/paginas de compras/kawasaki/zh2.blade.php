@@ -208,10 +208,13 @@
             <div 
                 x-data="{
                     aberto: false,
-                    nome: '',
-                    email: '',
-                    telefone: '',
                     cpf: '',
+                    cep: '',
+                    rua: '',
+                    numero: '',
+                    bairro: '',
+                    cidade: '',
+                    estado: '',
                     forma_pagamento: 'cartao',
                     acessorios: [
                         { nome: 'Protetor de Motor', preco: 1450, selecionado: false },
@@ -219,17 +222,30 @@
                         { nome: 'Bolha Touring Fumê', preco: 1350, selecionado: false },
                         { nome: 'Capacete Kawasaki Carbon', preco: 5490, selecionado: false }
                     ],
-                    precoBase: 129990,
-                    payment_token: '',
-                    card_number: '',
-                    card_expiry: '',
-                    card_cvv: '',
+                    precoBase: 79790,
                     get total() {
                         return this.precoBase + this.acessorios.filter(a => a.selecionado).reduce((s, a) => s + a.preco, 0);
                     },
-                    handleSubmit(e) {
-                        // Placeholder: integrar gateway ou submeter formulário no backend
+                    handleSubmit(event) {
+                        event.preventDefault();
+                        const pedido = {
+                            moto: 'Kawasaki Z H2',
+                            cpf: this.cpf,
+                            endereco: {
+                                cep: this.cep,
+                                rua: this.rua,
+                                numero: this.numero,
+                                bairro: this.bairro,
+                                cidade: this.cidade,
+                                estado: this.estado
+                            },
+                            forma_pagamento: this.forma_pagamento,
+                            total: this.total,
+                            acessorios: this.acessorios.filter(a => a.selecionado),
+                        };
+                        localStorage.setItem('pedido', JSON.stringify(pedido));
                         this.aberto = false;
+                        window.location.href = '/pedido';
                     }
                 }"
             >
@@ -245,36 +261,22 @@
                     x-show="aberto"
                     x-cloak
                     class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50"
-                    x-transition:enter="transition ease-out duration-300"
-                    x-transition:enter-start="opacity-0"
-                    x-transition:enter-end="opacity-100"
-                    x-transition:leave="transition ease-in duration-200"
-                    x-transition:leave-start="opacity-100"
-                    x-transition:leave-end="opacity-0"
+                    x-transition
                 >
                     <!-- Modal -->
                     <div 
                         class="bg-white w-[90vw] max-w-lg p-6 rounded-2xl shadow-2xl relative 
                             max-h-[80vh] overflow-y-auto"
                         @click.away="aberto = false"
-                        x-transition:enter="transition ease-out duration-300 transform"
-                        x-transition:enter-start="opacity-0 scale-95"
-                        x-transition:enter-end="opacity-100 scale-100"
-                        x-transition:leave="transition ease-in duration-200 transform"
-                        x-transition:leave-start="opacity-100 scale-100"
-                        x-transition:leave-end="opacity-0 scale-95"
                     >
                         <h2 class="text-2xl font-bold text-gray-900 mb-4">Finalizar Compra</h2>
 
-                        <form method="POST" action="" novalidate>
+                        
                         @csrf
 
                         <!-- Dados do comprador -->
                         <div class="space-y-3 mb-4">
-                            <input type="text" name="nome" x-model="nome" placeholder="Nome completo" class="w-full border p-2 rounded-md" required>
                             <input type="text" name="cpf" x-model="cpf" placeholder="CPF" required class="w-full border p-2 rounded-md" maxlength="14">
-                            <input type="email" name="email" x-model="email" placeholder="E-mail" class="w-full border p-2 rounded-md" required>
-                            <input type="text" name="telefone" x-model="telefone" placeholder="Telefone" class="w-full border p-2 rounded-md">
                         </div>
 
                         <!-- Endereço -->
@@ -315,6 +317,7 @@
                             <p class="text-sm text-gray-600">Informações do cartão </p>
 
                             <div class="grid grid-cols-1 gap-2">
+                                <!-- Número do cartão -->
                                 <input
                                     type="text"
                                     name="card_number"
@@ -328,6 +331,7 @@
                                     required
                                 >
 
+                                <!-- Validade MM/AA -->
                                 <input
                                     type="text"
                                     name="card_expiry"
@@ -340,6 +344,7 @@
                                     required
                                 >
 
+                                <!-- CVV -->
                                 <input
                                     type="text"
                                     name="card_cvv"
@@ -354,7 +359,6 @@
                                 >
                             </div>
                         </div>
-
                         <!-- QR Code Pix -->
                         <div x-show="forma_pagamento === 'pix'" x-cloak class="mb-4 text-center">
                             <p class="text-sm text-gray-600 mb-2">O QR code será gerado após a finalização da compra</p>

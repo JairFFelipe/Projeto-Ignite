@@ -8,7 +8,7 @@
 
     <!-- Navbar -->
     <div class="flex justify-between items-center p-6 border-b border-gray-200">
-        <h1 class="text-xl font-bold text-orange-600 uppercase">Kawasaki Ninja ZX-4RR</h1>
+        <h1 class="text-xl font-bold text-orange-600 uppercase">Kawasaki Ninja ZX-4R</h1>
         <nav class="space-x-6 text-sm font-medium text-gray-600">
             <button @click="aba = 'resumo'" :class="aba === 'resumo' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Resumo</button>
             <button @click="aba = 'ficha'" :class="aba === 'ficha' ? 'text-orange-600 font-semibold' : 'hover:text-orange-600'">Ficha Técnica</button>
@@ -38,7 +38,7 @@
                     x-transition:leave-end="opacity-0 translate-y-10"
                     class="absolute inset-0"
                 >
-                    <h2 class="text-5xl font-extrabold text-gray-900 mb-4">NINJA ZX-4RR</h2>
+                    <h2 class="text-5xl font-extrabold text-gray-900 mb-4">NINJA ZX-4R</h2>
                     <p class="uppercase text-sm tracking-widest text-orange-600 font-semibold mb-2">Supersport / High-Rev</p>
                     <p class="text-2xl font-bold text-gray-800 mb-6">
                         A partir de <span class="text-orange-600">R$ 56.990,00</span>
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed">
-                        A Ninja ZX-4RR é uma supersport de alta rotação com motor inline-4 de 399 cc projetada para máximo prazer de pilotagem.
+                        A Ninja ZX-4 é uma supersport de alta rotação com motor inline-4 de 399 cc projetada para máximo prazer de pilotagem.
                         Alta potência específica, resposta imediata do acelerador e chassis inspirado em competição proporcionam desempenho para rodovia e pista.
                     </p>
                 </div>
@@ -72,7 +72,7 @@
                     class="absolute inset-0"
                 >
                     <h2 class="text-3xl font-extrabold text-gray-900 mb-6 border-b-2 border-orange-500 inline-block pb-1">
-                        Ficha Técnica — Ninja ZX-4RR
+                        Ficha Técnica — Ninja ZX-4R
                     </h2>
 
                     <div class="grid sm:grid-cols-2 gap-6 text-sm text-gray-700">
@@ -159,7 +159,7 @@
                         <!-- Acessório 1 -->
                         <div class="flex justify-between items-center w-[34vw] bg-gray-50 p-4 rounded-2xl shadow-sm hover:shadow-md transition">
                             <div>
-                                <h3 class="font-semibold text-gray-900">Capa Personalizada ZX-4RR</h3>
+                                <h3 class="font-semibold text-gray-900">Capa Personalizada ZX-4R</h3>
                                 <p class="text-sm text-gray-500">Proteção sob medida contra poeira e arranhões.</p>
                             </div>
                             <span class="text-orange-600 font-bold text-lg">R$ 790,00</span>
@@ -213,28 +213,44 @@
             <div 
                 x-data="{
                     aberto: false,
-                    nome: '',
-                    email: '',
-                    telefone: '',
                     cpf: '',
+                    cep: '',
+                    rua: '',
+                    numero: '',
+                    bairro: '',
+                    cidade: '',
+                    estado: '',
                     forma_pagamento: 'cartao',
                     acessorios: [
-                        { nome: 'Capa Personalizada ZX-4RR', preco: 790, selecionado: false },
+                        { nome: 'Capa Personalizada ZX-4R', preco: 790, selecionado: false },
                         { nome: 'Kit de Performance Akrapovič', preco: 6250, selecionado: false },
                         { nome: 'Protetores Laterais de Carenagem', preco: 990, selecionado: false },
                         { nome: 'Capacete Kawasaki Sport Edition', preco: 2490, selecionado: false }
                     ],
                     precoBase: 56990,
-                    payment_token: '',
-                    card_number: '',
-                    card_expiry: '',
-                    card_cvv: '',
                     get total() {
                         return this.precoBase + this.acessorios.filter(a => a.selecionado).reduce((s, a) => s + a.preco, 0);
                     },
-                    handleSubmit(e) {
-                        // placeholder: integrar gateway aqui ou submeter formulário ao backend
+                    handleSubmit(event) {
+                        event.preventDefault();
+                        const pedido = {
+                            moto: 'Kawasaki Ninja ZX-4R',
+                            cpf: this.cpf,
+                            endereco: {
+                                cep: this.cep,
+                                rua: this.rua,
+                                numero: this.numero,
+                                bairro: this.bairro,
+                                cidade: this.cidade,
+                                estado: this.estado
+                            },
+                            forma_pagamento: this.forma_pagamento,
+                            total: this.total,
+                            acessorios: this.acessorios.filter(a => a.selecionado),
+                        };
+                        localStorage.setItem('pedido', JSON.stringify(pedido));
                         this.aberto = false;
+                        window.location.href = '/pedido';
                     }
                 }"
             >
@@ -250,35 +266,22 @@
                     x-show="aberto"
                     x-cloak
                     class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50"
-                    x-transition:enter="transition ease-out duration-300"
-                    x-transition:enter-start="opacity-0"
-                    x-transition:enter-end="opacity-100"
-                    x-transition:leave="transition ease-in duration-200"
-                    x-transition:leave-start="opacity-100"
-                    x-transition:leave-end="opacity-0"
+                    x-transition
                 >
                     <!-- Modal -->
                     <div 
-                        class="bg-white w-[90vw] max-w-lg p-6 rounded-2xl shadow-2xl relative max-h-[80vh] overflow-y-auto"
+                        class="bg-white w-[90vw] max-w-lg p-6 rounded-2xl shadow-2xl relative 
+                            max-h-[80vh] overflow-y-auto"
                         @click.away="aberto = false"
-                        x-transition:enter="transition ease-out duration-300 transform"
-                        x-transition:enter-start="opacity-0 scale-95"
-                        x-transition:enter-end="opacity-100 scale-100"
-                        x-transition:leave="transition ease-in duration-200 transform"
-                        x-transition:leave-start="opacity-100 scale-100"
-                        x-transition:leave-end="opacity-0 scale-95"
                     >
                         <h2 class="text-2xl font-bold text-gray-900 mb-4">Finalizar Compra</h2>
 
-                        <form method="POST" action="" novalidate>
+                        
                         @csrf
 
                         <!-- Dados do comprador -->
                         <div class="space-y-3 mb-4">
-                            <input type="text" name="nome" x-model="nome" placeholder="Nome completo" class="w-full border p-2 rounded-md" required>
                             <input type="text" name="cpf" x-model="cpf" placeholder="CPF" required class="w-full border p-2 rounded-md" maxlength="14">
-                            <input type="email" name="email" x-model="email" placeholder="E-mail" class="w-full border p-2 rounded-md" required>
-                            <input type="text" name="telefone" x-model="telefone" placeholder="Telefone" class="w-full border p-2 rounded-md">
                         </div>
 
                         <!-- Endereço -->
@@ -361,7 +364,6 @@
                                 >
                             </div>
                         </div>
-
                         <!-- QR Code Pix -->
                         <div x-show="forma_pagamento === 'pix'" x-cloak class="mb-4 text-center">
                             <p class="text-sm text-gray-600 mb-2">O QR code será gerado após a finalização da compra</p>
