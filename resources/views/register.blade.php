@@ -11,7 +11,7 @@
   <section class="flex flex-col md:flex-row h-screen items-center">
 
     <div class="bg-slate-900 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
-      <img src="{{ asset('img/motos.png') }}" alt="motos" class="w-full h-full object-cover">
+      <img src="{{ asset('img/continentalgt650banner.png') }}" alt="motos" class="w-full h-full object-cover blur-sm">
     </div>
 
     <div class="bg-zinc-950 w-full md:max-w-md lg:max-w-full md:mx-auto md:mx-0 md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12
