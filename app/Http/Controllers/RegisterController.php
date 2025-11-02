@@ -52,7 +52,7 @@ class RegisterController extends Controller
         $usuario->notify(new UsuarioCriado());
 
 
-        return view('testeform', $validated);
-       
+        return view('login', $validated);
+
     }
 }
