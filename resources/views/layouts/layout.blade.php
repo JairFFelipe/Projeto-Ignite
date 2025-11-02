@@ -37,7 +37,7 @@
             <div class="flex text-slate-400 space-x-6 text-xs items-center" x-data="{ showProfile: false }" @click.away="showProfile = false">
 
                 <!-- Botão do perfil -->
-                <button 
+                <button
                     @click="showProfile = !showProfile"
                     class="flex items-center gap-1 hover:text-orange-600 transition relative"
                 >
@@ -48,13 +48,17 @@
                 </button>
 
                 <!-- Dropdown -->
-                <div 
+                <div
                     x-show="showProfile"
                     x-transition
                     class="absolute right-10 top-full mt-3 w-40 bg-white text-black rounded-lg shadow-lg border border-gray-100 py-2 text-xs font-medium"
                 >
-                    <a href="/perfil" class="block px-4 py-2 hover:bg-gray-100">Ver Perfil</a>
+                @if(session('usuario'))
+                    <a href="/perfil" class="block px-4 py-2 hover:bg-gray-100">Ver Perfil ({{ session('usuario')->nome }})</a>
                     <a href="/logout" class="block px-4 py-2 text-red-500 hover:bg-red-50">Sair</a>
+                @else
+                    <a href="/login" class="block px-4 py-2 hover:bg-red-50">Entrar</a>
+                @endif
                 </div>
             </div>
         </div>
@@ -68,7 +72,7 @@
             </div>
         </div>
         <!-- Container motocicletas -->
-        <div 
+        <div
             x-show="activeMenu === 'motocicletas'"
             x-transition:enter.duration.150ms
             x-transition:leave.duration.150ms
@@ -101,21 +105,21 @@
             <div class="max-w-7xl mx-auto grid grid-cols-[150px_1fr_200px] gap-4 p-6">
             <!-- links de marcas -->
             <div class="space-y-2 text-sm font-bold w-32">
-                <a href="#" 
-                    @click.prevent="brand = 'kawasaki'" 
-                    :class="brand === 'kawasaki' ? 'text-red-600 font-bold' : 'text-black hover:text-red-600'" 
+                <a href="#"
+                    @click.prevent="brand = 'kawasaki'"
+                    :class="brand === 'kawasaki' ? 'text-red-600 font-bold' : 'text-black hover:text-red-600'"
                     class="block"
                 >Kawasaki</a>
 
-                <a href="#" 
-                    @click.prevent="brand = 'harley'" 
-                    :class="brand === 'harley' ? 'text-red-600 font-bold' : 'text-black hover:text-red-600'" 
+                <a href="#"
+                    @click.prevent="brand = 'harley'"
+                    :class="brand === 'harley' ? 'text-red-600 font-bold' : 'text-black hover:text-red-600'"
                     class="block"
                 >Harley-Davidson</a>
 
-                <a href="#" 
-                    @click.prevent="brand = 'royal'" 
-                    :class="brand === 'royal' ? 'text-red-600 font-bold' : 'text-black hover:text-red-600'" 
+                <a href="#"
+                    @click.prevent="brand = 'royal'"
+                    :class="brand === 'royal' ? 'text-red-600 font-bold' : 'text-black hover:text-red-600'"
                     class="block"
                 >Royal Enfield</a>
             </div>
@@ -203,12 +207,12 @@
         <!-- Codigo do blade que diz onde o conteúdo vai ser colocado -->
         @yield('content')
     </body>
-    
+
 
 
     <footer class="bg-white border-t mt-48">
         <div class="max-w-7xl mx-auto px-6 py-8 text-sm text-gray-600">
-            
+
             <!-- Seção de informações básicas -->
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
             <div>

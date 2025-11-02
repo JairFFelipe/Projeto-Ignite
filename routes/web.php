@@ -42,6 +42,8 @@ Route::get('/contato', function () {
     return view('contato');
 });
 
+Route::get('/logout', [LoginController::class, 'logout']);
+
 // PAGINAS DE COMPRAS DA LOJA (⚠☣☢ EXTREMAMENTE TENEBROSO ☢☣⚠)
 
     //---------KAWASAKI---------//
@@ -65,7 +67,7 @@ Route::get('/contato', function () {
         Route::get('/ninja400', function () {
             return view('paginas de compras/kawasaki/ninja400');
         });
-        
+
         Route::get('/zx4r', function () {
             return view('paginas de compras/kawasaki/ninjazx4rr');
         });
@@ -89,8 +91,8 @@ Route::get('/contato', function () {
 
         Route::get('/electraglide', function () {
             return view('paginas de compras/harleydavidson/electraglide');
-        });     
-        
+        });
+
         Route::get('/fatbob', function () {
             return view('paginas de compras/harleydavidson/fatbob');
         });
@@ -169,7 +171,7 @@ Route::get('/contato', function () {
         Route::get('/classic500', function () {
             return view('paginas de compras/royalenfield/classic500');
         });
-        
+
 
 
     //-----------FIM-----------//

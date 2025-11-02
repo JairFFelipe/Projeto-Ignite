@@ -17,9 +17,9 @@ class LoginController extends Controller
 
         $validated = $request->validate([
             'email' => 'required|email:rfc,dns',
-            'senha' => 'required|'
+            'senha' => 'required'
         ],[
-            'email.required' => 'O campo deve estár preenchido!',
+            'email.required' => 'O campo deve estar preenchido!',
             'senha.required' => 'O campo deve estár preenchido!'
         ]);
 
@@ -38,6 +38,13 @@ class LoginController extends Controller
                 ])->withInput();
             }
 
+            session(['usuario' => $usuario]);
+
+        return redirect('/');
+    }
+
+    public function logout() {
+        session()->forget('usuario');
 
         return redirect('/');
     }

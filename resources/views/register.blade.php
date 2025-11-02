@@ -72,7 +72,7 @@
             <div class="text-red-600 text-sm">{{ $message }}</div>
           @enderror
 
-          <button type="submit" class="w-full block bg-black border-[1px] border-orange-500 hover:bg-orange-500 focus:bg-orange-400 text-white font-semibold rounded-lg px-4 py-3 mt-8 ease-in-out duration-200">Entrar</button>
+          <button type="submit" class="w-full block bg-black border-[1px] border-orange-500 hover:bg-orange-500 focus:bg-orange-400 text-white font-semibold rounded-lg px-4 py-3 mt-8 ease-in-out duration-200">Registrar</button>
         </form>
 
         <hr class="mt-6 border-gray-700 w-full">
