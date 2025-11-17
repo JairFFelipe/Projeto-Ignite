@@ -227,7 +227,7 @@
                     handleSubmit(event) {
                         event.preventDefault();
                         const pedido = {
-                            moto: 'Kawasaki Ninja 400',
+                            moto: 'ninja400',
                             cpf: this.cpf,
                             endereco: {
                                 cep: this.cep,

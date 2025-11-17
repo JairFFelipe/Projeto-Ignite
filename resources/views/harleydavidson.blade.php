@@ -215,13 +215,13 @@
             <div class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
                 <img class="w-full h-56 object-cover" src="{{ asset('img/harleystreetglide.webp') }}" alt="Classic 500">
                 <div class="p-5">
-                    <h2 class="text-xl font-bold text-gray-800">Classic 500</h2>
+                    <h2 class="text-xl font-bold text-gray-800">Street Glide</h2>
                     <p class="text-gray-600 mt-2 text-sm overflow-auto max-h-16">
-                        A Road King™ Special combina estilo custom bagger com conforto de turismo. Equipado com motor Milwaukee-Eight™ 114, suspensão traseira ajustável e design sem carenagem, é ideal para viagens longas com estilo.
+                        A Street Glide™ 2024 combina o motor Milwaukee-Eight® 117 com o novo sistema de infotainment Skyline™ OS, oferecendo uma experiência de pilotagem moderna e conectada. Seu design icônico e recursos avançados a tornam ideal para viagens longas com estilo.
                     </p>
                     <div class="flex items-center justify-between mt-4">
                         <span class="text-lg font-semibold text-green-600">R$ 145.250</span>
-                        <a href="/streedglide">
+                        <a href="/streetglide">
                             <button class="bg-orange-600 text-white px-4 py-2 rounded-xl hover:bg-orange-700 transition-colors duration-300">
                                 Ver detalhes
                             </button>

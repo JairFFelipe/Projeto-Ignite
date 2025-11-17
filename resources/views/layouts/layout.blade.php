@@ -6,6 +6,36 @@
     <title>Home</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>[x-cloak] { display: none !important; }</style>
+    
+    <!-- Script de assecibilidade -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const minSize = 70;   // tamanho mínimo (em %)
+            const maxSize = 150;  // tamanho máximo (em %)
+
+            // Carregar valor salvo ou usar 100%
+            let currentSize = parseInt(localStorage.getItem("fontSize")) || 100;
+            document.documentElement.style.fontSize = currentSize + "%";
+
+            document.getElementById("fontIncrease").addEventListener("click", () => {
+                if (currentSize < maxSize) {
+                    currentSize += 10;
+                    document.documentElement.style.fontSize = currentSize + "%";
+                    localStorage.setItem("fontSize", currentSize);
+                }
+            });
+
+            document.getElementById("fontDecrease").addEventListener("click", () => {
+                if (currentSize > minSize) {
+                    currentSize -= 10;
+                    document.documentElement.style.fontSize = currentSize + "%";
+                    localStorage.setItem("fontSize", currentSize);
+                }
+            });
+        });
+    </script>
+
+
 </head>
 <body>
 
@@ -229,7 +259,11 @@
                 <a href="#"><img src="{{ asset('img/youtube.png') }}" alt="YouTube" class="h-5 w-fit"></a>
             </div>
             </div>
-
+            
+            <div class="flex space-x-3 items-center mt-4 text-xs">
+                <button id="fontDecrease" class="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300">A-</button>
+                <button id="fontIncrease" class="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300">A+</button>
+            </div>
             <!-- Linha divisória -->
             <hr class="my-4 border-gray-300">
 

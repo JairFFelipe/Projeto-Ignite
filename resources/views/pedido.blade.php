@@ -84,10 +84,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Mapeia nome da moto → imagem
         const imagens = {
+            // Harley-Davidson
+            'Harley-Davidson Sportster': '{{ asset("img/harleysportster.jpg") }}',
+            'electraglide': '{{ asset("img/harleyelectraglide.png") }}',
+            'fatbob': '{{ asset("img/harleyfatbob.webp") }}',
+            'fatboy': '{{ asset("img/harleyfatboy.webp") }}',
+            'heritageclassic': '{{ asset("img/harleyheritageclassic.jpg") }}',
+            'lowriders': '{{ asset("img/harleylowriders.jpg") }}',
+            'nightster': '{{ asset("img/harleynightster.jpg") }}',
+            'panamerica': '{{ asset("img/harleypanamerica.jpg") }}',
+            'roadking': '{{ asset("img/harleyroadking.jpg") }}',
+            'streetglide': '{{ asset("img/harleystreetglide.jpg") }}',
+
+            // Royal Enfield
+            'bullet350': '{{ asset("img/royalbullet350.webp") }}',
+            'classic350': '{{ asset("img/royalclassic350.webp") }}',
+            'classic500': '{{ asset("img/royalclassic500.jpg") }}',
+            'continentalgt650': '{{ asset("img/royalcontinentalgt650.avif") }}',
+            'hunter350': '{{ asset("img/royalhunter350.avif") }}',
+            'interceptor650cc': '{{ asset("img/royalinterceptor650cc.jpg") }}',
+            'meteor350': '{{ asset("img/royalmeteor350.webp") }}',
+            'shotgun650': '{{ asset("img/royalshotgun650.png") }}',
+            'supermeteor650': '{{ asset("img/royalsupermeteor650.jpg") }}',
+            'thunderbird500x': '{{ asset("img/royalthunderbird500x.jpg") }}',
+
+            // Kawasaki
             'Kawasaki Ninja H2R': '{{ asset("img/kawasakininjah2r.png") }}',
             'Kawasaki Ninja 1000SX': '{{ asset("img/kawasakininja1000sx.jpg") }}',
-            'Harley-Davidson Sportster': '{{ asset("img/harleysportster.png") }}',
-            'Royal Enfield Interceptor 650cc': '{{ asset("img/royalinterceptor650cc.jpg") }}'
+            'ninja400': '{{ asset("img/kawasakininja400.jpg") }}',
+            'ninja650': '{{ asset("img/kawasakininja650.jpg") }}',
+            'ninjazx4r': '{{ asset("img/kawasakininjazx4r.jpg") }}',
+            'ninjazx10r': '{{ asset("img/kawasakininjazx10r.jpg") }}',
+            'z650': '{{ asset("img/kawasakiz650.jpg") }}',
+            'z900': '{{ asset("img/kawasakiz900.avif") }}',
+            'z1000': '{{ asset("img/kawasakiz1000.png") }}',
+            'zh2': '{{ asset("img/kawasakizh2.png") }}'
         };
 
         // Define a imagem da moto

@@ -193,121 +193,206 @@
             <div 
                 x-data="{
                     aberto: false,
+                    cpf: '',
+                    cep: '',
+                    rua: '',
+                    numero: '',
+                    bairro: '',
+                    cidade: '',
+                    estado: '',
                     forma_pagamento: 'cartao',
                     acessorios: [
-                      { nome: 'Banco Slim Sport', preco: 2800, selecionado: false },
-                      { nome: 'Escapamento Slip-On Performance', preco: 8500, selecionado: false },
-                      { nome: 'Capacete Dark Edition', preco: 1900, selecionado: false },
-                      { nome: 'Manoplas Grip Premium', preco: 750, selecionado: false }
+                        { nome: 'Banco Slim Sport', preco: 2800, selecionado: false },
+                        { nome: 'Escapamento Slip-On Performance', preco: 8500, selecionado: false },
+                        { nome: 'Capacete Dark Edition', preco: 1900, selecionado: false },
+                        { nome: 'Manoplas Grip Premium', preco: 750, selecionado: false }
                     ],
                     precoBase: 145250,
                     get total() {
-                      return this.precoBase + this.acessorios.filter(a => a.selecionado).reduce((s, a) => s + a.preco, 0);
+                        return this.precoBase + this.acessorios.filter(a => a.selecionado).reduce((s, a) => s + a.preco, 0);
                     },
-                    handleSubmit(e) {
-                      this.aberto = false;
+                    handleSubmit(event) {
+                        event.preventDefault();
+                        const pedido = {
+                            moto: 'roadking',
+                            cpf: this.cpf,
+                            endereco: {
+                                cep: this.cep,
+                                rua: this.rua,
+                                numero: this.numero,
+                                bairro: this.bairro,
+                                cidade: this.cidade,
+                                estado: this.estado
+                            },
+                            forma_pagamento: this.forma_pagamento,
+                            total: this.total,
+                            acessorios: this.acessorios.filter(a => a.selecionado),
+                        };
+                        localStorage.setItem('pedido', JSON.stringify(pedido));
+                        this.aberto = false;
+                        window.location.href = '/pedido';
                     }
                 }"
             >
+                <!-- Botão que abre o popup -->
                 <button 
                     @click="aberto = true"
                     class="mt-6 bg-orange-600 hover:bg-orange-700 ease-in-out duration-300 text-white px-40 py-3 rounded-md font-semibold uppercase tracking-wide">
                     Ir para à compra
                 </button>
 
+                <!-- Fundo escurecido -->
                 <div 
                     x-show="aberto"
                     x-cloak
                     class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50"
-                    x-transition:enter="transition ease-out duration-300"
-                    x-transition:enter-start="opacity-0"
-                    x-transition:enter-end="opacity-100"
-                    x-transition:leave="transition ease-in duration-200"
-                    x-transition:leave-start="opacity-100"
-                    x-transition:leave-end="opacity-0"
+                    x-transition
                 >
+                    <!-- Modal -->
                     <div 
-                        class="bg-white w-[90vw] max-w-lg p-6 rounded-2xl shadow-2xl relative max-h-[80vh] overflow-y-auto"
+                        class="bg-white w-[90vw] max-w-lg p-6 rounded-2xl shadow-2xl relative 
+                            max-h-[80vh] overflow-y-auto"
                         @click.away="aberto = false"
-                        x-transition:enter="transition ease-out duration-300 transform"
-                        x-transition:enter-start="opacity-0 scale-95"
-                        x-transition:enter-end="opacity-100 scale-100"
-                        x-transition:leave="transition ease-in duration-200 transform"
-                        x-transition:leave-start="opacity-100 scale-100"
-                        x-transition:leave-end="opacity-0 scale-95"
                     >
                         <h2 class="text-2xl font-bold text-gray-900 mb-4">Finalizar Compra</h2>
 
-                        <form method="POST" action="" novalidate>
-                            @csrf
+                        
+                        @csrf
 
-                            <div class="space-y-3 mb-4">
-                                <input type="text" name="cpf" placeholder="CPF" required class="w-full border p-2 rounded-md" maxlength="14">
+                        <!-- Dados do comprador -->
+                        <div class="space-y-3 mb-4">
+                            <input type="text" name="cpf" x-model="cpf" placeholder="CPF" required class="w-full border p-2 rounded-md" maxlength="14">
+                        </div>
+
+                        <!-- Endereço -->
+                        <div class="space-y-3 mb-4">
+                            <h3 class="font-semibold text-gray-800 mb-2">Endereço de Entrega</h3>
+
+                            <input type="text" name="cep" placeholder="CEP" required maxlength="9"
+                                x-model="cep" class="w-full border p-2 rounded-md" inputmode="numeric">
+
+                            <input type="text" name="rua" placeholder="Rua" required
+                                x-model="rua" class="w-full border p-2 rounded-md">
+
+                            <input type="text" name="numero" placeholder="Número" required
+                                x-model="numero" class="w-full border p-2 rounded-md">
+
+                            <input type="text" name="bairro" placeholder="Bairro"
+                                x-model="bairro" class="w-full border p-2 rounded-md">
+
+                            <div class="grid grid-cols-2 gap-2">
+                                <input type="text" name="cidade" placeholder="Cidade" required
+                                    x-model="cidade" class="w-full border p-2 rounded-md">
+                                <input type="text" name="estado" placeholder="Estado" maxlength="2" required
+                                    x-model="estado" class="w-full border p-2 rounded-md uppercase">
                             </div>
+                        </div>
 
-                            <div class="space-y-3 mb-4">
-                                <h3 class="font-semibold text-gray-800 mb-2">Endereço de Entrega</h3>
-                                <input type="text" name="cep" placeholder="CEP" required maxlength="9" class="w-full border p-2 rounded-md">
-                                <input type="text" name="rua" placeholder="Rua" required class="w-full border p-2 rounded-md">
-                                <input type="text" name="numero" placeholder="Número" required class="w-full border p-2 rounded-md">
-                                <input type="text" name="bairro" placeholder="Bairro" class="w-full border p-2 rounded-md">
-                                <div class="grid grid-cols-2 gap-2">
-                                  <input type="text" name="cidade" placeholder="Cidade" required class="w-full border p-2 rounded-md">
-                                  <input type="text" name="estado" placeholder="Estado" maxlength="2" required class="w-full border p-2 rounded-md uppercase">
-                                </div>
+                        <!-- Forma de pagamento -->
+                        <div class="mb-4">
+                            <label class="font-semibold text-gray-800 block mb-2">Forma de pagamento:</label>
+                            <select name="forma_pagamento" x-model="forma_pagamento" class="w-full border p-2 rounded-md">
+                                <option value="cartao">Cartão de Crédito</option>
+                                <option value="pix">PIX</option>
+                            </select>
+                        </div>
+
+                        <!-- Campos de cartão (exibidos apenas se forma_pagamento == 'cartao') -->
+                        <div x-show="forma_pagamento === 'cartao'" x-cloak class="mb-4 space-y-3">
+                            <p class="text-sm text-gray-600">Informações do cartão </p>
+
+                            <div class="grid grid-cols-1 gap-2">
+                                <!-- Número do cartão -->
+                                <input
+                                    type="text"
+                                    name="card_number"
+                                    placeholder="Número do cartão (ex: 4111 1111 1111 1111)"
+                                    inputmode="numeric"
+                                    maxlength="19"
+                                    x-model="card_number"
+                                    class="w-full border p-2 rounded-md"
+                                    pattern="[\d\s]{13,19}"
+                                    autocomplete="cc-number"
+                                    required
+                                >
+
+                                <!-- Validade MM/AA -->
+                                <input
+                                    type="text"
+                                    name="card_expiry"
+                                    placeholder="Validade (MM/AA)"
+                                    maxlength="5"
+                                    x-model="card_expiry"
+                                    class="w-full border p-2 rounded-md"
+                                    pattern="(0[1-9]|1[0-2])\/?([0-9]{2})"
+                                    autocomplete="cc-exp"
+                                    required
+                                >
+
+                                <!-- CVV -->
+                                <input
+                                    type="text"
+                                    name="card_cvv"
+                                    placeholder="CVV (3 ou 4 dígitos)"
+                                    inputmode="numeric"
+                                    maxlength="4"
+                                    x-model="card_cvv"
+                                    class="w-full border p-2 rounded-md"
+                                    pattern="\d{3,4}"
+                                    autocomplete="cc-csc"
+                                    required
+                                >
                             </div>
+                        </div>
+                        <!-- QR Code Pix -->
+                        <div x-show="forma_pagamento === 'pix'" x-cloak class="mb-4 text-center">
+                            <p class="text-sm text-gray-600 mb-2">O QR code será gerado após a finalização da compra</p>
+                        </div>
 
-                            <div class="mb-4">
-                                <label class="font-semibold text-gray-800 block mb-2">Forma de pagamento:</label>
-                                <select name="forma_pagamento" x-model="forma_pagamento" class="w-full border p-2 rounded-md">
-                                  <option value="cartao">Cartão de Crédito</option>
-                                  <option value="pix">PIX</option>
-                                </select>
-                            </div>
-
-                            <div x-show="forma_pagamento === 'cartao'" x-cloak class="mb-4 space-y-3">
-                                <p class="text-sm text-gray-600">Informações do cartão</p>
-                                <input type="text" name="card_number" placeholder="Número do cartão" maxlength="19" class="w-full border p-2 rounded-md">
-                                <input type="text" name="card_expiry" placeholder="Validade (MM/AA)" maxlength="5" class="w-full border p-2 rounded-md">
-                                <input type="text" name="card_cvv" placeholder="CVV" maxlength="4" class="w-full border p-2 rounded-md">
-                            </div>
-
-                            <div x-show="forma_pagamento === 'pix'" x-cloak class="mb-4 text-center">
-                                <p class="text-sm text-gray-600 mb-2">O QR code será gerado após a finalização da compra</p>
-                            </div>
-
-                            <div class="mb-4">
-                                <h3 class="font-semibold text-gray-800 mb-2">Selecione os acessórios:</h3>
-                                <template x-for="(item, i) in acessorios" :key="i">
-                                  <label class="flex justify-between items-center border-b py-2">
+                        <!-- Acessórios -->
+                        <div class="mb-4">
+                            <h3 class="font-semibold text-gray-800 mb-2">Selecione os acessórios:</h3>
+                            <template x-for="(item, index) in acessorios" :key="index">
+                                <label class="flex justify-between items-center border-b py-2">
                                     <span x-text="item.nome"></span>
                                     <div class="flex items-center gap-3">
-                                      <span class="text-orange-600 font-semibold" x-text="`R$ ${item.preco.toLocaleString()}`"></span>
-                                      <input type="checkbox" x-model="item.selecionado" class="h-5 w-5 text-orange-600">
+                                        <span class="text-orange-600 font-semibold" x-text="`R$ ${item.preco.toLocaleString()}`"></span>
+                                        <input type="checkbox" :name="`acessorios[]`" :value="item.nome" x-model="item.selecionado" class="h-5 w-5 text-orange-600">
                                     </div>
-                                  </label>
-                                </template>
-                            </div>
+                                </label>
+                            </template>
+                        </div>
 
-                            <div class="border-t pt-3 mb-4 text-right">
-                                <p class="text-lg font-bold text-gray-900">
-                                    Total: <span class="text-orange-600" x-text="`R$ ${total.toLocaleString()}`"></span>
-                                </p>
-                            </div>
+                        <!-- Total -->
+                        <div class="border-t pt-3 mb-4 text-right">
+                            <p class="text-lg font-bold text-gray-900">
+                                Total: <span class="text-orange-600" x-text="`R$ ${total.toLocaleString()}`"></span>
+                            </p>
+                        </div>
 
-                            <div class="flex justify-end gap-3">
-                                <button type="button" @click="aberto = false" class="border px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100">
-                                    Cancelar
-                                </button>
-                                <button type="submit" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-md font-semibold">
-                                    Finalizar Compra
-                                </button>
-                            </div>
-                        </form>
+                        <!-- Campo oculto com o valor total -->
+                        <input type="hidden" name="total" :value="total">
 
+                        <!-- (Opcional) campo para payment token (se usar gateway -> frontend cria token aqui) -->
+                        <input type="hidden" name="payment_token" x-model="payment_token">
+
+                        <!-- Botões -->
+                        <div class="flex justify-end gap-3">
+                            <button type="button" @click="aberto = false" class="border border-gray-400 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-100">Cancelar</button>
+                            <button
+                                type="submit"
+                                class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-md font-semibold"
+                                @click.prevent="handleSubmit($event)"
+                            >
+                                Confirmar Compra
+                            </button>
+                        </div>
+                    </form>
+
+                        <!-- Fechar -->
+                        <button @click="aberto = false" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">✕</button>
                     </div>
                 </div>
-
             </div>
         </div>
     </main>

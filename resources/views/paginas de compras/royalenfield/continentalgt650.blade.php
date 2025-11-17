@@ -195,6 +195,12 @@
                 x-data="{
                     aberto: false,
                     cpf: '',
+                    cep: '',
+                    rua: '',
+                    numero: '',
+                    bairro: '',
+                    cidade: '',
+                    estado: '',
                     forma_pagamento: 'cartao',
                     acessorios: [
                         { nome: 'Banco Café Racer Premium', preco: 1700, selecionado: false },
@@ -203,23 +209,36 @@
                         { nome: 'Capacete Royal Enfield Classic', preco: 2400, selecionado: false }
                     ],
                     precoBase: 37990,
-                    payment_token: '',
-                    card_number: '',
-                    card_expiry: '',
-                    card_cvv: '',
                     get total() {
                         return this.precoBase + this.acessorios.filter(a => a.selecionado).reduce((s, a) => s + a.preco, 0);
                     },
-                    handleSubmit(e) {
-                        // Placeholder: integrar gateway ou submeter formulário no backend
+                    handleSubmit(event) {
+                        event.preventDefault();
+                        const pedido = {
+                            moto: 'continentalgt650',
+                            cpf: this.cpf,
+                            endereco: {
+                                cep: this.cep,
+                                rua: this.rua,
+                                numero: this.numero,
+                                bairro: this.bairro,
+                                cidade: this.cidade,
+                                estado: this.estado
+                            },
+                            forma_pagamento: this.forma_pagamento,
+                            total: this.total,
+                            acessorios: this.acessorios.filter(a => a.selecionado),
+                        };
+                        localStorage.setItem('pedido', JSON.stringify(pedido));
                         this.aberto = false;
+                        window.location.href = '/pedido';
                     }
                 }"
             >
                 <!-- Botão que abre o popup -->
                 <button 
                     @click="aberto = true"
-                    class="mt-6 bg-orange-600 hover:bg-orange-700 ease-in-out duration-300 text-white px-40 py-3 rounded-md font-semibold uppercase tracking-wide">
+                    class="mt-6 bg-orange-600 hover:bg-orange-700 ease-in-out duration-300 text-white px-40 py-3 rounded-md font-semibold uppercase tracking-wide ml-28">
                     Ir para à compra
                 </button>
 
@@ -228,28 +247,17 @@
                     x-show="aberto"
                     x-cloak
                     class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50"
-                    x-transition:enter="transition ease-out duration-300"
-                    x-transition:enter-start="opacity-0"
-                    x-transition:enter-end="opacity-100"
-                    x-transition:leave="transition ease-in duration-200"
-                    x-transition:leave-start="opacity-100"
-                    x-transition:leave-end="opacity-0"
+                    x-transition
                 >
                     <!-- Modal -->
                     <div 
                         class="bg-white w-[90vw] max-w-lg p-6 rounded-2xl shadow-2xl relative 
                             max-h-[80vh] overflow-y-auto"
                         @click.away="aberto = false"
-                        x-transition:enter="transition ease-out duration-300 transform"
-                        x-transition:enter-start="opacity-0 scale-95"
-                        x-transition:enter-end="opacity-100 scale-100"
-                        x-transition:leave="transition ease-in duration-200 transform"
-                        x-transition:leave-start="opacity-100 scale-100"
-                        x-transition:leave-end="opacity-0 scale-95"
                     >
                         <h2 class="text-2xl font-bold text-gray-900 mb-4">Finalizar Compra</h2>
 
-                        <form method="POST" action="" novalidate>
+                        
                         @csrf
 
                         <!-- Dados do comprador -->
@@ -337,7 +345,6 @@
                                 >
                             </div>
                         </div>
-
                         <!-- QR Code Pix -->
                         <div x-show="forma_pagamento === 'pix'" x-cloak class="mb-4 text-center">
                             <p class="text-sm text-gray-600 mb-2">O QR code será gerado após a finalização da compra</p>
@@ -381,7 +388,7 @@
                                 Confirmar Compra
                             </button>
                         </div>
-                    </form>
+                    </form class="">
 
                         <!-- Fechar -->
                         <button @click="aberto = false" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">✕</button>
@@ -389,7 +396,6 @@
                 </div>
             </div>
         </div>
-
     </main>
 </section>
 <br>

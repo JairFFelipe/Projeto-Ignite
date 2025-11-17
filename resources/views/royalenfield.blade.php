@@ -106,7 +106,7 @@
                         A Royal Enfield Classic 350 combina estética retrô refinada com mecânica moderna: seu visual remete às lendárias britânicas dos anos 1940/50, enquanto o motor monocilíndrico de 349 cc oferece média de 30 km/l e pilotagem tranquila, ideal para quem valoriza estilo sem abrir mão da versatilidade.
                     </p>
                     <div class="flex items-center justify-between mt-4">
-                        <span class="text-lg font-semibold text-green-600">R$ 22.990</span>
+                        <span class="text-lg font-semibold text-green-600">R$ 23.490</span>
                         <a href="/classic350">
                             <button class="bg-orange-600 text-white px-4 py-2 rounded-xl hover:bg-orange-700 transition-colors duration-300">
                                 Ver detalhes

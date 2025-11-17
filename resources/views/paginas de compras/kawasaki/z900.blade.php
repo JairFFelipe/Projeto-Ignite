@@ -232,7 +232,7 @@
                     handleSubmit(event) {
                         event.preventDefault();
                         const pedido = {
-                            moto: 'Kawasaki Z 900',
+                            moto: 'z900',
                             cpf: this.cpf,
                             endereco: {
                                 cep: this.cep,
