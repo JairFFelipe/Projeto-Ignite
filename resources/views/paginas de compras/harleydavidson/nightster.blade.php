@@ -214,7 +214,7 @@
                     handleSubmit(event) {
                         event.preventDefault();
                         const pedido = {
-                            moto: 'nighster',
+                            moto: 'nightster',
                             cpf: this.cpf,
                             endereco: {
                                 cep: this.cep,

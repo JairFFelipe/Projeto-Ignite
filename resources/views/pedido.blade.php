@@ -46,8 +46,8 @@
     </div>
 
     <!-- Link de Voltar -->
-    <a href="/kawasaki" class="mt-10 text-orange-600 font-semibold hover:underline text-base">
-        ← Voltar à loja
+    <a href="/" class="mt-10 text-orange-600 font-semibold hover:underline text-base">
+        ← Voltar ao inicio
     </a>
 </section>
 
@@ -86,8 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const imagens = {
             // Harley-Davidson
             'Harley-Davidson Sportster': '{{ asset("img/harleysportster.jpg") }}',
-            'electraglide': '{{ asset("img/harleyelectraglide.png") }}',
-            'fatbob': '{{ asset("img/harleyfatbob.webp") }}',
+            'electraglide': '{{ asset("img/harleyelectraglide.jpg") }}',
+            'fatbob': '{{ asset("img/harleyfatbob.jpg") }}',
             'fatboy': '{{ asset("img/harleyfatboy.webp") }}',
             'heritageclassic': '{{ asset("img/harleyheritageclassic.jpg") }}',
             'lowriders': '{{ asset("img/harleylowriders.jpg") }}',
@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'bullet350': '{{ asset("img/royalbullet350.webp") }}',
             'classic350': '{{ asset("img/royalclassic350.webp") }}',
             'classic500': '{{ asset("img/royalclassic500.jpg") }}',
-            'continentalgt650': '{{ asset("img/royalcontinentalgt650.avif") }}',
-            'hunter350': '{{ asset("img/royalhunter350.avif") }}',
+            'continentalgt650': '{{ asset("img/royalgt650.avif") }}',
+            'hunter350': '{{ asset("img/royalhunter350.jpg") }}',
             'interceptor650cc': '{{ asset("img/royalinterceptor650cc.jpg") }}',
             'meteor350': '{{ asset("img/royalmeteor350.webp") }}',
             'shotgun650': '{{ asset("img/royalshotgun650.png") }}',
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'Kawasaki Ninja 1000SX': '{{ asset("img/kawasakininja1000sx.jpg") }}',
             'ninja400': '{{ asset("img/kawasakininja400.jpg") }}',
             'ninja650': '{{ asset("img/kawasakininja650.jpg") }}',
-            'ninjazx4r': '{{ asset("img/kawasakininjazx4r.jpg") }}',
+            'ninjazx4r': '{{ asset("img/kawasakininjazx4rr.jpg") }}',
             'ninjazx10r': '{{ asset("img/kawasakininjazx10r.jpg") }}',
             'z650': '{{ asset("img/kawasakiz650.jpg") }}',
             'z900': '{{ asset("img/kawasakiz900.avif") }}',

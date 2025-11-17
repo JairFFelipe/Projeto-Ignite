@@ -42,6 +42,10 @@ Route::get('/contato', function () {
     return view('contato');
 });
 
+Route::get('/perfil', function () {
+    return view('perfil');
+});
+
 Route::get('/logout', [LoginController::class, 'logout']);
 
 // PAGINAS DE COMPRAS DA LOJA (⚠☣☢ EXTREMAMENTE TENEBROSO ☢☣⚠)

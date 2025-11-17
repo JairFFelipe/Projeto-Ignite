@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,9 +44,11 @@
         <div class="max-w-full flex justify-between items-center px-10 py-4">
             <!-- Logo -->
             <a href="/"><img src="{{ asset('img/ignitelogobrancolimpo.png') }}" alt="Logo" class="h-8"></a>
-
             <!-- Menu principal -->
             <nav class="flex space-x-6 text-sm font-semibold">
+            <a href="/"><button
+                class="hover:text-orange-600"
+            >INÍCIO</button></a>
             <!-- note o @click.stop em cada botão -->
             <button
                 @click.stop="activeMenu = activeMenu === 'motocicletas' ? null : 'motocicletas'"
@@ -130,7 +132,7 @@
                 }
             }"
             x-init="brand = 'kawasaki'"
-            class="absolute left-0 top-full h-[15vh] w-full bg-white text-black shadow-lg content-center"
+            class="absolute left-0 top-full h-[150px] w-full bg-white text-black shadow-lg content-center"
         >
             <div class="max-w-7xl mx-auto grid grid-cols-[150px_1fr_200px] gap-4 p-6">
             <!-- links de marcas -->

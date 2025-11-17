@@ -187,7 +187,7 @@
 
         <!-- COLUNA DA IMAGEM E MODAL DE COMPRA -->
         <div class="flex flex-col items-center ml-20">
-            <img src="{{ asset('img/harleynightster.jpg') }}" alt="Harley-Davidson Nightster" class="w-full max-w-lg object-contain">
+            <img src="{{ asset('img/harleypanamerica.jpg') }}" alt="Harley-Davidson Nightster" class="w-full max-w-lg object-contain">
             <p class="mt-2 text-xs text-gray-500">*Imagem meramente ilustrativa</p>
 
             <div 

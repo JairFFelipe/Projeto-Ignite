@@ -240,7 +240,7 @@
                 <!-- Botão que abre o popup -->
                 <button 
                     @click="aberto = true"
-                    class="mt-6 bg-orange-600 hover:bg-orange-700 ease-in-out duration-300 text-white px-40 py-3 rounded-md font-semibold uppercase tracking-wide ml-28">
+                    class="mt-6 bg-orange-600 hover:bg-orange-700 ease-in-out duration-300 text-white px-40 py-3 rounded-md font-semibold uppercase tracking-wide">
                     Ir para à compra
                 </button>
 
