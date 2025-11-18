@@ -54,5 +54,6 @@ class RegisterController extends Controller
 
         return view('login', $validated);
 
+        return redirect()->back();
     }
 }

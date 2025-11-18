@@ -50,9 +50,8 @@
                     <h2 class="text-3xl font-bold mb-6">Alterar Informações</h2>
                 </div>
 
-                <form action="" method="POST">
+                <form action="/geni" method="POST">
                     @csrf
-                    @method('PUT')
 
                     <!-- Nome -->
                     <div>
