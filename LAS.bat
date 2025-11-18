@@ -43,13 +43,14 @@ set "NEW_PATH=%PHP_PATH%;%NODE_PATH%;%OLD_PATH%"
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v Path /t REG_EXPAND_SZ /d "%NEW_PATH%" /f || (echo [ERRO] Falha ao atualizar PATH && pause && exit /b)
 
 echo.
+
 echo ====== Etapa 5: Instalando Composer ======
 "%REQ_DIR%\composer-setup.exe" /quiet || (echo [ERRO] Falha na instalação do Composer && pause && exit /b)
 set "COMPOSER_PATH=C:\ProgramData\ComposerSetup\bin\composer.bat"
-
 echo.
+
 echo ====== Etapa 6: Instalando dependências ======
-call %PHP_PATH%\php.exe C:\ProgramData\ComposerSetup\bin\composer.phar install || (echo [ERRO] Composer Install falhou && pause && exit /b)
+call %PHP_PATH%\php.exe C:\ProgramData\ComposerSetup\bin\composer.phar update || (echo [ERRO] Composer Install falhou && pause && exit /b)
 
 :: Temporarily set the PATH for the current session
 set PATH=%NODE_PATH%;%PATH%
@@ -62,5 +63,6 @@ copy ".env.example" ".env" /Y || (echo [ERRO] Falha ao copiar .env && pause && e
 call %PHP_PATH%\php.exe artisan key:generate || (echo [ERRO] Falha ao gerar chave Laravel && pause && exit /b)
 
 echo.
+
 echo ====== Concluído! ======
 pause

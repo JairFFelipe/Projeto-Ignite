@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -47,6 +48,8 @@ Route::get('/perfil', function () {
 });
 
 Route::get('/logout', [LoginController::class, 'logout']);
+
+Route::post('/geni', [UsuarioController::class, 'mudarEmail']);
 
 // PAGINAS DE COMPRAS DA LOJA (⚠☣☢ EXTREMAMENTE TENEBROSO ☢☣⚠)
 
@@ -175,6 +178,10 @@ Route::get('/logout', [LoginController::class, 'logout']);
         Route::get('/classic500', function () {
             return view('paginas de compras/royalenfield/classic500');
         });
+
+        Route::get('/contato', [ContatoController::class, 'index'])->name('contato.form');
+
+        Route::post('/contato', [ContatoController::class, 'enviar'])->name('contato.enviar');
 
 
 
