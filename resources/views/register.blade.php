@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
+  <title>Registrar</title>
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
@@ -57,7 +57,7 @@
             <label class="block text-gray-200">Senha</label>
               <div class="flex items-center">
                 <input type="password" name="senha" id="senha" placeholder="Senha123" minlength="6" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black ease-in-out duration-300 focus:ring-orange-500" required>
-                <button type="button" onclick="toggleSenha('senha', this)" aria-label="Mostrar senha" class="absolute right-3 transform"><img src="{{ asset('img/olhoaberto.png') }}" alt="mostrar senha" class="w-[2vw] h-[2vw]"></button>
+                <button type="button" onclick="toggleSenha('senha', this)" aria-label="Mostrar senha" class="absolute right-3 top-[38px] transform"><img src="{{ asset('img/olhofechado.svg') }}" alt="mostrar senha" class="w-[2vw] h-[2vw]"></button>
               </div>
           </div>
 
@@ -65,7 +65,7 @@
             <label class="block text-gray-200">Confirme sua senha</label>
             <div class="flex items-center justify-center ">
               <input type="password" name="senha_confirmation" id="senha_confirmation" placeholder="Senha123" minlength="6" class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black ease-in-out duration-300 focus:ring-orange-500" required>
-              <button type="button" onclick="toggleSenha('senha_confirmation', this)" aria-label="Mostrar senha" class="absolute right-3 transform"><img src="{{ asset('img/olhoaberto.png') }}" alt="mostrar senha" class="w-[2vw] h-[2vw]"></button>
+              <button type="button" onclick="toggleSenha('senha_confirmation', this)" aria-label="Mostrar senha" class="absolute right-3 top-[38px] transform"><img src="{{ asset('img/olhofechado.svg') }}" alt="mostrar senha" class="w-[2vw] h-[2vw]"></button>
             </div>
           </div>
           @error('senha')
@@ -116,7 +116,7 @@
         if (!input) return;
         const showing = input.type === 'password';
         input.type = showing ? 'text' : 'password';
-        btn.innerHTML = showing ? '<img src="{{ asset('img/olhofechado.png') }}" alt="ocultar senha" class="w-[2vw] h-[2vw]">' : '<img src="{{ asset('img/olhoaberto.png') }}" alt="mostrar senha" class="w-[2vw] h-[2vw]">';
+        btn.innerHTML = showing ? '<img src="{{ asset('img/olhoaberto.svg') }}" alt="ocultar senha" class="w-[2vw] h-[2vw]">' : '<img src="{{ asset('img/olhofechado.svg') }}" alt="mostrar senha" class="w-[2vw] h-[2vw]">';
         btn.setAttribute('aria-pressed', String(showing));
       }
 

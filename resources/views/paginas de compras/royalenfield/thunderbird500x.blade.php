@@ -53,7 +53,7 @@
                                 ACESSÓRIOS
                             </button>
                             <button class="border border-gray-800 hover:bg-gray-200 text-gray-900 px-24 py-3 rounded-md font-semibold text-sm uppercase" @click="aba = 'ficha'">
-                                ESPECIFICAÇÕES
+                                FICHA TÉCNICA
                             </button>
                         </div>
                     </div>
