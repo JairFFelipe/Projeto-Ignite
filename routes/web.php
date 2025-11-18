@@ -47,6 +47,15 @@ Route::get('/perfil', function () {
     return view('perfil');
 });
 
+
+Route::get('/recuperarsenha', function () {
+    return view('esqueceu');
+});
+
+Route::get('/trocarsenha', function () {
+    return view('redefinir');
+});
+
 Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::post('/geni', [UsuarioController::class, 'mudarEmail']);
