@@ -56,6 +56,10 @@ Route::get('/trocarsenha', function () {
     return view('redefinir');
 });
 
+Route::get('/teste', function () {
+    return view('emails/conta_criada_html');
+});
+
 Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::post('/chsenha', [UsuarioController::class, 'mudarSenha']);
