@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class usuarios extends Model
 {
     use Notifiable;
-    protected $filliable = ['nome','email','senha','num','cpf','cep',];
+    protected $fillable = ['nome','email','senha','num','cpf','cep',];
 
 
     public function getNumFormatadoAttribute()

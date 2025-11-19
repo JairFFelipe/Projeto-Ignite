@@ -40,7 +40,7 @@ class ContaCriadaMail extends Mailable{
 
            ->html(
 
-               view('emails.conta\_criada\_html', [
+               view('emails.conta_criada_html', [
 
                    'user' => $this->user
 

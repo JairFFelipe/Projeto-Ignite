@@ -49,6 +49,13 @@ echo ====== Etapa 5: Instalando Composer ======
 set "COMPOSER_PATH=C:\ProgramData\ComposerSetup\bin\composer.bat"
 echo.
 
+echo ====== Etapa 7: Configurando Laravel ======
+copy ".env.example" ".env" /Y || (echo [ERRO] Falha ao copiar .env && pause && exit /b)
+call %PHP_PATH%\php.exe artisan key:generate || (echo [ERRO] Falha ao gerar chave Laravel && pause && exit /b)
+
+echo.
+
+
 echo ====== Etapa 6: Instalando dependências ======
 call %PHP_PATH%\php.exe C:\ProgramData\ComposerSetup\bin\composer.phar update || (echo [ERRO] Composer Install falhou && pause && exit /b)
 
@@ -58,11 +65,5 @@ call npm.cmd install || (echo [ERRO] NPM Install falhou && pause && exit /b)
 call npm.cmd run build || (echo [ERRO] NPM Build falhou && pause && exit /b)
 
 echo.
-echo ====== Etapa 7: Configurando Laravel ======
-copy ".env.example" ".env" /Y || (echo [ERRO] Falha ao copiar .env && pause && exit /b)
-call %PHP_PATH%\php.exe artisan key:generate || (echo [ERRO] Falha ao gerar chave Laravel && pause && exit /b)
-
-echo.
-
 echo ====== Concluído! ======
 pause
