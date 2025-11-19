@@ -6,6 +6,8 @@ use App\Models\usuarios;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Notifications\UsuarioCriado;
+use App\Mail\ContaCriadaMail;
+use Illuminate\Support\Facades\Mail;
 
 
 class RegisterController extends Controller
@@ -49,7 +51,7 @@ class RegisterController extends Controller
 
        $usuario->save();
 
-        $usuario->notify(new UsuarioCriado());
+        Mail::to($usuario->email)->send(new ContaCriadaMail($usuario));
 
          return redirect('/login');
     }
