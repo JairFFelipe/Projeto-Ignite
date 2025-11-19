@@ -58,7 +58,10 @@ Route::get('/trocarsenha', function () {
 
 Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::post('/geni', [UsuarioController::class, 'mudarEmail']);
+Route::post('/chsenha', [UsuarioController::class, 'mudarSenha']);
+Route::post('/chfone', [UsuarioController::class, 'mudarFone']);
+Route::post('/chnome', [UsuarioController::class, 'mudarnome']);
+Route::post('/chcep', [UsuarioController::class, 'mudarCEP']);
 
 // PAGINAS DE COMPRAS DA LOJA (⚠☣☢ EXTREMAMENTE TENEBROSO ☢☣⚠)
 

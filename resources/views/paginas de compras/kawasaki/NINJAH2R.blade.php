@@ -209,7 +209,7 @@
             <p class="mt-2 text-xs text-gray-500">*Imagem meramente ilustrativa</p>
 
             <!-- Modal de Compra -->
-            <div 
+            <div
                 x-data="{
                     aberto: false,
                     cpf: '',
@@ -254,28 +254,28 @@
                 }"
             >
                 <!-- Botão que abre o popup -->
-                <button 
+                <button
                     @click="aberto = true"
                     class="mt-6 bg-orange-600 hover:bg-orange-700 ease-in-out duration-300 text-white px-40 py-3 rounded-md font-semibold uppercase tracking-wide">
                     Ir para à compra
                 </button>
 
                 <!-- Fundo escurecido -->
-                <div 
+                <div
                     x-show="aberto"
                     x-cloak
                     class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50"
                     x-transition
                 >
                     <!-- Modal -->
-                    <div 
-                        class="bg-white w-[90vw] max-w-lg p-6 rounded-2xl shadow-2xl relative 
+                    <div
+                        class="bg-white w-[90vw] max-w-lg p-6 rounded-2xl shadow-2xl relative
                             max-h-[80vh] overflow-y-auto"
                         @click.away="aberto = false"
                     >
                         <h2 class="text-2xl font-bold text-gray-900 mb-4">Finalizar Compra</h2>
 
-                        
+
                         @csrf
 
                         <!-- Dados do comprador -->

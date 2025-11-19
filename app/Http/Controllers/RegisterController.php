@@ -51,9 +51,6 @@ class RegisterController extends Controller
 
         $usuario->notify(new UsuarioCriado());
 
-
-        return view('login', $validated);
-
-        return redirect()->back();
+         return redirect('/login');
     }
 }

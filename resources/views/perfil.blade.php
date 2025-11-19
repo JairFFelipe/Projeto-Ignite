@@ -19,7 +19,7 @@
                 <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Minhas Informações</h2>
 
                 <div class="space-y-6 text-left">
-                    
+
                     {{-- Nome Completo com Ícone de Edição --}}
                     <div class="border-b border-gray-200 pb-4 flex justify-between items-center">
                         <div>
@@ -42,7 +42,7 @@
                     <div class="border-b border-gray-200 pb-4 flex justify-between items-center">
                         <div>
                             <h3 class="text-xl font-semibold text-gray-600">Telefone</h3>
-                            <p class="text-gray-900 text-lg">{{ session('usuario')->num ?? 'Não informado' }}</p>
+                            <p class="text-gray-900 text-lg">{{ session('usuario')->num_formatado ?? 'Não informado' }}</p>
                         </div>
                         {{-- Ícone de Edição (Caneta) --}}
                         <button onclick="openModal('modal-telefone')" class="text-orange-600 hover:text-orange-700 transition duration-150 p-2 rounded-full hover:bg-orange-50" aria-label="Alterar Telefone">
@@ -60,7 +60,7 @@
                     <div class="flex justify-between items-center">
                         <div>
                             <h3 class="text-xl font-semibold text-gray-600">CEP</h3>
-                            <p class="text-gray-900 text-lg">{{ session('usuario')->cep ?? 'Não informado' }}</p>
+                            <p class="text-gray-900 text-lg">{{ session('usuario')->cep_formatado ?? 'Não informado' }}</p>
                         </div>
                         {{-- Ícone de Edição (Caneta) --}}
                         <button onclick="openModal('modal-cep')" class="text-orange-600 hover:text-orange-700 transition duration-150 p-2 rounded-full hover:bg-orange-50" aria-label="Alterar CEP">
@@ -72,7 +72,7 @@
 
                 {{-- Botão Alterar Senha --}}
                 <div class="text-center mt-10">
-                    <button 
+                    <button
                         onclick="openModal('modal-senha')"
                         class="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 px-8 rounded-full transition transform hover:scale-105 shadow-lg"
                     >
@@ -90,14 +90,14 @@
     <div id="modal-nome" class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden items-center justify-center z-50 transition-opacity duration-300">
         <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md mx-4 transform transition-all duration-300 scale-95 opacity-0" data-modal-content>
             <h3 class="text-2xl font-bold mb-6 text-gray-800 text-center">Alterar Nome Completo</h3>
-            <form action="" method="POST">
+            <form action="/chnome" method="POST">
                 @csrf
                 <input type="hidden" name="campo" value="nome">
-                
+
                 <label for="nome" class="block text-sm font-medium text-gray-700 mb-2">Novo Nome</label>
-                <input 
-                    type="text" 
-                    name="nome" 
+                <input
+                    type="text"
+                    name="nome"
                     id="nome"
                     value="{{ session('usuario')->nome ?? '' }}"
                     class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
@@ -117,14 +117,14 @@
     <div id="modal-telefone" class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden items-center justify-center z-50 transition-opacity duration-300">
         <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md mx-4 transform transition-all duration-300 scale-95 opacity-0" data-modal-content>
             <h3 class="text-2xl font-bold mb-6 text-gray-800 text-center">Alterar Telefone</h3>
-            <form action="" method="POST">
+            <form action="/chfone" method="POST">
                 @csrf
                 <input type="hidden" name="campo" value="num">
-                
+
                 <label for="num" class="block text-sm font-medium text-gray-700 mb-2">Novo Telefone</label>
-                <input 
-                    type="text" 
-                    name="num" 
+                <input
+                    type="text"
+                    name="num"
                     id="num"
                     value="{{ session('usuario')->num ?? '' }}"
                     class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
@@ -144,14 +144,14 @@
     <div id="modal-cep" class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden items-center justify-center z-50 transition-opacity duration-300">
         <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md mx-4 transform transition-all duration-300 scale-95 opacity-0" data-modal-content>
             <h3 class="text-2xl font-bold mb-6 text-gray-800 text-center">Alterar CEP</h3>
-            <form action="" method="POST">
+            <form action="/chcep" method="POST">
                 @csrf
                 <input type="hidden" name="campo" value="cep">
 
                 <label for="cep" class="block text-sm font-medium text-gray-700 mb-2">Novo CEP</label>
-                <input 
-                    type="text" 
-                    name="cep" 
+                <input
+                    type="text"
+                    name="cep"
                     id="cep"
                     value="{{ session('usuario')->cep ?? '' }}"
                     class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
@@ -171,17 +171,16 @@
     <div id="modal-senha" class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden items-center justify-center z-50 transition-opacity duration-300">
         <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md mx-4 transform transition-all duration-300 scale-95 opacity-0" data-modal-content>
             <h3 class="text-2xl font-bold mb-6 text-gray-800 text-center">Alterar Senha</h3>
-            <form action="" method="POST">
+            <form action="/chsenha" method="POST">
                 @csrf
-                @method('PUT')
                 <input type="hidden" name="campo" value="senha">
 
                 {{-- Campo Nova Senha --}}
                 <div class="mb-4">
                     <label for="senha" class="block text-sm font-medium text-gray-700 mb-2">Nova Senha</label>
-                    <input 
-                        type="password" 
-                        name="senha" 
+                    <input
+                        type="password"
+                        name="senha"
                         id="senha"
                         class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
                         required
@@ -191,9 +190,9 @@
                 {{-- Campo Confirmar Senha --}}
                 <div>
                     <label for="senha_confirmation" class="block text-sm font-medium text-gray-700 mb-2">Confirmar Nova Senha</label>
-                    <input 
-                        type="password" 
-                        name="senha_confirmation" 
+                    <input
+                        type="password"
+                        name="senha_confirmation"
                         id="senha_confirmation"
                         class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
                         required
@@ -207,18 +206,18 @@
             </form>
         </div>
     </div>
-    
+
     {{-- Script JavaScript para Modals (Permanece o mesmo) --}}
     <script>
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
             const content = modal.querySelector('[data-modal-content]');
-            
+
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-            
+
             // Força o reflow para garantir a transição
-            void modal.offsetWidth; 
+            void modal.offsetWidth;
 
             modal.style.opacity = '1';
             content.style.transform = 'scale(1)';
@@ -228,19 +227,19 @@
         function closeModal(modalId) {
             const modal = document.getElementById(modalId);
             const content = modal.querySelector('[data-modal-content]');
-            
+
             content.style.transform = 'scale(0.95)';
             content.style.opacity = '0';
-            
+
             modal.style.opacity = '0';
-            
+
             // Esconde o modal após a transição
             setTimeout(() => {
                 modal.classList.remove('flex');
                 modal.classList.add('hidden');
             }, 300); // 300ms, o tempo da transição CSS
         }
-        
+
         // Fechar ao clicar fora do modal
         document.querySelectorAll('.fixed').forEach(modal => {
             modal.addEventListener('click', (e) => {
@@ -249,7 +248,7 @@
                 }
             });
         });
-        
+
         // Fechar com a tecla ESC
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
