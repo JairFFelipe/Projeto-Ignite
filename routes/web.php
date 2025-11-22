@@ -202,3 +202,63 @@ Route::post('/chcep', [UsuarioController::class, 'mudarCEP']);
 
 
     //-----------FIM-----------//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// shhh //
+    Route::get('/悪魔の世界', function () {
+        return view('shhh/shhh');
+    });

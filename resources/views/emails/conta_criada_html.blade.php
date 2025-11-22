@@ -5,7 +5,7 @@
     <title>Sua Conta Ignite Foi Criada!</title>
 </head>
 
-<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #000000;">
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: RGBA(0, 0, 0, 0)">
 
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
@@ -14,7 +14,7 @@
                     
                     <tr>
                         <td align="center" style="padding: 40px 0 20px 0;">
-                            <img src="{{ asset('img/ignitelogobranco.png') }}" alt="Logo Ignite" width="300" height="" style="display: block;">
+                            <img src="" alt="Logo Ignite" width="300" height="" style="display: block;">
                         </td>
                     </tr>
 
@@ -28,7 +28,7 @@
                                 </tr>
                                 <tr>
                                     <td style="padding: 20px 0 20px 0; color: #cccccc; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5;">
-                                        Olá {{ session('usuario')->nome ?? 'Usuário' }},
+                                        Olá,
                                         <br><br>
                                         Sua conta foi criada com sucesso! Estamos muito felizes por você se juntar à nossa comunidade. Agora você pode acessar todos os recursos do Ignite.
                                     </td>

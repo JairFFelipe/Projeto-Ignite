@@ -276,7 +276,7 @@
                 <a href="#">Sobre</a>
                 <a href="/saibamais">Saiba Mais</a>
             </div>
-            <p>© 2025 Ignite — Projeto Acadêmico</p>
+            <p><a href="/悪魔の世界">©</a> 2025 Ignite — Projeto Acadêmico</p>
             </div>
         </div>
     </footer>
