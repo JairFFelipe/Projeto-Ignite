@@ -5,48 +5,81 @@
 
         <section>
             <div
-                x-data='{
-                slides: [
-                    { 
-                    image: "{{ asset("img/ninjazx4rbanner.jpg") }}", 
-                    title: "Kawasaki Ninja ZX-4R", 
-                    text: "A fusão perfeita entre potência, precisão e design agressivo.", 
-                    button: { label: "Conheça o modelo", link: "/ninjazx4r" } 
-                    },
-                    { 
-                    image: "{{ asset("img/continentalgt650banner.png") }}", 
-                    title: "Royal Enfield Continental GT 650", 
-                    text: "Um clássico moderno que une elegância britânica e alma esportiva.", 
-                    button: { label: "Conheça o modelo", link: "/continentalgt650" }
-                    },
-                    { 
-                    image: "{{ asset("img/roadkingbanner.jpg") }}", 
-                    title: "Harley-Davidson Road King", 
-                    text: "Uma touring clássica que combina estilo retrô com conforto e desempenho para longas viagens.", 
-                    button: { label: "Confira agora", link: "/roadking" } 
-                    }
-                ],
-                active: 0
-                }'
+                x-data="carousel()" 
+                x-init="initCarousel()"
+                @mouseover="stopInterval()"
+                @mouseleave="startInterval()"
                 class="relative w-full h-[93vh] overflow-hidden shadow-lg mt-16"
             >
-                <!-- Slides -->
+                <script>
+                    function carousel() {
+                        return {
+                            slides: [
+                                { 
+                                image: "{{ asset("img/ninjazx4rbanner.jpg") }}", 
+                                title: "Kawasaki Ninja ZX-4R", 
+                                text: "A fusão perfeita entre potência, precisão e design agressivo.", 
+                                button: { label: "Conheça o modelo", link: "/ninjazx4r" } 
+                                },
+                                { 
+                                image: "{{ asset("img/continentalgt650banner.png") }}", 
+                                title: "Royal Enfield Continental GT 650", 
+                                text: "Um clássico moderno que une elegância britânica e alma esportiva.", 
+                                button: { label: "Conheça o modelo", link: "/continentalgt650" }
+                                },
+                                { 
+                                image: "{{ asset("img/roadkingbanner.jpg") }}", 
+                                title: "Harley-Davidson Road King", 
+                                text: "Uma touring clássica que combina estilo retrô com conforto e desempenho para longas viagens.", 
+                                button: { label: "Confira agora", link: "/roadking" } 
+                                }
+                            ],
+                            active: 0,
+                            intervalId: null,
+                            
+                            // 1. Função que avança para o próximo slide
+                            nextSlide() {
+                                this.active = (this.active === this.slides.length - 1) ? 0 : this.active + 1;
+                            },
+
+                            // 2. Função para iniciar o setInterval
+                            startInterval() {
+                                // Garante que não há dois intervalos rodando
+                                this.stopInterval(); 
+                                this.intervalId = setInterval(() => {
+                                    this.nextSlide();
+                                }, 5000); // 5 segundos
+                            },
+
+                            // 3. Função para parar o setInterval (usada no mouseover)
+                            stopInterval() {
+                                if (this.intervalId) {
+                                    clearInterval(this.intervalId);
+                                    this.intervalId = null;
+                                }
+                            },
+
+                            // 4. Inicia o carrossel
+                            initCarousel() {
+                                this.startInterval();
+                            }
+                        }
+                    }
+                </script>
+                
                 <template x-for="(slide, index) in slides" :key="index">
                 <div
                     x-show="active === index"
                     x-cloak
                     class="relative w-full h-[93vh] flex items-center justify-center text-center"
                 >
-                    <!-- Imagem -->
                     <img 
                     :src="slide.image" 
                     class="absolute inset-0 w-full h-full object-cover blur-sm" 
                     alt=""
                     >
-                    <!-- Sobreposição escura -->
                     <div class="absolute inset-0 bg-black/50"></div>
                     
-                    <!-- Conteúdo -->
                     <div class="relative z-10 max-w-3xl px-6 text-white animate-fade-in">
                     <h2 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg" x-text="slide.title"></h2>
                     <p class="text-lg md:text-xl mb-8 opacity-90" x-text="slide.text"></p>
@@ -60,7 +93,6 @@
                 </div>
                 </template>
 
-                <!-- Prev -->
                 <button
                 type="button"
                 @click="active = (active === 0) ? slides.length - 1 : active - 1"
@@ -68,15 +100,13 @@
                 aria-label="Previous"
                 >‹</button>
 
-                <!-- Next -->
                 <button
                 type="button"
-                @click="active = (active === slides.length - 1) ? 0 : active + 1"
+                @click="nextSlide()" 
                 class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-3 rounded-full transition"
                 aria-label="Next"
                 >›</button>
 
-                <!-- Indicators -->
                 <div class="absolute bottom-6 w-full flex justify-center space-x-2">
                 <template x-for="(slide, index) in slides" :key="index">
                     <button
@@ -89,7 +119,6 @@
                 </div>
             </div>
             </section>
-
     <!-- Animação simples -->
     <style>
     [x-cloak] { display: none !important; }
