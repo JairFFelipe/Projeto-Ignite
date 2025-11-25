@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
+use App\Mail\ContatoMail;
+use Illuminate\Support\Facades\Mail;
 
 Route::get('/', function () {
     return view('index');
@@ -199,6 +201,25 @@ Route::post('/chcep', [UsuarioController::class, 'mudarCEP']);
 
         Route::post('/contato', [ContatoController::class, 'enviar'])->name('contato.enviar');
 
+        Route::post('/contato', function () {
+    $data = request()->validate([
+        'nome' => 'required',
+        'email' => 'required|email',
+        'telefone'=>'required',
+        'mensagem' => 'required'
+    ]);
+
+    Mail::to('ignite.webmotors@gmail.com')->send(
+        new ContatoMail(
+            $data['nome'],
+            $data['email'],
+            $data['telefone'],
+            $data['mensagem']
+        )
+    );
+
+    return back()->with('success', 'Mensagem enviada com sucesso!');
+});
 
 
     //-----------FIM-----------//

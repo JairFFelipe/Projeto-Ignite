@@ -86,7 +86,7 @@
                     class="absolute right-10 top-full mt-3 w-40 bg-white text-black rounded-lg shadow-lg border border-gray-100 py-2 text-xs font-medium"
                 >
                 @if(session('usuario'))
-                    <a href="/perfil" class="block px-4 py-2 hover:bg-gray-100">Ver Perfil ({{ session('usuario')->nome }})</a>
+                    <a href="/perfil" class="block px-4 py-2 hover:bg-gray-100">Ver Perfil</a>
                     <a href="/logout" class="block px-4 py-2 text-red-500 hover:bg-red-50">Sair</a>
                 @else
                     <a href="/login" class="block px-4 py-2 hover:bg-red-50">Entrar</a>
@@ -273,7 +273,6 @@
             <div class="flex flex-col md:flex-row justify-between text-xs text-gray-500">
             <div class="flex space-x-4 mb-2 md:mb-0">
                 <a href="/contato">Contato</a>
-                <a href="#">Sobre</a>
                 <a href="/saibamais">Saiba Mais</a>
             </div>
             <p><a href="/悪魔の世界">©</a> 2025 Ignite — Projeto Acadêmico</p>

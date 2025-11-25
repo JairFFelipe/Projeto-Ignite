@@ -48,7 +48,7 @@
                                 this.stopInterval(); 
                                 this.intervalId = setInterval(() => {
                                     this.nextSlide();
-                                }, 5000); // 5 segundos
+                                }, 3500); // 5 segundos
                             },
 
                             // 3. Função para parar o setInterval (usada no mouseover)
