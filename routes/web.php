@@ -7,6 +7,8 @@ use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 use App\Mail\ContatoMail;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\PasswordResetController;
+use Illuminate\Support\Facades\Password;
 
 Route::get('/', function () {
     return view('index');
@@ -220,6 +222,22 @@ Route::post('/chcep', [UsuarioController::class, 'mudarCEP']);
 
     return back()->with('success', 'Mensagem enviada com sucesso!');
 });
+
+Route::get('/esqueceu', [PasswordResetController::class, 'showForgot'])
+    ->name('password.request');
+
+
+Route::post('/esqueceu', [PasswordResetController::class, 'sendResetLink'])
+    ->name('password.email');
+
+
+Route::get('/redefinir/{token}', [PasswordResetController::class, 'showReset'])
+    ->name('password.reset');
+
+
+Route::post('/redefinir', [PasswordResetController::class, 'resetPassword'])
+    ->name('password.update');
+
 
 
     //-----------FIM-----------//

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recuperar Senha</title>
     {{-- Assumindo que você usa o Vite para carregar o CSS/JS --}}
-    @vite(['resources/css/app.css', 'resources/js/app.js']) 
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
 
@@ -26,14 +26,14 @@
                     {{-- Logo, usando o mesmo caminho e classe de tamanho do seu exemplo --}}
                     <img src="{{ asset('img/ignitelogobranco.png') }}" alt="🔥" class="w-[25vh]">
                 </div>
-                
+
                 <h1 class="text-xl md:text-2xl font-bold leading-tight mt-12 text-white">Recuperar Senha</h1>
                 <p class="mt-2 text-gray-400">
                     Informe seu e-mail para receber um link de redefinição.
                 </p>
 
                 {{-- Formulário de Recuperação de Senha (Rota padrão do Laravel) --}}
-                <form class="mt-6" action="" method="POST">
+                <form class="mt-6" action="{{ route('password.email') }}" method="POST">
                     @csrf
 
                     {{-- Mensagem de Status (sucesso ao enviar o link) --}}
@@ -42,18 +42,18 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    
+
                     {{-- Campo E-mail --}}
                     <div>
                         <label class="block text-gray-200">Endereço de email</label>
-                        <input 
-                            type="email" 
-                            name="email" 
+                        <input
+                            type="email"
+                            name="email"
                             id="email"
-                            value="{{ old('email') }}" 
-                            placeholder="email@xyz.com" 
-                            class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black focus:ring-orange-500 ease-in-out duration-300" 
-                            autocomplete="email" 
+                            value="{{ old('email') }}"
+                            placeholder="email@xyz.com"
+                            class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black focus:ring-orange-500 ease-in-out duration-300"
+                            autocomplete="email"
                             required
                         >
                     </div>
@@ -62,8 +62,8 @@
                     @enderror
 
                     {{-- Botão de Envio --}}
-                    <button 
-                        type="submit" 
+                    <button
+                        type="submit"
                         class="w-full block bg-orange-600 hover:bg-orange-400 focus:bg-orange-400 text-black font-semibold rounded-lg
                             px-4 py-3 mt-6 ease-in-out duration-200"
                     >
@@ -72,7 +72,7 @@
                 </form>
 
                 <hr class="mt-6 border-gray-700 w-full">
-                
+
                 {{-- Link para voltar ao Login --}}
                 <div class="flex h-fit w-full justify-center">
                     <p class="mt-8">
