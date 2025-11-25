@@ -221,6 +221,7 @@
                     cidade: '',
                     estado: '',
                     forma_pagamento: 'cartao',
+                    tipo_entrega: 'entrega',
                     acessorios: [
                         { nome: 'Capa Personalizada ZX-4R', preco: 790, selecionado: false },
                         { nome: 'Kit de Performance Akrapovič', preco: 6250, selecionado: false },
@@ -236,14 +237,15 @@
                         const pedido = {
                             moto: 'ninjazx4r',
                             cpf: this.cpf,
-                            endereco: {
+                            tipo_entrega: this.tipo_entrega,
+                            endereco: this.tipo_entrega === 'entrega' ? {
                                 cep: this.cep,
                                 rua: this.rua,
                                 numero: this.numero,
                                 bairro: this.bairro,
                                 cidade: this.cidade,
                                 estado: this.estado
-                            },
+                            } : null,
                             forma_pagamento: this.forma_pagamento,
                             total: this.total,
                             acessorios: this.acessorios.filter(a => a.selecionado),
@@ -284,28 +286,80 @@
                             <input type="text" name="cpf" x-model="cpf" placeholder="CPF" required class="w-full border p-2 rounded-md" maxlength="14">
                         </div>
 
+                        <!-- Tipo de entrega -->
+                        <div class="mb-4">
+                            <label class="font-semibold text-gray-800 block mb-2">Forma de recebimento:</label>
+                            <div class="flex gap-6">
+                                <label class="flex items-center gap-2">
+                                    <input type="radio" value="retirada" x-model="tipo_entrega">
+                                    Retirada na loja
+                                </label>
+                                <label class="flex items-center gap-2">
+                                    <input type="radio" value="entrega" x-model="tipo_entrega" checked>
+                                    Entrega à domicílio
+                                </label>
+                            </div>
+                        </div>
+
                         <!-- Endereço -->
                         <div class="space-y-3 mb-4">
                             <h3 class="font-semibold text-gray-800 mb-2">Endereço de Entrega</h3>
 
-                            <input type="text" name="cep" placeholder="CEP" required maxlength="9"
-                                x-model="cep" class="w-full border p-2 rounded-md" inputmode="numeric">
+                            <input type="text" name="cep" placeholder="CEP" maxlength="9"
+                                x-model="cep"
+                                :disabled="tipo_entrega === 'retirada'"
+                                :required="tipo_entrega === 'entrega'"
+                                :class="tipo_entrega === 'retirada' 
+                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-300' 
+                                    : 'bg-white text-gray-900'"
+                                class="w-full border p-2 rounded-md transition">
 
-                            <input type="text" name="rua" placeholder="Rua" required
-                                x-model="rua" class="w-full border p-2 rounded-md">
+                            <input type="text" name="rua" placeholder="Rua"
+                                x-model="rua"
+                                :disabled="tipo_entrega === 'retirada'"
+                                :required="tipo_entrega === 'entrega'"
+                                :class="tipo_entrega === 'retirada' 
+                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-300' 
+                                    : 'bg-white text-gray-900'"
+                                class="w-full border p-2 rounded-md transition">
 
-                            <input type="text" name="numero" placeholder="Número" required
-                                x-model="numero" class="w-full border p-2 rounded-md">
+                            <input type="text" name="numero" placeholder="Número"
+                                x-model="numero"
+                                :disabled="tipo_entrega === 'retirada'"
+                                :required="tipo_entrega === 'entrega'"
+                                :class="tipo_entrega === 'retirada' 
+                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-300' 
+                                    : 'bg-white text-gray-900'"
+                                class="w-full border p-2 rounded-md transition">
 
                             <input type="text" name="bairro" placeholder="Bairro"
-                                x-model="bairro" class="w-full border p-2 rounded-md">
+                                x-model="bairro"
+                                :disabled="tipo_entrega === 'retirada'"
+                                :class="tipo_entrega === 'retirada' 
+                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-300' 
+                                    : 'bg-white text-gray-900'"
+                                class="w-full border p-2 rounded-md transition">
 
                             <div class="grid grid-cols-2 gap-2">
-                                <input type="text" name="cidade" placeholder="Cidade" required
-                                    x-model="cidade" class="w-full border p-2 rounded-md">
-                                <input type="text" name="estado" placeholder="Estado" maxlength="2" required
-                                    x-model="estado" class="w-full border p-2 rounded-md uppercase">
+                                <input type="text" name="cidade" placeholder="Cidade"
+                                    x-model="cidade"
+                                    :disabled="tipo_entrega === 'retirada'"
+                                    :required="tipo_entrega === 'entrega'"
+                                    :class="tipo_entrega === 'retirada' 
+                                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-300' 
+                                        : 'bg-white text-gray-900'"
+                                    class="w-full border p-2 rounded-md transition">
+
+                                <input type="text" name="estado" placeholder="Estado" maxlength="2"
+                                    x-model="estado"
+                                    :disabled="tipo_entrega === 'retirada'"
+                                    :required="tipo_entrega === 'entrega'"
+                                    :class="tipo_entrega === 'retirada' 
+                                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-300' 
+                                        : 'bg-white text-gray-900'"
+                                    class="w-full border p-2 rounded-md uppercase transition">
                             </div>
+
                         </div>
 
                         <!-- Forma de pagamento -->
