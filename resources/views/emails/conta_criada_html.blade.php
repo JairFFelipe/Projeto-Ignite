@@ -38,7 +38,7 @@
                                         <table border="0" cellpadding="0" cellspacing="0">
                                             <tr>
                                                 <td align="center" style="border-radius: 4px; background-color: #ff6600;">
-                                                    <a href="[URL_DO_SEU_APP_OU_SITE]" target="_blank" style="padding: 12px 25px; border: 1px solid #ff6600; border-radius: 4px; display: inline-block; color: #ffffff; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-decoration: none; line-height: 1.2;">
+                                                    <a href="http://127.0.0.1:8000/perfil" target="_blank" style="padding: 12px 25px; border: 1px solid #ff6600; border-radius: 4px; display: inline-block; color: #ffffff; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-decoration: none; line-height: 1.2;">
                                                         Acessar Minha Conta
                                                     </a>
                                                 </td>
