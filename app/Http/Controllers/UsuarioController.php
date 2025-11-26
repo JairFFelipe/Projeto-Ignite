@@ -133,4 +133,23 @@ class UsuarioController extends Controller
         session(['usuario' => $usuario->fresh()]);
     }
 
+    public function dadosPagMenu(Request $request){
+
+        mudarCPF($request->cpf);
+
+        $validated = $request->validate([
+            'cep' => 'max:8|required'
+        ]);
+
+
+        if($request->cep != null){
+            $cep = $request->cep;
+            $usuario = usuarios::where('email', session('usuario')->email)->first();
+                $usuario->cep = $cep;
+                $usuario->save();
+        }
+            session(['usuario' => $usuario->fresh()]);
+
+    }
+
 }

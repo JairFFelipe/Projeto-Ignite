@@ -46,9 +46,16 @@
     </div>
 
     <!-- Link de Voltar -->
-    <a href="/" class="mt-10 text-orange-600 font-semibold hover:underline text-base">
+     <form action="/megamind" method="post">
+        @csrf
+
+     <input type="hidden" id="cpf2" name="cpfs" value="">
+     <input type="hidden" id="cep2" name="ceps" value="">
+
+    <button type="submit" class="mt-10 text-orange-600 font-semibold hover:underline text-base">
         ← Voltar ao inicio
-    </a>
+    </button>
+    </form>
 </section>
 
 
@@ -64,6 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Atualiza os campos
         document.getElementById('moto').textContent = pedido.moto;
         document.getElementById('cpf').textContent = pedido.cpf;
+        document.getElementById('cpf2').value = pedido.cpf;
+        document.getElementById('cep2').value = pedido.endereco.cep;
         document.getElementById('forma_pagamento').textContent =
             pedido.forma_pagamento === 'pix' ? 'PIX' : 'Cartão de Crédito';
         const blocoEndereco = document.getElementById('bloco_endereco');

@@ -15,7 +15,7 @@
                 <!-- Header -->
                 <tr>
                     <td align="center" style="padding:35px 20px 20px 20px;">
-                        <img src="https://i.imgur.com/S6y0ncO.png" alt="Logo Ignite" width="220" style="display:block;">
+                        <img src="https://i.imgur.com/Z8u3Are.png" alt="Logo Ignite" width="220" style="display:block;">
                     </td>
                 </tr>
 

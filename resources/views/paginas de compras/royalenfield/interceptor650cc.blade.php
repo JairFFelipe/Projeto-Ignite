@@ -267,7 +267,7 @@
 
                         <!-- Dados do comprador -->
                         <div class="space-y-3 mb-4">
-                            <input type="text" name="cpf" x-model="cpf" placeholder="CPF" required class="w-full border p-2 rounded-md" maxlength="14">
+                            <input type="text" id="cpf" name="cpf" x-model="cpf" placeholder="CPF" required class="w-full border p-2 rounded-md" maxlength="14">
                         </div>
 
                         <!-- Tipo de entrega -->
@@ -457,6 +457,20 @@
 </section>
 
 <script>
+    document.getElementById('cpf').addEventListener('input', function () {
+    let v = this.value.replace(/\D/g, '');
+    v = v.replace(/(\d{3})(\d)/, '$1.$2');
+    v = v.replace(/(\d{3})(\d)/, '$1.$2');
+    v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+    this.value = v;
+});
+
+document.getElementById('cep').addEventListener('input', function () {
+    let v = this.value.replace(/\D/g, '');
+    v = v.replace(/(\d{5})(\d)/, '$1-$2');
+    this.value = v;
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const cepInput = document.getElementById('cep');

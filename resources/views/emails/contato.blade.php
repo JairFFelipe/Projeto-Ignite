@@ -15,7 +15,7 @@
 
                 <tr>
                     <td align="center" style="padding: 40px 0 20px 0;">
-                        <img src="https://i.imgur.com/S6y0ncO.png" alt="Logo Ignite" width="300" style="display: block;">
+                        <img src="https://i.imgur.com/Z8u3Are.png" alt="Logo Ignite" width="300" style="display: block;">
                     </td>
                 </tr>
 

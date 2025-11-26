@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Mail\ContatoMail;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\PasswordResetController;
+use App\Http\Controllers\megamindController;
 use Illuminate\Support\Facades\Password;
 
 Route::get('/', function () {
@@ -237,8 +238,10 @@ Route::get('/redefinir/{token}', [PasswordResetController::class, 'showReset'])
 
 Route::post('/redefinir', [PasswordResetController::class, 'resetPassword'])
     ->name('password.update');
+    
+Route::post('/pagmenu', [UsuarioController::class, 'dadosPagMenu']);
 
-Route::post('/pagmenu', []);
+Route::post('/megamind', [megamindController::class, 'truqueSave']);
 
 
 
