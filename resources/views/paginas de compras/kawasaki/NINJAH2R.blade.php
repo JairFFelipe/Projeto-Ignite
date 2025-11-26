@@ -277,7 +277,7 @@
                     >
                         <h2 class="text-2xl font-bold text-gray-900 mb-4">Finalizar Compra</h2>
 
-
+                    <form action="" method="post">
                         @csrf
 
                         <!-- Dados do comprador -->
@@ -304,21 +304,21 @@
                         <div class="space-y-3 mb-4">
                             <h3 class="font-semibold text-gray-800 mb-2">Endereço de Entrega</h3>
 
-                            <input type="text" name="cep" placeholder="CEP" maxlength="9"
+                            <input type="text" id="cep" name="cep" placeholder="CEP" maxlength="9"
                                 x-model="cep"
                                 :disabled="tipo_entrega === 'retirada'"
                                 :required="tipo_entrega === 'entrega'"
-                                :class="tipo_entrega === 'retirada' 
-                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-300' 
+                                :class="tipo_entrega === 'retirada'
+                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-300'
                                     : 'bg-white text-gray-900'"
                                 class="w-full border p-2 rounded-md transition">
 
-                            <input type="text" name="rua" placeholder="Rua"
+                            <input type="text" id="rua" name="rua" placeholder="Rua"
                                 x-model="rua"
                                 :disabled="tipo_entrega === 'retirada'"
                                 :required="tipo_entrega === 'entrega'"
-                                :class="tipo_entrega === 'retirada' 
-                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-300' 
+                                :class="tipo_entrega === 'retirada'
+                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-300'
                                     : 'bg-white text-gray-900'"
                                 class="w-full border p-2 rounded-md transition">
 
@@ -326,35 +326,35 @@
                                 x-model="numero"
                                 :disabled="tipo_entrega === 'retirada'"
                                 :required="tipo_entrega === 'entrega'"
-                                :class="tipo_entrega === 'retirada' 
-                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-300' 
+                                :class="tipo_entrega === 'retirada'
+                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-300'
                                     : 'bg-white text-gray-900'"
                                 class="w-full border p-2 rounded-md transition">
 
-                            <input type="text" name="bairro" placeholder="Bairro"
+                            <input type="text" id="bairro" name="bairro" placeholder="Bairro"
                                 x-model="bairro"
                                 :disabled="tipo_entrega === 'retirada'"
-                                :class="tipo_entrega === 'retirada' 
-                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-300' 
+                                :class="tipo_entrega === 'retirada'
+                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-300'
                                     : 'bg-white text-gray-900'"
                                 class="w-full border p-2 rounded-md transition">
 
                             <div class="grid grid-cols-2 gap-2">
-                                <input type="text" name="cidade" placeholder="Cidade"
+                                <input type="text" id="cidade" name="cidade" placeholder="Cidade"
                                     x-model="cidade"
                                     :disabled="tipo_entrega === 'retirada'"
                                     :required="tipo_entrega === 'entrega'"
-                                    :class="tipo_entrega === 'retirada' 
-                                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-300' 
+                                    :class="tipo_entrega === 'retirada'
+                                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-300'
                                         : 'bg-white text-gray-900'"
                                     class="w-full border p-2 rounded-md transition">
 
-                                <input type="text" name="estado" placeholder="Estado" maxlength="2"
+                                <input type="text" id="estado" name="estado" placeholder="Estado" maxlength="2"
                                     x-model="estado"
                                     :disabled="tipo_entrega === 'retirada'"
                                     :required="tipo_entrega === 'entrega'"
-                                    :class="tipo_entrega === 'retirada' 
-                                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-300' 
+                                    :class="tipo_entrega === 'retirada'
+                                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-300'
                                         : 'bg-white text-gray-900'"
                                     class="w-full border p-2 rounded-md uppercase transition">
                             </div>
@@ -467,9 +467,42 @@
                     </div>
                 </div>
             </div>
-
-
+        </div>
     </main>
 </section>
-<br>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    const cepInput = document.getElementById('cep');
+
+    function atualizarInput(id, valor) {
+        const el = document.getElementById(id);
+        el.value = valor;
+        el.dispatchEvent(new Event('input')); // <-- Atualiza x-model corretamente
+    }
+
+    cepInput.addEventListener('blur', async () => {
+        let cep = cepInput.value.replace(/\D/g, "");
+
+        if (cep.length !== 8) return;
+
+        try {
+            const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+            const dados = await resposta.json();
+
+            if (dados.erro) return;
+
+            atualizarInput('rua', dados.logradouro);
+            atualizarInput('bairro', dados.bairro);
+            atualizarInput('cidade', dados.localidade);
+            atualizarInput('estado', dados.uf);
+
+        } catch (e) {
+            console.error("Erro ao consultar CEP:", e);
+        }
+    });
+});
+</script>
+
 @endsection
