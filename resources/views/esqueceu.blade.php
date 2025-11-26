@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recuperar Senha</title>
-    {{-- Assumindo que você usa o Vite para carregar o CSS/JS --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
@@ -23,7 +22,6 @@
 
             <div class="w-full h-100">
                 <div class="flex items-center gap-3 w-full align-middle justify-center">
-                    {{-- Logo, usando o mesmo caminho e classe de tamanho do seu exemplo --}}
                     <img src="{{ asset('img/ignitelogobranco.png') }}" alt="🔥" class="w-[25vh]">
                 </div>
 

@@ -61,7 +61,7 @@ Route::get('/trocarsenha', function () {
 });
 
 Route::get('/teste', function () {
-    return view('emails/conta_criada_html');
+    return view('emails/reset-password.blade.php');
 });
 
 Route::get('/logout', [LoginController::class, 'logout']);

@@ -6,7 +6,6 @@
     <title>Recuperar Senha</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    {{-- Estilos para o ícone (mantidos para consistência, embora não sejam usados nesta página) --}}
     <style>
         .password-toggle-icon {
             color: #6B7280;
@@ -23,7 +22,7 @@
     <section class="flex flex-col md:flex-row min-h-screen items-center">
 
         {{-- Coluna da Imagem (Esquerda) --}}
-        <div class="bg-slate-900 hidden lg:block w-full md:w-1/2 xl:w-2/3 min-h-screen">
+        <div class="bg-slate-900 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
             <img src="{{ asset('img/ninjazx4rbanner.jpg') }}" alt="Motos" class="w-full h-full object-cover blur-sm">
         </div>
 
@@ -64,7 +63,7 @@
                         </div>
 
                         {{-- Campo confirmar senha --}}
-                        <div class="relative"> {{-- Adicionado 'relative' para o posicionamento do botão --}}
+                        <div class="relative">
                             <label class="block text-gray-200">Confirme sua senha</label>
                             <input
                                 type="password"
