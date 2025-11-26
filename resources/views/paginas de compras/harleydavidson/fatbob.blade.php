@@ -191,8 +191,8 @@
         <div class="flex flex-col items-center ml-20">
             <img src="{{ asset('img/fatbob.webp') }}" alt="Harley-Davidson Electra Glide" class="w-full max-w-lg object-contain">
             <p class="mt-2 text-xs text-gray-500">*Imagem meramente ilustrativa</p>
-        
-        <div 
+
+        <div
                 x-data="{
                     aberto: false,
                     cpf: '',
@@ -260,7 +260,7 @@
                     >
                         <h2 class="text-2xl font-bold text-gray-900 mb-4">Finalizar Compra</h2>
 
-                    <form action="" method="post">
+                    <form action="/pagmenu" method="post">
                         @csrf
 
                         <!-- Dados do comprador -->

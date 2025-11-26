@@ -54,8 +54,8 @@
                         </div>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed">
-                        A Kawasaki Ninja ZX-10R é uma superbike de alta performance com enfoque em pista. 
-                        Equipada com motor 998 cc, eletrônica de última geração e estrutura derivada do WorldSBK, 
+                        A Kawasaki Ninja ZX-10R é uma superbike de alta performance com enfoque em pista.
+                        Equipada com motor 998 cc, eletrônica de última geração e estrutura derivada do WorldSBK,
                         entrega resposta rápida, estabilidade em curvas e dinâmica agressiva para pilotagem esportiva.
                     </p>
                 </div>
@@ -212,7 +212,7 @@
             <p class="mt-2 text-xs text-gray-500">*Imagem meramente ilustrativa</p>
 
            <!-- Modal de Compra -->
-            <div 
+            <div
                 x-data="{
                     aberto: false,
                     cpf: '',
@@ -280,7 +280,7 @@
                     >
                         <h2 class="text-2xl font-bold text-gray-900 mb-4">Finalizar Compra</h2>
 
-                    <form action="" method="post">
+                    <form action="/pagmenu" method="post">
                         @csrf
 
                         <!-- Dados do comprador -->

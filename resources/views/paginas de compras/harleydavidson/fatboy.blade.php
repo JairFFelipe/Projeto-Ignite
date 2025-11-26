@@ -259,7 +259,7 @@
                     >
                         <h2 class="text-2xl font-bold text-gray-900 mb-4">Finalizar Compra</h2>
 
-                    <form action="" method="post">
+                    <form action="/pagmenu" method="post">
                         @csrf
 
                         <!-- Dados do comprador -->

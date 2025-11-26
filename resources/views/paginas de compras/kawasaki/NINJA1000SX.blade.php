@@ -54,8 +54,8 @@
                         </div>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed">
-                        A Kawasaki Ninja 1000SX combina a performance esportiva de uma superbike com o conforto de uma tourer. 
-                        Equipada com motor de 1.043 cc, controle eletrônico avançado e ergonomia otimizada para longas distâncias, 
+                        A Kawasaki Ninja 1000SX combina a performance esportiva de uma superbike com o conforto de uma tourer.
+                        Equipada com motor de 1.043 cc, controle eletrônico avançado e ergonomia otimizada para longas distâncias,
                         é uma sport touring equilibrada e precisa, projetada para desempenho em estrada e conforto em viagens prolongadas.
                     </p>
                 </div>
@@ -210,7 +210,7 @@
             <p class="mt-2 text-xs text-gray-500">*Imagem meramente ilustrativa</p>
 
            <!-- Modal de Compra -->
-            <div 
+            <div
                 x-data="{
                     aberto: false,
                     cpf: '',
@@ -278,7 +278,7 @@
                     >
                         <h2 class="text-2xl font-bold text-gray-900 mb-4">Finalizar Compra</h2>
 
-                    <form action="" method="post">
+                    <form action="/pagmenu" method="post">
                         @csrf
 
                         <!-- Dados do comprador -->

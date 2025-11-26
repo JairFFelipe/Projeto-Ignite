@@ -192,7 +192,7 @@
             <p class="mt-2 text-xs text-gray-500">*Imagem meramente ilustrativa</p>
 
             <!-- Modal de Compra (igual estrutura) -->
-            <div 
+            <div
                 x-data="{
                     aberto: false,
                     cpf: '',
@@ -260,7 +260,7 @@
                     >
                         <h2 class="text-2xl font-bold text-gray-900 mb-4">Finalizar Compra</h2>
 
-                    <form action="" method="post">
+                    <form action="/pagmenu" method="post">
                         @csrf
 
                         <!-- Dados do comprador -->

@@ -238,6 +238,8 @@ Route::get('/redefinir/{token}', [PasswordResetController::class, 'showReset'])
 Route::post('/redefinir', [PasswordResetController::class, 'resetPassword'])
     ->name('password.update');
 
+Route::post('/pagmenu', []);
+
 
 
     //-----------FIM-----------//

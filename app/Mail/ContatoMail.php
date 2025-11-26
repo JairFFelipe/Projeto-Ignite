@@ -16,7 +16,7 @@ class ContatoMail extends Mailable
     public $telefone;
     public $mensagem;
 
-    public function __construct($nome, $email, $mensagem, $telefone)
+    public function __construct($nome, $email, $telefone, $mensagem)
     {
         $this->nome = $nome;
         $this->email = $email;
@@ -33,5 +33,5 @@ class ContatoMail extends Mailable
 
 
 
-   
+
 
