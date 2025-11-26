@@ -66,8 +66,17 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('cpf').textContent = pedido.cpf;
         document.getElementById('forma_pagamento').textContent =
             pedido.forma_pagamento === 'pix' ? 'PIX' : 'Cartão de Crédito';
-        document.getElementById('endereco').textContent =
-            `${pedido.endereco.rua}, ${pedido.endereco.numero} - ${pedido.endereco.bairro}, ${pedido.endereco.cidade} - ${pedido.endereco.estado}, CEP: ${pedido.endereco.cep}`;
+        const blocoEndereco = document.getElementById('bloco_endereco');
+        const enderecoEl = document.getElementById('endereco');
+
+        if (pedido.tipo_entrega === 'retirada') {
+            enderecoEl.textContent = 'Retirada na loja';
+        } else if (pedido.endereco) {
+            enderecoEl.textContent =
+                `${pedido.endereco.rua}, ${pedido.endereco.numero} - ${pedido.endereco.bairro}, ${pedido.endereco.cidade} - ${pedido.endereco.estado}, CEP: ${pedido.endereco.cep}`;
+        } else {
+            enderecoEl.textContent = 'Endereço não informado';
+        }
         document.getElementById('total').textContent = `R$ ${pedido.total.toLocaleString()}`;
 
         // Acessórios

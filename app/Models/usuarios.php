@@ -5,14 +5,21 @@ use Illuminate\Notifications\Notifiable;
 
 use Illuminate\Database\Eloquent\Model;
 
-class usuarios extends Model
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class usuarios extends Authenticatable
 {
+    protected $table = 'usuarios';
+
     use Notifiable;
     protected $fillable = ['nome','email','senha','num','cpf','cep',];
 
+    public function getAuthPassword(){
+        return $this->senha;
+    }
 
-    public function getNumFormatadoAttribute()
-    {
+
+    public function getNumFormatadoAttribute(){
         $num = $this->num;
 
         return preg_replace(
@@ -22,8 +29,7 @@ class usuarios extends Model
         );
     }
 
-    public function getCepFormatadoAttribute()
-    {
+    public function getCepFormatadoAttribute(){
         $cep = $this->cep;
 
         return preg_replace(

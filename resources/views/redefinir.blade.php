@@ -44,6 +44,9 @@
                 <form class="mt-6" action="{{ route('password.update') }}" method="POST">
                     @csrf
 
+                    <input type="hidden" name="token" value="{{ $token }}">
+                    <input type="hidden" name="email" value="{{ request('email') }}">
+
                     {{-- Campo nova senha --}}
                     <div class="flex flex-col gap-3">
                         <div class="relative"> {{-- Adicionado 'relative' para o posicionamento do botão --}}
@@ -52,7 +55,6 @@
                                 type="password"
                                 name="senha"
                                 id="senha"
-                                value="{{ old('email') }}"
                                 placeholder="1234..."
                                 class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black focus:ring-orange-500 ease-in-out duration-300"
                                 required
@@ -63,6 +65,11 @@
                             </button>
                         </div>
 
+                        @foreach ($errors->all() as $error)
+                            <div class="text-red-500">{{ $error }}</div>
+                        @endforeach
+
+
                         {{-- Campo confirmar senha --}}
                         <div class="relative"> {{-- Adicionado 'relative' para o posicionamento do botão --}}
                             <label class="block text-gray-200">Confirme sua senha</label>
@@ -70,7 +77,6 @@
                                 type="password"
                                 name="confirmar_senha"
                                 id="confirmar_senha"
-                                value="{{ old('email') }}"
                                 placeholder="1234..."
                                 class="w-full px-4 py-3 rounded-lg bg-zinc-200 mt-2 border focus:border-orange-500 focus:bg-orange-100 focus:outline-none text-black focus:ring-orange-500 ease-in-out duration-300"
                                 required

@@ -41,23 +41,29 @@ class PasswordResetController extends Controller
     public function resetPassword(Request $request)
     {
         $request->validate([
-            'token' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|min:6|confirmed',
-        ]);
+        'token' => 'required',
+        'email' => 'required|email',
+        'senha' => 'required|min:6',
+        'confirmar_senha' => 'required|same:senha'
+    ]);
 
-        $status = Password::reset(
-            $request->only('email', 'password', 'password_confirmation', 'token'),
-            function ($user) use ($request) {
-                $user->forceFill([
-                    'password' => Hash::make($request->password),
-                ])->save();
-            }
-        );
+    $status = Password::reset(
+        [
+            'email' => $request->email,
+            'password' => $request->senha,
+            'password_confirmation' => $request->confirmar_senha,
+            'token' => $request->token
+        ],
+        function ($user) use ($request) {
+            $user->forceFill([
+                'senha' => Hash::make($request->senha),
+            ])->save();
+        }
+    );
 
-        return $status === Password::PASSWORD_RESET
-            ? redirect('/login')->with('success', 'Senha redefinida!')
-            : back()->withErrors(['email' => 'Erro ao redefinir senha.']);
+    return $status === Password::PASSWORD_RESET
+        ? redirect('/login')->with('success', 'Senha redefinida!')
+        : back()->withErrors(['email' => 'Erro ao redefinir senha.']);
+
     }
-
 }
